@@ -45,27 +45,6 @@
   background: var(--color-primary-highlight);
 }
 
-.site-nav-actions { display: flex; align-items: center; gap: var(--space-2); flex-shrink: 0; }
-
-.lang-switch {
-  display: inline-flex;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-full);
-  overflow: hidden;
-}
-.lang-switch button {
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-  padding: 3px 8px;
-  color: var(--color-text-muted);
-  transition: background var(--transition-interactive), color var(--transition-interactive);
-}
-.lang-switch button:hover { color: var(--color-text); }
-.lang-switch button[aria-pressed="true"] {
-  background: var(--color-primary);
-  color: #ffffff;
-}
-
 @media (max-width: 620px) {
   .site-nav { padding: 6px var(--space-3); }
   .site-nav-brand { display: none; }
