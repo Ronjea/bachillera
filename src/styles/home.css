@@ -1,6 +1,369 @@
-/* Landing page styles — replaced by the home worker; minimal placeholder. */
-.home-main {
-  max-width: 960px;
+/* =========================================================
+   Landing page — La Bachillera.
+   Built on the shared "electric grid" design system
+   (src/styles/tokens.css): dark technical surfaces by default,
+   amber primary accent, voltage colors reused for the
+   electrical-infrastructure section. No hardcoded colors here —
+   everything routes through design tokens so light/dark both work.
+   ========================================================= */
+
+body { overflow-x: hidden; }
+
+.wrap {
+  max-width: 1180px;
   margin: 0 auto;
-  padding: var(--space-10) var(--space-5);
+  padding: 0 var(--space-6);
+}
+
+/* ============ Eyebrow (mono uppercase label) ============ */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin-bottom: var(--space-4);
+}
+.eyebrow--voltage { color: var(--color-voltage-high); }
+
+/* ============ Hero ============ */
+.hero {
+  position: relative;
+  padding: clamp(3.5rem, 2rem + 6vw, 7rem) 0 clamp(3rem, 2rem + 4vw, 5rem);
+  overflow: hidden;
+  background:
+    radial-gradient(640px circle at 88% -15%, color-mix(in srgb, var(--color-primary) 18%, transparent), transparent 60%),
+    var(--color-bg);
+  border-bottom: 1px solid var(--color-divider);
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(color-mix(in srgb, var(--color-border) 60%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--color-border) 60%, transparent) 1px, transparent 1px);
+  background-size: 56px 56px;
+  -webkit-mask-image: linear-gradient(to bottom, black, transparent 85%);
+  mask-image: linear-gradient(to bottom, black, transparent 85%);
+  opacity: 0.4;
+  pointer-events: none;
+}
+.hero-inner { position: relative; z-index: 1; }
+
+.hero-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 0.98;
+  font-size: clamp(2.75rem, 1.9rem + 4.2vw, 5.5rem);
+  color: var(--color-text);
+  margin-bottom: var(--space-5);
+}
+
+.hero-subtitle {
+  font-size: var(--text-lg);
+  color: var(--color-text-muted);
+  max-width: 62ch;
+  line-height: 1.5;
+}
+
+.hero-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-6) var(--space-10);
+  margin-top: var(--space-10);
+  padding-top: var(--space-8);
+  border-top: 1px solid var(--color-divider);
+}
+.hero-stat { min-width: 130px; }
+.hero-stat-value {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: clamp(1.35rem, 1.1rem + 1vw, 1.9rem);
+  font-weight: 600;
+  color: var(--color-primary);
+  line-height: 1;
+  margin-bottom: var(--space-2);
+}
+.hero-stat-label {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+/* ============ Section rhythm ============ */
+.section {
+  padding: var(--space-12) 0;
+  border-bottom: 1px solid var(--color-divider);
+}
+.section-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  font-size: clamp(1.6rem, 1.3rem + 1.4vw, 2.5rem);
+  color: var(--color-text);
+  max-width: 32ch;
+  margin-bottom: var(--space-4);
+}
+.section-title--center { text-align: center; margin-inline: auto; }
+.section-lede {
+  font-size: var(--text-lg);
+  color: var(--color-text-muted);
+  max-width: 68ch;
+  line-height: 1.55;
+  margin-bottom: var(--space-8);
+}
+.explore-section .section-lede,
+.explore-section .section-title--center { margin-inline: auto; text-align: center; }
+
+/* ============ Timeline (history) ============ */
+.timeline {
+  list-style: none;
+  margin-top: var(--space-6);
+  border-left: 2px solid var(--color-border);
+  padding-left: var(--space-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  max-width: 68ch;
+}
+.timeline-item { position: relative; }
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: calc(-1 * var(--space-8) - 5px);
+  top: 4px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--color-text-faint);
+  border: 2px solid var(--color-bg);
+}
+.timeline-item--key::before {
+  background: var(--color-primary);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-primary) 25%, transparent);
+}
+.timeline-year {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: var(--space-1);
+}
+.timeline-item--key .timeline-year { color: var(--color-primary); }
+.timeline-text {
+  color: var(--color-text-muted);
+  font-size: var(--text-base);
+  line-height: 1.6;
+}
+
+/* ============ Planning grid ============ */
+.planning-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-6);
+  margin-bottom: var(--space-8);
+}
+.planning-col {
+  border: 1px solid var(--color-divider);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+}
+.planning-col--done {
+  background: color-mix(in srgb, var(--color-success) 6%, var(--color-surface-2));
+  border-color: color-mix(in srgb, var(--color-success) 25%, var(--color-divider));
+}
+.planning-col--pending {
+  background: color-mix(in srgb, var(--color-primary) 5%, var(--color-surface-2));
+  border-color: color-mix(in srgb, var(--color-primary) 20%, var(--color-divider));
+}
+.planning-col-title {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-display);
+  font-size: var(--text-base);
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: var(--space-4);
+}
+.planning-col-icon { width: 18px; height: 18px; flex-shrink: 0; }
+.planning-col--done .planning-col-icon { color: var(--color-success); }
+.planning-col--pending .planning-col-icon { color: var(--color-text-muted); }
+.planning-list { display: flex; flex-direction: column; gap: var(--space-3); }
+.planning-list li {
+  position: relative;
+  padding-left: var(--space-5);
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  line-height: 1.55;
+}
+.planning-list li::before {
+  content: '';
+  position: absolute;
+  left: 2px;
+  top: 0.55em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+.planning-col--done .planning-list li::before { background: var(--color-success); }
+.planning-col--pending .planning-list li::before { background: var(--color-text-faint); }
+
+/* ============ CTA text link (arrow, used inline) ============ */
+.cta-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-primary);
+  padding: var(--space-2) 0;
+}
+.cta-link:hover { text-decoration: none; }
+.cta-link::after { content: '→'; transition: transform var(--transition-interactive); }
+.cta-link:hover::after { transform: translateX(4px); }
+
+/* ============ Electric-problem section (highlighted) ============ */
+.section-electric { border-bottom: none; padding-bottom: 0; }
+.electric-card {
+  position: relative;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-left: 4px solid var(--color-voltage-high);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8) var(--space-8) var(--space-10);
+  box-shadow: var(--shadow-md);
+}
+.electric-facts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+  margin: var(--space-6) 0 var(--space-8);
+}
+.fact-card {
+  background: var(--color-surface-offset);
+  border: 1px solid var(--color-divider);
+  border-top-width: 3px;
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+}
+.fact-card--high { border-top-color: var(--color-voltage-high); }
+.fact-card--medium { border-top-color: var(--color-voltage-medium); }
+.fact-card--neutral { border-top-color: var(--color-text-faint); }
+.fact-value {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  margin-bottom: var(--space-1);
+}
+.fact-card--high .fact-value { color: var(--color-voltage-high); }
+.fact-card--medium .fact-value { color: var(--color-voltage-medium); }
+.fact-card--neutral .fact-value { color: var(--color-text); }
+.fact-label { font-size: var(--text-xs); color: var(--color-text-muted); line-height: 1.4; }
+
+.electric-text {
+  color: var(--color-text-muted);
+  max-width: 68ch;
+  margin-bottom: var(--space-4);
+  line-height: 1.65;
+}
+.electric-text strong { color: var(--color-text); font-weight: 600; }
+.electric-card .cta-link { margin-top: var(--space-2); }
+
+/* ============ Explore / CTA cards ============ */
+.explore-section .wrap { max-width: 1000px; }
+.cta-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-6);
+  margin-top: var(--space-8);
+}
+.cta-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-divider);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8);
+  transition:
+    transform var(--transition-interactive),
+    border-color var(--transition-interactive),
+    box-shadow var(--transition-interactive);
+}
+.cta-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-lg);
+  text-decoration: none;
+}
+.cta-card-icon { width: 28px; height: 28px; color: var(--color-primary); margin-bottom: var(--space-5); }
+.cta-card-title {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: var(--space-2);
+}
+.cta-card-desc {
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  line-height: 1.6;
+  margin-bottom: var(--space-6);
+  flex: 1;
+}
+.cta-card-link {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-primary);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+.cta-card-link::after { content: '→'; transition: transform var(--transition-interactive); }
+.cta-card:hover .cta-card-link::after { transform: translateX(4px); }
+
+/* ============ Footer ============ */
+.site-footer { padding: var(--space-10) 0 var(--space-12); }
+.footer-about {
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  max-width: 70ch;
+  line-height: 1.6;
+  margin-bottom: var(--space-4);
+}
+.footer-about strong { color: var(--color-text); font-weight: 600; }
+.footer-disclaimer {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  max-width: 70ch;
+  background: var(--color-surface-2);
+  border-left: 3px solid var(--color-primary);
+  border-radius: var(--radius-sm);
+  padding: var(--space-3) var(--space-4);
+  line-height: 1.55;
+}
+.footer-disclaimer strong { color: var(--color-text); font-weight: 600; }
+
+/* ============ Responsive ============ */
+@media (max-width: 860px) {
+  .planning-grid { grid-template-columns: 1fr; }
+  .cta-grid { grid-template-columns: 1fr; }
+  .electric-facts { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 640px) {
+  .wrap { padding: 0 var(--space-4); }
+  .hero { padding: var(--space-10) 0 var(--space-8); }
+  .hero-stats { gap: var(--space-5); }
+  .hero-stat { min-width: 44%; }
+  .section { padding: var(--space-10) 0; }
+  .electric-card { padding: var(--space-6) var(--space-5) var(--space-8); }
 }
