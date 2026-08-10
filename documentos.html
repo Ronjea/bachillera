@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AGI-02 La Bachillera · Archivo de planeamiento</title>
+<style>
+  :root{
+    --ink:#1c1a17;
+    --ink-2:#4a453e;
+    --paper:#f6f3ec;
+    --card:#fffdf8;
+    --line:#d9d2c4;
+    --line-strong:#b7ac97;
+    --accent:#2f5d4e;
+    --accent-soft:#e6efe9;
+    --amber:#8a6d1f;
+    --amber-soft:#f5edd6;
+    --red:#8a3324;
+    --red-soft:#f3e2dd;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--paper);
+    color:#1c1a17;
+    font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:940px;margin:0 auto;padding:0 22px}
+
+  /* Map viewer hero card */
+  .mapcard{
+    margin:26px 0 4px;background:var(--accent);color:#fff;border-radius:4px;
+    padding:24px 26px;display:flex;flex-wrap:wrap;align-items:center;gap:18px 26px;
+    justify-content:space-between;box-shadow:0 8px 22px rgba(47,93,78,.18);
+  }
+  .mapcard .mc-txt{max-width:56ch}
+  .mapcard .mc-tag{
+    font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;
+    color:var(--accent-soft);opacity:.9;
+  }
+  .mapcard h2{font-size:22px;font-weight:600;margin:6px 0 5px;letter-spacing:-.01em;color:#fff}
+  .mapcard p{font-size:14.5px;color:#e6efe9;opacity:.92}
+  .mapcard .mc-btn{
+    display:inline-flex;align-items:center;gap:9px;white-space:nowrap;
+    font-family:ui-monospace,monospace;font-size:13.5px;letter-spacing:.01em;
+    text-decoration:none;background:#fff;color:var(--accent);
+    padding:13px 22px;border-radius:3px;font-weight:600;
+    transition:transform .12s ease, box-shadow .12s ease;
+  }
+  .mapcard .mc-btn:hover{transform:translateY(-1px);box-shadow:0 6px 16px rgba(0,0,0,.22)}
+
+  /* Header */
+  header.masthead{
+    border-bottom:2px solid var(--ink);
+    padding:46px 0 22px;
+    margin-bottom:6px;
+  }
+  .eyebrow{
+    font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+    font-size:12px;letter-spacing:.28em;text-transform:uppercase;
+    color:var(--accent);margin-bottom:18px;
+  }
+  h1{
+    font-size:clamp(34px,6vw,56px);
+    line-height:1.02;font-weight:600;letter-spacing:-.01em;
+    margin-bottom:14px;
+  }
+  h1 .ref{display:block;font-size:.42em;letter-spacing:.02em;color:var(--ink-2);font-weight:500;margin-top:10px}
+  .lede{font-size:18px;color:var(--ink-2);max-width:60ch}
+  .meta-row{
+    display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:22px;
+    font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+    font-size:12.5px;color:var(--ink-2);
+  }
+  .meta-row b{color:#1c1a17;font-weight:600}
+
+  /* Status banner for the PERI */
+  .headline-doc{
+    margin:30px 0 10px;
+    background:var(--card);
+    border:1px solid var(--line-strong);
+    border-left:5px solid var(--accent);
+    border-radius:3px;
+    padding:24px 26px;
+  }
+  .headline-doc .tag{
+    font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.2em;
+    text-transform:uppercase;color:var(--accent);
+  }
+  .headline-doc h2{font-size:24px;font-weight:600;margin:8px 0 6px;letter-spacing:-.01em}
+  .headline-doc p{color:var(--ink-2);font-size:15.5px;margin-bottom:16px;max-width:66ch}
+  .btn-row{display:flex;flex-wrap:wrap;gap:12px}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    font-family:ui-monospace,monospace;font-size:13px;letter-spacing:.02em;
+    text-decoration:none;padding:11px 18px;border-radius:3px;
+    border:1px solid var(--accent);color:#fff;background:var(--accent);
+    transition:transform .12s ease, box-shadow .12s ease;
+  }
+  .btn:hover{transform:translateY(-1px);box-shadow:0 5px 14px rgba(47,93,78,.22)}
+  .btn.ghost{background:transparent;color:var(--accent)}
+  .btn.ghost:hover{background:var(--accent-soft)}
+
+  .howto{
+    margin-top:16px;padding-top:16px;border-top:1px dashed var(--line-strong);
+    font-size:14px;color:var(--ink-2);
+  }
+  .howto b{color:#1c1a17}
+  .howto ol{margin:8px 0 0 18px}
+  .howto li{margin-bottom:5px}
+  .howto code{
+    font-family:ui-monospace,monospace;font-size:12.5px;
+    background:var(--amber-soft);padding:1px 6px;border-radius:3px;color:#5a4a15;
+  }
+  .clarify{
+    margin-top:16px;padding:15px 17px;border-radius:4px;
+    background:#fff4ec;border:1px solid #e6b48f;border-left:5px solid var(--red);
+    font-size:14px;color:#5a2a1c;
+  }
+  .clarify b{color:#7a2718}
+  .clarify .q{font-weight:600;display:block;margin-bottom:6px;font-size:14.5px}
+  .clarify .split{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:10px}
+  .clarify .split div{background:#fffdf8;border:1px solid var(--line);border-radius:3px;padding:11px 13px}
+  .clarify .split .no{border-color:#e0b3a6}
+  .clarify .split .yes{border-color:#a9cbbd}
+  .clarify .split .lab{font-family:ui-monospace,monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;display:block;margin-bottom:5px}
+  .clarify .split .no .lab{color:var(--red)}
+  .clarify .split .yes .lab{color:var(--accent)}
+  @media (max-width:620px){ .clarify .split{grid-template-columns:1fr} }
+
+  /* Section */
+  section{margin-top:44px}
+  .sec-head{display:flex;align-items:baseline;gap:14px;border-bottom:1px solid var(--line);padding-bottom:10px;margin-bottom:4px}
+  .sec-num{font-family:ui-monospace,monospace;font-size:13px;color:var(--accent);font-weight:600}
+  .sec-head h3{font-size:21px;font-weight:600;letter-spacing:-.01em}
+
+  /* Document rows */
+  .doc{
+    display:grid;grid-template-columns:1fr auto;gap:6px 20px;
+    align-items:start;
+    padding:17px 4px;border-bottom:1px solid var(--line);
+  }
+  .doc:hover{background:rgba(47,93,78,.035)}
+  .doc .title{font-size:16.5px;font-weight:600;line-height:1.3}
+  .doc .desc{grid-column:1 / -1;font-size:14px;color:var(--ink-2);max-width:74ch}
+  .doc .desc .src{font-family:ui-monospace,monospace;font-size:11.5px;color:var(--line-strong);word-break:break-all}
+  .doc a.open{
+    white-space:nowrap;font-family:ui-monospace,monospace;font-size:12.5px;
+    text-decoration:none;color:var(--accent);border:1px solid var(--line-strong);
+    padding:7px 13px;border-radius:3px;transition:all .12s ease;
+  }
+  .doc a.open:hover{border-color:var(--accent);background:var(--accent);color:#fff}
+  .doc a.open[data-blocked]:hover{border-color:var(--amber);background:var(--amber);color:#fff}
+
+  .pill{
+    font-family:ui-monospace,monospace;font-size:10px;letter-spacing:.12em;
+    text-transform:uppercase;padding:3px 8px;border-radius:20px;white-space:nowrap;
+    align-self:center;
+  }
+  .pill.ok{background:var(--accent-soft);color:var(--accent)}
+  .pill.manual{background:var(--amber-soft);color:var(--amber)}
+  .pill.ext{background:#eae6dc;color:var(--ink-2)}
+  .row-top{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+
+  /* Timeline mini */
+  .timeline{margin-top:6px;border-left:2px solid var(--line-strong);padding-left:20px}
+  .tl{position:relative;padding:9px 0}
+  .tl::before{content:"";position:absolute;left:-27px;top:15px;width:9px;height:9px;border-radius:50%;background:var(--accent);border:2px solid var(--paper)}
+  .tl .d{font-family:ui-monospace,monospace;font-size:12px;color:var(--accent);font-weight:600}
+  .tl .t{font-size:15px}
+  .tl.dim::before{background:var(--line-strong)}
+
+  /* Full chronology */
+  .chrono{
+    background:var(--card);border:1px solid var(--line-strong);border-radius:4px;
+    padding:6px 26px 20px;margin-top:8px;
+  }
+  .era{
+    font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;
+    color:var(--accent);padding:20px 0 4px;border-bottom:1px solid var(--line);
+  }
+  .cevent{
+    display:grid;grid-template-columns:104px 1fr;gap:0 18px;align-items:baseline;
+    padding:12px 0;border-bottom:1px solid var(--line);
+  }
+  .cevent:last-child{border-bottom:none}
+  .cevent .yr{font-family:ui-monospace,monospace;font-size:13px;font-weight:600;color:#1c1a17}
+  .cevent .ev{font-size:15px;color:#1c1a17}
+  .cevent .ev small{display:block;color:var(--ink-2);font-size:13px;margin-top:3px;line-height:1.4}
+  .cevent.key{background:var(--accent-soft);margin:6px -14px;padding:13px 14px;border-radius:3px;border-bottom:none}
+  .cevent.key .yr{color:var(--accent)}
+
+  footer{
+    margin:56px 0 40px;padding-top:20px;border-top:2px solid var(--ink);
+    font-size:13px;color:var(--ink-2);
+  }
+  footer .note{background:var(--amber-soft);border-radius:4px;padding:14px 16px;margin-bottom:16px;color:#5a4a15;font-size:13.5px}
+  a.inline{color:var(--accent)}
+
+  @media (max-width:620px){
+    .doc{grid-template-columns:1fr}
+    .doc a.open{justify-self:start;margin-top:4px}
+    .btn-row{flex-direction:column;align-items:stretch}
+    .cevent{grid-template-columns:1fr;gap:2px}
+    .chrono{padding:6px 18px 16px}
+  }
+</style>
+</head>
+<body>
+
+<div id="siteNav"></div>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="eyebrow">Gerencia de Urbanismo · Sevilla · Distrito Norte</div>
+    <h1>La Bachillera
+      <span class="ref">Área de Gestión Integrada AGI-02 — archivo de planeamiento</span>
+    </h1>
+    <p class="lede">Todos los documentos e instrumentos urbanísticos del ámbito, reunidos y enlazados en un solo sitio. Cada ficha abre la fuente oficial en una pestaña nueva.</p>
+    <div class="meta-row">
+      <span><b>Ámbito:</b> ~34.000 m²</span>
+      <span><b>Población:</b> ~1.000–1.500 hab.</span>
+      <span><b>Parcelas (2026):</b> 202</span>
+      <span><b>PERI aprob. def.:</b> 25/05/2018</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <!-- MAP VIEWER: direct link -->
+  <div class="mapcard">
+    <div class="mc-txt">
+      <div class="mc-tag">Visor cartográfico · acceso directo</div>
+      <h2>Ver La Bachillera en el mapa</h2>
+      <p>Abre el visor urbanístico de Sevilla (ArcGIS) centrado directamente sobre el ámbito AGI-02, con las capas de planeamiento activas.</p>
+    </div>
+    <a class="mc-btn" href="https://cdu.urbanismosevilla.org/arcgis/apps/experiencebuilder/experience/?id=4617ad6ca7624d84971d065b730f902b#widget_39=active_datasource_id:dataSource_2,center:-666266.236665109%2C4497207.6212885035%2C102100,scale:2011.5031449674996,rotation:0,viewpoint:%7B%22rotation%22%3A0%2C%22scale%22%3A2011.5031449674996%2C%22targetGeometry%22%3A%7B%22spatialReference%22%3A%7B%22latestWkid%22%3A3857%2C%22wkid%22%3A102100%7D%2C%22x%22%3A-666266.236665109%2C%22y%22%3A4497207.6212885035%7D%7D" target="_blank" rel="noopener">Abrir el visor →</a>
+  </div>
+
+  <!-- HEADLINE: the PERI document -->
+  <div class="headline-doc">
+    <div class="tag">Documento principal</div>
+    <h2>PERI AGI-02 «La Bachillera» — documento completo</h2>
+    <p>La memoria, la normativa y los planos del Plan Especial se descargan desde la ficha del ámbito en el visor de Planeamiento de Desarrollo. El visor no permite enlace directo al PDF ni acceso automatizado, así que se abre por búsqueda dentro del propio visor.</p>
+    <div class="btn-row">
+      <a class="btn" href="https://sig.urbanismosevilla.org/PGOU2006_Des.aspx" target="_blank" rel="noopener">Abrir el visor de Planeamiento de Desarrollo →</a>
+      <a class="btn ghost" href="https://ws132.juntadeandalucia.es/situadifusion/pages/search.jsf" target="_blank" rel="noopener">Registro autonómico (Junta) →</a>
+    </div>
+    <div class="howto">
+      <b>Cómo llegar al PDF del PERI, paso a paso:</b>
+      <ol>
+        <li>Abre el visor de <b>Planeamiento de Desarrollo</b> con el botón de arriba (no el de modificaciones del PGOU) y espera a que cargue el listado.</li>
+        <li>En el filtro del listado escribe <code>Bachillera</code> o <code>AGI-02</code>.</li>
+        <li>En la fila del PERI, pulsa el icono de <b>«Ficha del Documento»</b> (datos administrativos, fechas de aprobación y publicación en BOP) y el de <b>«Plano Guía»</b>.</li>
+        <li>Dentro de la ficha, descarga el <b>documento vigente</b> (memoria + normativa + planos en PDF).</li>
+      </ol>
+      <p style="margin-top:10px">Si descargas ese PDF y lo subes a este chat, puedo mostrártelo aquí y extraerte la normativa y los planos artículo por artículo.</p>
+    </div>
+
+    <div class="clarify">
+      <span class="q">¿No lo encuentras entre las modificaciones del PGOU? Es normal.</span>
+      El PERI <b>no es una modificación del PGOU</b>: es <b>planeamiento de desarrollo</b>. No cambia el Plan General, sino que desarrolla la previsión que el PGOU ya dejó hecha para el ámbito AGI-02. Por eso está en una lista distinta del visor.
+      <div class="split">
+        <div class="no"><span class="lab">Aquí no está</span>Modificaciones del PGOU (cambian el texto del Plan General).</div>
+        <div class="yes"><span class="lab">Aquí sí está</span>Planeamiento de Desarrollo → filtra «AGI-02» o «Bachillera».</div>
+      </div>
+      <p style="margin-top:12px"><b>Ruta más rápida:</b> en el visor de mapa (botón verde de arriba), haz clic sobre la mancha de La Bachillera; el cuadro emergente muestra la capa de planeamiento de desarrollo AGI-02 con el enlace a la ficha y al documento del PERI.</p>
+    </div>
+  </div>
+
+  <!-- 0. Cronología completa -->
+  <section id="cronologia">
+    <div class="sec-head"><span class="sec-num">00</span><h3>Cronología de los sucesos</h3></div>
+    <div class="chrono">
+
+      <div class="era">Origen y consolidación del barrio</div>
+      <div class="cevent"><span class="yr">1948</span><span class="ev">La Asociación Sevillana de Caridad recibe en herencia los terrenos.<small>Se arriendan parcelas a pequeños ganaderos que, con permiso, las traspasan a familiares y particulares. Comienza la autoconstrucción sin norma urbanística ni escrituras.</small></span></div>
+      <div class="cevent"><span class="yr">Años 50–90</span><span class="ev">Crecimiento del barrio de autoconstrucción.<small>Alta densidad, calles estrechas, sin zonas verdes ni dotaciones; el suelo permanece como una única finca registral y las casas nunca se escrituran.</small></span></div>
+
+      <div class="era">Movilización vecinal y nuevo planeamiento</div>
+      <div class="cevent"><span class="yr">2000</span><span class="ev">Se constituye la Comisión de Barrio.<small>Vecinos de AVV Estrella Andaluza y Asociación NIJA, con apoyo de la ONG Arquitectura y Compromiso Social, en paralelo a la redacción del nuevo PGOU.</small></span></div>
+      <div class="cevent"><span class="yr">2001</span><span class="ev">Diagnóstico urbanístico participativo del barrio.</span></div>
+      <div class="cevent key"><span class="yr">2006</span><span class="ev">El PGOU delimita La Bachillera como Área de Gestión Integrada AGI-02.<small>Se revierte el desalojo que se planteaba y se orienta el planeamiento a la rehabilitación. La ordenación se remite a un Plan Especial de Reforma Interior. (Texto Refundido aprobado el 15/03/2007.)</small></span></div>
+      <div class="cevent"><span class="yr">2004</span><span class="ev">La Asociación pasa a ser Fundación Sevillana de la Caridad.<small>Presidida por el alcalde de Sevilla; queda como titular registral del suelo.</small></span></div>
+
+      <div class="era">Tramitación del PERI</div>
+      <div class="cevent"><span class="yr">Nov 2010</span><span class="ev">Aprobación inicial del PERI.<small>Reparcelación del área, regeneración con dotaciones y equipamientos, y posibilidad de que los vecinos accedan a la propiedad. El Pleno acuerda con los residentes los criterios de ordenación.</small></span></div>
+      <div class="cevent"><span class="yr">2011</span><span class="ev">Exposición pública: ~300 alegaciones vecinales.<small>Su falta de resolución mantiene bloqueado el expediente durante años.</small></span></div>
+      <div class="cevent"><span class="yr">Jul 2014</span><span class="ev">Moción en Pleno, aprobada por unanimidad.<small>Reclama resolver las alegaciones, aprobar definitivamente el PERI y actuar contra la infravivienda.</small></span></div>
+      <div class="cevent"><span class="yr">Jul 2016</span><span class="ev">Iniciativa en Pleno, por unanimidad, para culminar el expediente.</span></div>
+      <div class="cevent"><span class="yr">16 May 2018</span><span class="ev">Aprobación por el Consejo de la Gerencia de Urbanismo (unanimidad).</span></div>
+      <div class="cevent key"><span class="yr">25 May 2018</span><span class="ev">Aprobación definitiva del PERI por el Pleno del Ayuntamiento (unanimidad).<small>Culmina una tramitación de 8 años. Se habilita la inscripción de las viviendas, la reparcelación, la definición de viales y espacios libres y la erradicación de la infravivienda.</small></span></div>
+
+      <div class="era">Seguimiento y actuación eléctrica pendiente</div>
+      <div class="cevent"><span class="yr">2017</span><span class="ev">Convenio Ayuntamiento–Red Eléctrica–Endesa (55 M€) en el Distrito Este.<small>Precedente citado para el soterramiento de líneas y traslado de la subestación Empalme en San Jerónimo–La Bachillera.</small></span></div>
+      <div class="cevent"><span class="yr">Feb–Abr 2022</span><span class="ev">Preguntas en Comisión de Control y Pleno sobre las torres de alta tensión.<small>Se reclama calendario de inversiones y ejecución de las actuaciones del PERI.</small></span></div>
+
+      <div class="era">Ejecución: regularización de la propiedad</div>
+      <div class="cevent"><span class="yr">Ene 2025</span><span class="ev">La Junta Municipal del Distrito Norte trata la modificación puntual del art. 53 del PGOU.<small>Desbloqueo de suelo colindante paralizado desde 2004 (uso industrial a residencial, VPO al 40%).</small></span></div>
+      <div class="cevent key"><span class="yr">Feb 2025</span><span class="ev">Firma de la escritura de parcelación ante notario.<small>Divide la finca única original; primer paso para que los vecinos registren sus viviendas.</small></span></div>
+      <div class="cevent key"><span class="yr">May 2026</span><span class="ev">Reparcelación culminada: 202 parcelas independientes.<small>Suelo inscrito a la Fundación Sevillana de la Caridad para su transmisión individual; viarios y espacios públicos inscritos a favor del Ayuntamiento.</small></span></div>
+      <div class="cevent"><span class="yr">Pendiente</span><span class="ev">Actuaciones físicas del PERI.<small>Urbanización de viarios, equipamiento deportivo, programa de infravivienda y soterramiento de líneas / traslado de la subestación (condicionado a Endesa y Red Eléctrica).</small></span></div>
+
+    </div>
+  </section>
+
+  <!-- 1. Instrumento marco -->
+  <section id="marco">
+    <div class="sec-head"><span class="sec-num">01</span><h3>Instrumento marco · PGOU de Sevilla</h3></div>
+
+    <div class="doc">
+      <div class="row-top"><span class="title">Ficha AGI-02 en las Normas Urbanísticas (Anexo I)</span><span class="pill manual">Servidor bloquea descarga</span></div>
+      <a class="open" data-blocked href="https://web.urbanismosevilla.org/planeamientopgou/pdfs/06_TR_NORMAS_URBANISTICAS/06_TR_NORMAS_ANEXO_I_FICHAS/06_TR_NORMAS_ANEXO_I_FICHAS.PDF" target="_blank" rel="noopener">Abrir PDF</a>
+      <div class="desc">Ficha «madre» que delimita el ámbito y define objetivos, criterios, modo de ejecución y administraciones participantes. <span class="src">web.urbanismosevilla.org · Anexo I de Fichas</span></div>
+    </div>
+
+    <div class="doc">
+      <div class="row-top"><span class="title">Normas Urbanísticas del PGOU (Texto Refundido)</span><span class="pill manual">Servidor bloquea descarga</span></div>
+      <a class="open" data-blocked href="https://web.urbanismosevilla.org/planeamientopgou/pdfs/06_TR_NORMAS_URBANISTICAS/06_TR_NORMAS/06_TR_NORMAS.PDF" target="_blank" rel="noopener">Abrir PDF</a>
+      <div class="desc">Articulado general: define la figura de Área de Gestión Integrada y la obligación de PERI. <span class="src">web.urbanismosevilla.org</span></div>
+    </div>
+
+    <div class="doc">
+      <div class="row-top"><span class="title">Visor de Ordenación Pormenorizada</span><span class="pill ok">Web oficial</span></div>
+      <a class="open" href="https://sig.urbanismosevilla.org/PGOU2006_p_o.aspx" target="_blank" rel="noopener">Abrir visor</a>
+      <div class="desc">Consulta de clasificación y calificación del suelo del ámbito y su entorno. <span class="src">sig.urbanismosevilla.org</span></div>
+    </div>
+  </section>
+
+  <!-- 2. Tramitación del PERI -->
+  <section id="tramitacion">
+    <div class="sec-head"><span class="sec-num">02</span><h3>Tramitación del PERI · documentos</h3></div>
+    <div class="timeline">
+      <div class="tl dim"><div class="d">Nov 2010</div><div class="t">Aprobación inicial del PERI (reparcelación, dotaciones, propiedad para los vecinos).</div></div>
+      <div class="tl dim"><div class="d">2011</div><div class="t">Exposición pública: ~300 alegaciones vecinales; el expediente queda bloqueado.</div></div>
+      <div class="tl dim"><div class="d">Jul 2014</div><div class="t">Moción en Pleno (unanimidad) reclamando la aprobación definitiva.</div></div>
+      <div class="tl dim"><div class="d">Jul 2016</div><div class="t">Iniciativa en Pleno (unanimidad) para culminar el expediente.</div></div>
+      <div class="tl"><div class="d">16 May 2018</div><div class="t">Aprobación por el Consejo de la Gerencia de Urbanismo (unanimidad).</div></div>
+      <div class="tl"><div class="d">25 May 2018</div><div class="t"><b>Aprobación definitiva por el Pleno del Ayuntamiento (unanimidad).</b></div></div>
+    </div>
+
+    <div class="doc" style="margin-top:14px">
+      <div class="row-top"><span class="title">Nota oficial · Aprobación definitiva en Pleno (25/05/2018)</span><span class="pill ok">Ayuntamiento</span></div>
+      <a class="open" href="https://www.sevilla.org/ayuntamiento/alcaldia/comunicacion/noticias/el-pleno-del-ayuntamiento-aprueba-el-plan-especial-de-reforma-interior-de-la-bachillera-que-permite-iniciar-el-proceso-de-regularizacion-y-desarrollo-urbanistico-de-la-barriada-y-marca-el-camino-para-erradicar-la-infravivienda" target="_blank" rel="noopener">Abrir</a>
+      <div class="desc">Finalidades: marco urbanístico, reparcelación, viales y espacios libres, erradicación de infravivienda, realojos con mínima afección. <span class="src">sevilla.org</span></div>
+    </div>
+
+    <div class="doc">
+      <div class="row-top"><span class="title">Nota oficial · Aprobación en Consejo de la Gerencia (16/05/2018)</span><span class="pill ok">Ayuntamiento</span></div>
+      <a class="open" href="https://www.sevilla.org/ayuntamiento/alcaldia/comunicacion/noticias/el-ayuntamiento-desbloquea-8-anos-despues-el-plan-especial-de-la-bachillera-con-el-objetivo-de-urbanizar-regularizar-y-acabar-con-la-infravivienda-en-un-barrio-con-mas-de-1-000-residentes" target="_blank" rel="noopener">Abrir</a>
+      <div class="desc">Desbloqueo tras 8 años; detalle de ámbito (34.000 m²) y objetivos. <span class="src">sevilla.org</span></div>
+    </div>
+
+    <div class="doc">
+      <div class="row-top"><span class="title">Nota de la Gerencia de Urbanismo (2018)</span><span class="pill ok">Gerencia</span></div>
+      <a class="open" href="https://www.urbanismosevilla.org/noticias/aprobado-el-plan-especial-de-la-bachillera-como-marco-urbanistico-para-la-regeneracion-y-reordenacion-de-este-barrio-del-distrito-norte-de-sevilla" target="_blank" rel="noopener">Abrir</a>
+      <div class="desc">El PERI como marco para la regeneración y reordenación del barrio. <span class="src">urbanismosevilla.org</span></div>
+    </div>
+
+    <div class="doc">
+      <div class="row-top"><span class="title">Moción de julio 2014 (aprobación inicial 2010 y 300 alegaciones)</span><span class="pill ext">Prensa</span></div>
+      <a class="open" href="https://www.eleconomista.es/espana/noticias/5968712/07/14/El-pleno-aprueba-por-unanimidad-impulsar-el-PERI-de-La-Bachillera-y-erradicar-las-infraviviendas-de-la-zona.html" target="_blank" rel="noopener">Abrir</a>
+      <div class="desc">Contexto histórico de la tramitación y del origen de 1948. <span class="src">elEconomista</span></div>
+    </div>
+  </section>
+
+  <!-- 3. Ejecución -->
+  <section id="ejecucion">
+    <div class="sec-head"><span class="sec-num">03</span><h3>Ejecución · regularización de la propiedad</h3></div>
+
+    <div class="doc">
+      <div class="row-top"><span class="title">Escritura de parcelación (febrero 2025)</span><span class="pill ok">Ayuntamiento</span></div>
+      <a class="open" href="https://www.sevilla.org/actualidad/noticias/2025/el-gobierno-de-sanz-pone-fin-a-77-anos-de-espera-y-otorga-a-los-vecinos-de-la-bachillera-la-propiedad-de-sus-viviendas" target="_blank" rel="noopener">Abrir</a>
+      <div class="desc">División de la finca única original ante notario; primer paso para registrar las viviendas. <span class="src">sevilla.org</span></div>
+    </div>
+
+    <div class="doc">
+      <div class="row-top"><span class="title">Reparcelación culminada — 202 parcelas (mayo 2026)</span><span class="pill ok">Ayuntamiento</span></div>
+      <a class="open" href="https://www.sevilla.org/actualidad/noticias/2026/jose-luis-sanz-cumple-su-compromiso-con-los-vecinos-de-la-bachillera-y-culmina-la-regularizacion-de-la-titularidad-de-sus-viviendas" target="_blank" rel="noopener">Abrir</a>
+      <div class="desc">202 parcelas independientes; suelo inscrito a la Fundación para su transmisión individual; viarios y espacios públicos a favor del Ayuntamiento. <span class="src">sevilla.org</span></div>
+    </div>
+
+    <div class="doc">
+      <div class="row-top"><span class="title">Cobertura de prensa · regularización culminada (2026)</span><span class="pill ext">Prensa</span></div>
+      <a class="open" href="https://www.andaluciainformacion.es/articulo/sevilla/regularizacion-titularidad-viviendas-barriada-bachillera-culminada/202605291431413394212.html" target="_blank" rel="noopener">Abrir</a>
+      <div class="desc">Detalle del cierre registral del proceso. <span class="src">Andalucía Información</span></div>
+    </div>
+  </section>
+
+  <!-- 4. Ámbitos colindantes -->
+  <section id="colindantes">
+    <div class="sec-head"><span class="sec-num">04</span><h3>Ámbitos colindantes del PGOU</h3></div>
+
+    <div class="doc">
+      <div class="row-top"><span class="title">Ficha ARI-DMN-05 «Huerta de la Tenería / Arteferro»</span><span class="pill manual">Servidor bloquea descarga</span></div>
+      <a class="open" data-blocked href="https://web.urbanismosevilla.org/planeamientopgou/pdfs/06_TR_NORMAS_URBANISTICAS/06_TR_NORMAS_ANEXO_I_FICHAS/0607_TR_ARI-DMN-05.PDF" target="_blank" rel="noopener">Abrir PDF</a>
+      <div class="desc">Área residencial de transición «para la recualificación del entorno vulnerable de La Bachillera»; obligación de Estudio de Detalle. <span class="src">web.urbanismosevilla.org</span></div>
+    </div>
+
+    <div class="doc">
+      <div class="row-top"><span class="title">Ficha API-DMN-01 «Depósitos de RENFE / San Jerónimo»</span><span class="pill manual">Servidor bloquea descarga</span></div>
+      <a class="open" data-blocked href="https://sig.urbanismosevilla.org/docs/TR_PGOU_Y_PD/WEB/06_TR_NORMAS_URBANISTICAS/06_TR_NORMAS_ANEXO_I_FICHAS/0617_TR_API_SUNC_API-DMN-01.pdf" target="_blank" rel="noopener">Abrir PDF</a>
+      <div class="desc">Recoge la «operación San Jerónimo–La Bachillera» de sutura urbana con la zona norte. <span class="src">sig.urbanismosevilla.org</span></div>
+    </div>
+
+    <div class="doc">
+      <div class="row-top"><span class="title">Ficha ARI-DMN-04 «Subestación Empalme»</span><span class="pill manual">Servidor bloquea descarga</span></div>
+      <a class="open" data-blocked href="https://web.urbanismosevilla.org/planeamientopgou/pdfs/06_TR_NORMAS_URBANISTICAS/06_TR_NORMAS_ANEXO_I_FICHAS/0607_TR_ARI-DMN-04.PDF" target="_blank" rel="noopener">Abrir PDF</a>
+      <div class="desc">Ámbito de la subestación; su traslado condiciona la retirada de la alta tensión de El Manchón. <span class="src">web.urbanismosevilla.org</span></div>
+    </div>
+  </section>
+
+  <!-- 5. Infraestructura eléctrica -->
+  <section id="electrico">
+    <div class="sec-head"><span class="sec-num">05</span><h3>Actuación pendiente · líneas eléctricas y subestación</h3></div>
+
+    <div class="doc">
+      <div class="row-top"><span class="title">Pregunta en Comisión de Control (feb. 2022)</span><span class="pill ext">Grupo municipal</span></div>
+      <a class="open" href="https://iusevillaciudad.org/preguntas-sobre-las-torres-de-alta-tension-de-san-jeronimo-y-la-bachillera-comision-de-control-febrero-2022/" target="_blank" rel="noopener">Abrir</a>
+      <div class="desc">Detalle de las 3 líneas AT por El Manchón, 2 líneas MT centrales y postes en calle Tilo; convenio de 55 M€ de 2017 como precedente. <span class="src">iusevillaciudad.org</span></div>
+    </div>
+
+    <div class="doc">
+      <div class="row-top"><span class="title">Pregunta al alcalde en Pleno (abr. 2022)</span><span class="pill ext">Grupo municipal</span></div>
+      <a class="open" href="http://iusevillaciudad.org/pregunta-al-alcalde-sobre-la-la-eliminacion-de-las-torres-de-alta-tension-en-san-jeronimo-y-la-bachillera/" target="_blank" rel="noopener">Abrir</a>
+      <div class="desc">Traslado de la subestación Empalme a una nueva instalación junto a la carretera de La Rinconada. <span class="src">iusevillaciudad.org</span></div>
+    </div>
+  </section>
+
+  <!-- 6. Contexto y consulta -->
+  <section id="contexto">
+    <div class="sec-head"><span class="sec-num">06</span><h3>Contexto histórico y portales de consulta</h3></div>
+
+    <div class="doc">
+      <div class="row-top"><span class="title">Ficha del barrio · La Bachillera (Wikipedia)</span><span class="pill ext">Referencia</span></div>
+      <a class="open" href="https://es.wikipedia.org/wiki/La_Bachillera" target="_blank" rel="noopener">Abrir</a>
+      <div class="desc">Origen (1948), forma triangular, 356 viviendas en 2015, herencia de la Asociación Sevillana de Caridad. <span class="src">es.wikipedia.org</span></div>
+    </div>
+
+    <div class="doc">
+      <div class="row-top"><span class="title">Análisis urbanístico del ámbito y su entorno</span><span class="pill ext">Técnico</span></div>
+      <a class="open" href="https://habitatydesarrollo.wordpress.com/2012/02/29/bachillera/" target="_blank" rel="noopener">Abrir</a>
+      <div class="desc">Relación de La Bachillera con los ámbitos colindantes y criterios de regeneración sostenible. <span class="src">Hábitat y Desarrollo</span></div>
+    </div>
+
+    <div class="doc">
+      <div class="row-top"><span class="title">Memorias de La Bachillera (colección audiovisual)</span><span class="pill ext">Archivo</span></div>
+      <a class="open" href="https://ladigitalizadora.org/coleccion/memorias-de-la-bachillera-sevilla/" target="_blank" rel="noopener">Abrir</a>
+      <div class="desc">Proceso de lucha vecinal que revirtió el desalojo previsto y orientó el planeamiento a la rehabilitación. <span class="src">ladigitalizadora.org</span></div>
+    </div>
+
+    <div class="doc">
+      <div class="row-top"><span class="title">Visor cartográfico urbanístico (ArcGIS) · centrado en AGI-02</span><span class="pill ok">Oficial</span></div>
+      <a class="open" href="https://cdu.urbanismosevilla.org/arcgis/apps/experiencebuilder/experience/?id=4617ad6ca7624d84971d065b730f902b#widget_39=active_datasource_id:dataSource_2,center:-666266.236665109%2C4497207.6212885035%2C102100,scale:2011.5031449674996,rotation:0,viewpoint:%7B%22rotation%22%3A0%2C%22scale%22%3A2011.5031449674996%2C%22targetGeometry%22%3A%7B%22spatialReference%22%3A%7B%22latestWkid%22%3A3857%2C%22wkid%22%3A102100%7D%2C%22x%22%3A-666266.236665109%2C%22y%22%3A4497207.6212885035%7D%7D" target="_blank" rel="noopener">Abrir</a>
+      <div class="desc">Mapa interactivo con capas de planeamiento, encuadrado sobre el barrio. <span class="src">cdu.urbanismosevilla.org</span></div>
+    </div>
+
+    <div class="doc">
+      <div class="row-top"><span class="title">BOP de Sevilla · buscador de anuncios</span><span class="pill ok">Oficial</span></div>
+      <a class="open" href="https://bopsevilla.dipusevilla.es/publica/buscador-anuncios/" target="_blank" rel="noopener">Abrir</a>
+      <div class="desc">Publicación de la aprobación del PERI y actos de gestión (buscar «Bachillera»). <span class="src">bopsevilla.dipusevilla.es</span></div>
+    </div>
+
+    <div class="doc">
+      <div class="row-top"><span class="title">Tramitación de Planes Especiales (Gerencia)</span><span class="pill ok">Oficial</span></div>
+      <a class="open" href="https://www.urbanismosevilla.org/areas/planeamiento-desarrollo-urbanistico/carta-de-servicios/planeamiento-urbanistico/planes-reforma-interior/planes-especiales" target="_blank" rel="noopener">Abrir</a>
+      <div class="desc">Procedimiento y legislación aplicable (PGOU, LISTA, RGLISTA). <span class="src">urbanismosevilla.org</span></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="note">
+      <b>Sobre los PDF marcados «servidor bloquea descarga».</b> Los servidores de la Gerencia (<code>sig.urbanismosevilla.org</code> y <code>web.urbanismosevilla.org</code>) rechazan el acceso automatizado, pero los enlaces funcionan con normalidad al abrirlos tú desde el navegador. Si algún PDF diera error, entra por el <a class="inline" href="https://sig.urbanismosevilla.org/PGOU2006_Des.aspx" target="_blank" rel="noopener">visor de Planeamiento de Desarrollo</a> y llega al documento por búsqueda.
+    </div>
+    <p>Archivo de referencia del ámbito AGI-02 «La Bachillera». Reúne fuentes oficiales del Ayuntamiento de Sevilla y la Gerencia de Urbanismo, publicaciones en boletín, documentación de grupos municipales y material de contexto. Para cualquier trámite, la fuente vinculante es el documento del PERI aprobado y su publicación en el BOP. Elaborado en julio de 2026.</p>
+  </footer>
+
+</div>
+<script type="module" src="/src/documents/main.ts"></script>
+</body>
+</html>

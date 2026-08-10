@@ -1,0 +1,79 @@
+{
+  "type": "FeatureCollection",
+  "metadata": {
+    "note": "FIXTURE — hand-made sample matching the power-lines.geojson properties contract. Not real data.",
+    "extractedAt": null,
+    "source": "fixture",
+    "license": "n/a"
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "fixture/1",
+        "kind": "overhead",
+        "voltageClass": "high",
+        "voltageKv": 220,
+        "name": "FIXTURE línea aérea 220 kV",
+        "circuits": 2,
+        "cables": "6",
+        "source": "osm"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [[-6.05, 37.45], [-6.0, 37.44], [-5.95, 37.46]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "fixture/2",
+        "kind": "overhead",
+        "voltageClass": "medium",
+        "voltageKv": 132,
+        "name": "FIXTURE Cross San Jerónimo – Empalme (aérea)",
+        "circuits": 1,
+        "cables": "3",
+        "source": "osm"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [[-5.97330, 37.42983], [-5.97800, 37.42500], [-5.98100, 37.42100]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "fixture/3",
+        "kind": "underground",
+        "voltageClass": "medium",
+        "voltageKv": 132,
+        "name": "FIXTURE soterramiento junto a Empalme",
+        "circuits": 1,
+        "cables": null,
+        "source": "osm"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [[-5.98100, 37.42100], [-5.98300, 37.41900], [-5.98428, 37.41727]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "fixture/4",
+        "kind": "overhead",
+        "voltageClass": "unknown",
+        "voltageKv": null,
+        "name": null,
+        "circuits": null,
+        "cables": null,
+        "source": "osm"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [[-5.99, 37.41], [-5.995, 37.415], [-6.0, 37.412]]
+      }
+    }
+  ]
+}

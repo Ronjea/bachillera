@@ -1,0 +1,6 @@
+/* Landing page styles — replaced by the home worker; minimal placeholder. */
+.home-main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: var(--space-10) var(--space-5);
+}

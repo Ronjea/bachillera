@@ -1,0 +1,19 @@
+{
+  "siteName": "La Bachillera",
+  "nav": {
+    "label": "Navegación principal",
+    "home": "Inicio",
+    "map": "Mapa",
+    "documents": "Documentos"
+  },
+  "lang": {
+    "label": "Idioma",
+    "es": "Español",
+    "en": "English"
+  },
+  "theme": {
+    "toDark": "Cambiar a modo oscuro",
+    "toLight": "Cambiar a modo claro"
+  },
+  "documentsSpanishNote": "El contenido de este archivo documental solo está disponible en español; la documentación original es en español."
+}

@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+<title>Subestaciones Eléctricas de Sevilla — Mapa Interactivo</title>
+<meta name="description" content="Mapa interactivo de las subestaciones eléctricas de la provincia de Sevilla, con datos oficiales de la Agencia Andaluza de la Energía: tipología, tensión, municipio y herramienta de proximidad." />
+
+<!-- Open Graph -->
+<meta property="og:title" content="Subestaciones Eléctricas de Sevilla — Mapa Interactivo" />
+<meta property="og:description" content="Explora la red de subestaciones eléctricas de Sevilla: tipología de tensión, densidad territorial y distancia a tu ubicación." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@700,500,800&f[]=satoshi@400,500,700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+<link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet" />
+<script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+<link rel="stylesheet" href="style.css" />
+
+<!-- favicon -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230B0F14'/%3E%3Cpath d='M16 4 8 17h6l-2 11 10-15h-6l2-9z' fill='%23FBBF24'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+<div class="app">
+
+  <!-- ============ TOPBAR ============ -->
+  <header class="topbar">
+    <div class="topbar-brand">
+      <svg class="brand-mark" width="30" height="30" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <rect width="32" height="32" rx="7" fill="var(--color-surface-2)"/>
+        <path d="M16 4 8 17h6l-2 11 10-15h-6l2-9z" fill="var(--color-primary)"/>
+      </svg>
+      <div class="brand-text">
+        <h1>Subestaciones Eléctricas <span>de Sevilla</span></h1>
+        <p class="brand-sub">Mapa interactivo · Agencia Andaluza de la Energía</p>
+      </div>
+    </div>
+
+    <div class="topbar-actions">
+      <button class="btn btn-ghost" id="sidebarToggle" aria-label="Mostrar u ocultar panel" data-testid="button-toggle-sidebar">
+        <i data-lucide="panel-left"></i>
+      </button>
+      <button class="btn btn-icon" id="themeToggle" aria-label="Cambiar a modo claro" data-testid="button-theme-toggle">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <div class="body-shell">
+
+    <!-- ============ SIDEBAR ============ -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-scroll" id="sidebarScroll">
+
+        <!-- Stats -->
+        <section class="panel stats-panel" aria-label="Resumen">
+          <div class="stat-grid" id="statGrid" data-testid="grid-stats"></div>
+        </section>
+
+        <!-- Proximity tool -->
+        <section class="panel">
+          <h2 class="panel-title"><i data-lucide="locate-fixed"></i> Distancia a mi ubicación</h2>
+          <p class="panel-hint">Introduce tu código postal o dirección en Sevilla para calcular la subestación más cercana.</p>
+          <form id="proximityForm" class="proximity-form" autocomplete="off">
+            <div class="input-row">
+              <input type="text" id="proximityInput" placeholder="Ej: 41013 o Calle Sierpes, Sevilla" data-testid="input-proximity" />
+              <button type="submit" class="btn btn-primary" id="proximitySubmit" data-testid="button-search-proximity">
+                <i data-lucide="search"></i>
+              </button>
+            </div>
+            <button type="button" class="btn btn-ghost btn-block" id="useMyLocation" data-testid="button-use-location">
+              <i data-lucide="crosshair"></i> Usar mi ubicación actual
+            </button>
+          </form>
+          <div id="proximityStatus" class="proximity-status" role="status" aria-live="polite"></div>
+          <div id="proximityResults" class="proximity-results" data-testid="list-proximity-results"></div>
+        </section>
+
+        <!-- Layers -->
+        <section class="panel">
+          <h2 class="panel-title"><i data-lucide="layers"></i> Capas visuales</h2>
+          <div class="layer-toggles">
+            <label class="toggle-row">
+              <span>Marcadores</span>
+              <input type="checkbox" id="layerMarkers" checked data-testid="checkbox-layer-markers" />
+              <span class="toggle-switch"></span>
+            </label>
+            <label class="toggle-row">
+              <span>Mapa de densidad</span>
+              <input type="checkbox" id="layerHeatmap" data-testid="checkbox-layer-heatmap" />
+              <span class="toggle-switch"></span>
+            </label>
+            <label class="toggle-row">
+              <span>Agrupación por municipio</span>
+              <input type="checkbox" id="layerClusters" data-testid="checkbox-layer-clusters" />
+              <span class="toggle-switch"></span>
+            </label>
+          </div>
+          <div class="view-presets">
+            <button class="chip" id="viewMetro" data-testid="button-view-metro">Área metropolitana</button>
+            <button class="chip" id="viewPeriphery" data-testid="button-view-periphery">Provincia completa</button>
+          </div>
+        </section>
+
+        <!-- Filters -->
+        <section class="panel">
+          <h2 class="panel-title"><i data-lucide="sliders-horizontal"></i> Filtrar por tipología</h2>
+          <div class="filter-chips" id="typologyFilters" data-testid="group-typology-filters"></div>
+
+          <label class="field-label" for="municipioFilter">Municipio</label>
+          <select id="municipioFilter" class="select" data-testid="select-municipio">
+            <option value="">Todos los municipios (44)</option>
+          </select>
+        </section>
+
+        <!-- Urbanismo -->
+        <section class="panel legend-panel">
+          <h2 class="panel-title"><i data-lucide="scale"></i> ¿Se permiten en suelo urbano?</h2>
+          <p class="panel-note">
+            Sí. Tanto la <strong>alta tensión</strong> como la <strong>media tensión</strong> se clasifican jurídicamente como uso dotacional de «transportes e infraestructuras básicas» (energía eléctrica), un uso admitido por igual en suelo urbano, urbanizable y no urbanizable por tratarse de un servicio de interés general. El <a href="https://web.urbanismosevilla.org/planeamientopgou/pdfs/06_TR_NORMAS_URBANISTICAS/06_TR_NORMAS/06_TR_NORMAS.PDF" target="_blank" rel="noopener">Art. 6.6.28 del PGOU de Sevilla</a> lo recoge expresamente dentro de la Sección Cuarta «Uso de transportes e infraestructuras básicas».
+          </p>
+          <p class="panel-note">
+            Ahora bien, esa admisión va acompañada de condiciones más estrictas en suelo urbano que en suelo urbanizable: en <strong>suelo urbano consolidado</strong>, las instalaciones de abastecimiento eléctrico deben ser subterráneas salvo justificación técnica de improcedencia; cuando se necesita levantar una subestación, debe ubicarse en un edificio protegido o en una parcela con calificación urbanística específica para infraestructuras —nunca en la vía pública—, y requiere licencia urbanística municipal (además de concesión demanial si ocupa subsuelo público). En suelo urbano no consolidado y urbanizable, los nuevos desarrollos deben prever de forma obligatoria el tendido subterráneo de las líneas de media y baja tensión (Art. 6.6.28, apartados 5, 6 y 11 del PGOU; <a href="https://www.boe.es/buscar/doc.php?id=BOE-A-2000-24019" target="_blank" rel="noopener">RD 1955/2000</a>).
+          </p>
+          <p class="panel-note">
+            Un ejemplo real es la subestación «Empalme» (Endesa, barrio de San Jerónimo): calificada en 2006 para traslado, el Ayuntamiento tramita ahora una modificación puntual del PGOU para consolidarla en su emplazamiento actual al considerarla infraestructura crítica para la red provincial — confirmando que una subestación de alta tensión puede permanecer, e incluso blindarse, dentro de suelo urbano consolidado (<a href="https://www.manueljesusflorencio.com/2026/07/urbanismo-modificara-el-pgou-para-blindar-la-subestacion-electrica-estrategica-empalme-en-san-jeronimo/" target="_blank" rel="noopener">reportaje, jul. 2026</a>).
+          </p>
+        </section>
+
+        <!-- Legend / methodology -->
+        <section class="panel legend-panel">
+          <h2 class="panel-title"><i data-lucide="info"></i> Sobre los datos</h2>
+          <p class="panel-note">
+            109 subestaciones eléctricas de transporte y distribución en la provincia de Sevilla, obtenidas del servicio geográfico oficial de la <strong>Agencia Andaluza de la Energía</strong> (Mapa de Infraestructuras Energéticas de Andalucía, capa DERA G10), vía <a href="http://www.ideandalucia.es/services/DERA_g10_infra_energetica/wfs" target="_blank" rel="noopener">IDEAndalucía</a>. Prensa regional cifraba la red en 95 subestaciones a cierre de 2024; esta capa geográfica (actualización 2025) incluye 109 nodos. Fuente: <a href="https://www.agenciaandaluzadelaenergia.es/es/informacion-energetica/cartografia-energetica-de-andalucia/mapa-de-infraestructuras-energeticas-de-andalucia-miea" target="_blank" rel="noopener">AAE — MIEA</a>.
+          </p>
+          <p class="panel-note">
+            La clasificación por tensión agrupa: <strong>Alta</strong> (transporte, 220–400 kV, gestionado por Red Eléctrica), <strong>Media</strong> (distribución en alta tensión, 132 kV) y <strong>Baja</strong> (distribución, ≤66 kV). No existe capacidad instalada por subestación en formato abierto; los totales agregados por categoría (<a href="https://www.agenciaandaluzadelaenergia.es/sites/default/files/Documentos/Infraestructuras/Informe_Prov_SE_MIEA.pdf" target="_blank" rel="noopener">informe AAE 30/06/2025</a>) se muestran en cada ficha.
+          </p>
+        </section>
+
+      </div>
+    </aside>
+
+    <!-- ============ MAP ============ -->
+    <main class="map-wrap">
+      <div id="map" role="application" aria-label="Mapa interactivo de subestaciones eléctricas de Sevilla"></div>
+
+      <!-- floating legend on map -->
+      <div class="map-legend" id="mapLegend" data-testid="legend-map"></div>
+
+      <!-- mobile sidebar backdrop -->
+      <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+    </main>
+
+  </div>
+</div>
+
+<script src="app.js"></script>
+<script data-pplx-inline-edit>
+(function () {
+  if (window === window.top) return;
+
+  const allowedParentOrigins = ["https://www.perplexity.ai","https://perplexity.ai","https://testing.perplexity.ai","https://staging.perplexity.ai","https://*.preview.i.perplexity.ai","http://perplexity.localhost","http://localhost:1420","http://127.0.0.1:1420","http://localhost:3000","http://127.0.0.1:3000","http://localhost:5173","http://127.0.0.1:5173"];
+  const MAX_FONT_BYTES = 500 * 1024;
+  const MAX_TOTAL_FONT_BYTES = 2 * 1024 * 1024;
+  let scrollForwarding = false;
+  let scrollRaf = 0;
+  let trustedTopOrigin = null;
+
+  // Allow entries like "https://*.preview.i.perplexity.ai" — the wildcard
+  // matches a single DNS label (no dots), so "https://*.foo" cannot stretch
+  // across multiple labels.
+  function matchesAllowedOrigin(origin) {
+    if (!origin) return false;
+    for (const entry of allowedParentOrigins) {
+      if (!entry.includes("*")) {
+        if (entry === origin) return true;
+        continue;
+      }
+      const pattern = new RegExp(
+        "^" +
+          entry.replace(/[.+?^${}()|[\]\\]/g, "\\$&").replace(/\*/g, "[^.]+") +
+          "$",
+      );
+      if (pattern.test(origin)) return true;
+    }
+    return false;
+  }
+
+  // Trust decision: when the sender is same-origin-visible (event.origin is a
+  // real origin like https://www.perplexity.ai) we trust event.origin directly.
+  // When event.origin is "null" (opaque broker srcdoc), we fall back to the
+  // broker's stamped `parentOrigin` to identify the top window. The fallback
+  // is claim-only — we rely on the browser's native `targetOrigin` enforcement
+  // on the response path (see postToTrustedTop) to ensure replies can't be
+  // delivered to anyone but the actual top window of that claimed origin.
+  function getTrustedParentOrigin(event) {
+    const forwardedParentOrigin =
+      typeof event.data.parentOrigin === "string" ? event.data.parentOrigin : null;
+    const parentOrigin = event.origin === "null" ? forwardedParentOrigin : event.origin;
+    return matchesAllowedOrigin(parentOrigin) ? parentOrigin : null;
+  }
+
+  // All responses go to window.top with targetOrigin = the allowlisted origin.
+  // An attacker that iframes us inside their own null-origin broker can claim
+  // any parentOrigin they like, but the browser will drop the reply whenever
+  // the real top's origin doesn't match — so the screenshot never leaves.
+  function postToTrustedTop(message) {
+    if (!trustedTopOrigin) return;
+    try {
+      window.top.postMessage(message, trustedTopOrigin);
+    } catch (_error) {}
+  }
+
+  function inlineAll(original, clone) {
+    if (original.nodeType !== 1 || clone.nodeType !== 1) return;
+
+    try {
+      const computedStyle = getComputedStyle(original);
+      // cssText on a computed style is the serialized declaration in modern
+      // Chromium/Safari — a single read beats enumerating ~400 longhand
+      // properties. Firefox returns "" here, so we fall back on empty.
+      const serialized = computedStyle.cssText;
+      if (serialized) {
+        clone.style.cssText = serialized;
+      } else {
+        const parts = new Array(computedStyle.length);
+        for (let index = 0; index < computedStyle.length; index += 1) {
+          const property = computedStyle[index];
+          parts[index] = `${property}:${computedStyle.getPropertyValue(property)};`;
+        }
+        clone.style.cssText = parts.join("");
+      }
+    } catch (_error) {}
+
+    const originalChildren = original.children;
+    const clonedChildren = clone.children;
+    for (
+      let index = 0;
+      index < originalChildren.length && index < clonedChildren.length;
+      index += 1
+    ) {
+      inlineAll(originalChildren[index], clonedChildren[index]);
+    }
+  }
+
+  function extractFontUrl(srcValue) {
+    const matches = [
+      ...srcValue.matchAll(
+        /url\(["']?([^"')]+)["']?\)(?:\s*format\(["']?([^"')]+)["']?\))?/gi,
+      ),
+    ];
+    if (matches.length === 0) return null;
+    const woff2 = matches.find((m) => m[2] && m[2].toLowerCase().includes("woff2"));
+    if (woff2) return woff2[1];
+    const woff = matches.find((m) => m[2] && m[2].toLowerCase().includes("woff"));
+    if (woff) return woff[1];
+    return matches[0][1];
+  }
+
+  // Cache resolved font URL -> data URI across captures. Fonts on a page
+  // essentially never change, and a batch run emits multiple captures back to
+  // back — without this we'd refetch + re-base64 every time.
+  const fontDataUriCache = new Map();
+  const SRC_DECLARATION_RE = /src\s*:\s*[^;}]+/i;
+
+  async function fetchAsDataUri(url) {
+    if (fontDataUriCache.has(url)) return fontDataUriCache.get(url);
+    let dataUri = null;
+    try {
+      const response = await fetch(url, { mode: "cors", credentials: "omit" });
+      if (response.ok) {
+        const blob = await response.blob();
+        if (blob.size <= MAX_FONT_BYTES) {
+          dataUri = await new Promise((resolve) => {
+            const reader = new FileReader();
+            reader.onloadend = () =>
+              resolve(typeof reader.result === "string" ? reader.result : null);
+            reader.onerror = () => resolve(null);
+            reader.readAsDataURL(blob);
+          });
+        }
+      }
+    } catch (_error) {
+      dataUri = null;
+    }
+    fontDataUriCache.set(url, dataUri);
+    return dataUri;
+  }
+
+  function collectFontFaceRuleTexts() {
+    const rules = [];
+    for (const sheet of document.styleSheets) {
+      let cssRules;
+      try {
+        cssRules = sheet.cssRules;
+      } catch (_error) {
+        continue;
+      }
+      if (!cssRules) continue;
+      for (const rule of cssRules) {
+        const cssText = rule.cssText || "";
+        if (cssText.startsWith("@font-face")) rules.push(cssText);
+      }
+    }
+    return rules;
+  }
+
+  async function buildInlinedFontCss() {
+    const ruleTexts = collectFontFaceRuleTexts();
+    if (ruleTexts.length === 0) return null;
+
+    const resolved = ruleTexts.map((cssText) => {
+      if (!SRC_DECLARATION_RE.test(cssText)) return null;
+      const srcMatch = cssText.match(/src\s*:\s*([^;}]+)[;}]/i);
+      if (!srcMatch) return null;
+      const url = extractFontUrl(srcMatch[1]);
+      if (!url) return null;
+      try {
+        return { cssText, url: new URL(url, document.baseURI).href };
+      } catch (_error) {
+        return null;
+      }
+    });
+
+    const dataUris = await Promise.all(
+      resolved.map((entry) => (entry ? fetchAsDataUri(entry.url) : Promise.resolve(null))),
+    );
+
+    const inlined = [];
+    let totalBytes = 0;
+    for (let index = 0; index < resolved.length; index += 1) {
+      const entry = resolved[index];
+      const dataUri = dataUris[index];
+      if (!entry || !dataUri) continue;
+      const approxBytes = dataUri.length * 0.75;
+      if (totalBytes + approxBytes > MAX_TOTAL_FONT_BYTES) break;
+      totalBytes += approxBytes;
+      inlined.push(entry.cssText.replace(SRC_DECLARATION_RE, `src: url("${dataUri}")`));
+    }
+    return inlined.length > 0 ? inlined.join("\n") : null;
+  }
+
+  function stripExternal(clone) {
+    const images = clone.querySelectorAll("img");
+    for (let index = 0; index < images.length; index += 1) {
+      const src = images[index].getAttribute("src");
+      if (src && !src.startsWith("data:")) images[index].removeAttribute("src");
+    }
+
+    const elements = clone.querySelectorAll("*");
+    for (let index = 0; index < elements.length; index += 1) {
+      const style = elements[index].style.cssText;
+      if (style && style.includes("url(")) {
+        elements[index].style.cssText = style.replace(
+          /url\(["']?(?!data:)[^)"']*["']?\)/gi,
+          "none",
+        );
+      }
+    }
+  }
+
+  function emitScroll() {
+    scrollRaf = 0;
+    if (!scrollForwarding) return;
+    postToTrustedTop({
+      type: "INLINE_EDIT_SCROLL",
+      scrollX: window.scrollX,
+      scrollY: window.scrollY,
+    });
+  }
+
+  window.addEventListener(
+    "scroll",
+    function () {
+      if (!scrollForwarding || scrollRaf) return;
+      scrollRaf = requestAnimationFrame(emitScroll);
+    },
+    { passive: true, capture: true },
+  );
+
+  async function handleCaptureRequest(event) {
+    const requestId = event.data.requestId;
+    const scrollX = window.scrollX;
+    const scrollY = window.scrollY;
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+
+    function postResult(dataUrl) {
+      postToTrustedTop({
+        type: "INLINE_EDIT_SCREENSHOT_RESULT",
+        requestId,
+        dataUrl,
+        scrollX,
+        scrollY,
+      });
+    }
+
+    try {
+      // Wait for any pending web fonts to resolve so both inline metrics and
+      // the @font-face inlining below see the same loaded faces.
+      if (document.fonts && document.fonts.ready) {
+        try {
+          await document.fonts.ready;
+        } catch (_error) {}
+      }
+
+      const clone = document.documentElement.cloneNode(true);
+      inlineAll(document.documentElement, clone);
+
+      const removedNodes = clone.querySelectorAll("script,link[rel=\"stylesheet\"],style");
+      for (let index = 0; index < removedNodes.length; index += 1) {
+        removedNodes[index].remove();
+      }
+
+      stripExternal(clone);
+
+      // Re-embed web fonts as data-URI @font-face rules so the SVG rasterizer
+      // can resolve them — external font URLs aren't fetched during
+      // foreignObject rendering, which would otherwise force a fallback face
+      // and change text metrics.
+      const inlinedFontCss = await buildInlinedFontCss();
+      if (inlinedFontCss) {
+        const styleEl = document.createElement("style");
+        styleEl.textContent = inlinedFontCss;
+        const head = clone.querySelector("head");
+        if (head) head.appendChild(styleEl);
+        else clone.insertBefore(styleEl, clone.firstChild);
+      }
+
+      const html = new XMLSerializer().serializeToString(clone);
+      const svg =
+        `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}">` +
+        '<foreignObject width="100%" height="100%">' +
+        `<div xmlns="http://www.w3.org/1999/xhtml" style="width:${width}px;height:${height}px;overflow:hidden">` +
+        `<div style="position:relative;left:-${scrollX}px;top:-${scrollY}px">` +
+        html +
+        "</div></div></foreignObject></svg>";
+      const svgUrl = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
+      const image = new Image();
+      image.onload = function () {
+        const canvas = document.createElement("canvas");
+        canvas.width = width;
+        canvas.height = height;
+        canvas.getContext("2d").drawImage(image, 0, 0);
+        postResult(canvas.toDataURL("image/png"));
+      };
+      image.onerror = function () {
+        postResult(null);
+      };
+      image.src = svgUrl;
+    } catch (_error) {
+      postResult(null);
+    }
+  }
+
+  window.addEventListener("message", function (event) {
+    if (!event.data) return;
+    // Only accept messages from the direct parent frame. Blocks sibling /
+    // unrelated-window postMessage senders that could otherwise reach us.
+    if (event.source !== window.parent) return;
+
+    const trustedParentOrigin = getTrustedParentOrigin(event);
+    if (!trustedParentOrigin) return;
+    trustedTopOrigin = trustedParentOrigin;
+
+    if (event.data.type === "INLINE_EDIT_SCROLL_START") {
+      scrollForwarding = true;
+      emitScroll();
+      return;
+    }
+
+    if (event.data.type === "INLINE_EDIT_SCROLL_STOP") {
+      scrollForwarding = false;
+      if (scrollRaf) cancelAnimationFrame(scrollRaf);
+      scrollRaf = 0;
+      return;
+    }
+
+    if (event.data.type !== "INLINE_EDIT_CAPTURE_REQUEST") return;
+
+    handleCaptureRequest(event);
+  });
+})();
+
+
+</script></body>
+</html>

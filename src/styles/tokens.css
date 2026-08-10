@@ -1,0 +1,146 @@
+/* =========================================================
+   La Bachillera — shared design tokens
+   Inherited from the "electric grid" design system of the
+   substations map: dark technical surfaces, amber/cyan accents.
+   ========================================================= */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+:root, [data-theme="dark"] {
+  /* Surfaces */
+  --color-bg: #0a0e13;
+  --color-surface: #10161d;
+  --color-surface-2: #161d26;
+  --color-surface-offset: #1b232d;
+  --color-divider: #232d38;
+  --color-border: #2b3644;
+
+  /* Text */
+  --color-text: #e7ebef;
+  --color-text-muted: #90a0b0;
+  --color-text-faint: #5c6b7a;
+  --color-text-inverse: #0a0e13;
+
+  /* Primary accent — electric amber */
+  --color-primary: #fbbf24;
+  --color-primary-hover: #fcd34d;
+  --color-primary-active: #f59e0b;
+  --color-primary-highlight: #3a3220;
+
+  /* Secondary accent — electric cyan */
+  --color-cyan: #22d3ee;
+  --color-cyan-highlight: #17313a;
+
+  /* Voltage category colors (high / medium / low) */
+  --color-voltage-high: #ef4444;
+  --color-voltage-high-bg: #3a1e1e;
+  --color-voltage-medium: #f59e0b;
+  --color-voltage-medium-bg: #3a2e15;
+  --color-voltage-low: #22d3ee;
+  --color-voltage-low-bg: #16313a;
+  --color-voltage-unknown: #8a94a3;
+
+  --color-success: #34d399;
+  --color-error: #f87171;
+
+  --radius-sm: 0.375rem;
+  --radius-md: 0.6rem;
+  --radius-lg: 0.9rem;
+  --radius-full: 9999px;
+
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.3);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.4);
+  --shadow-lg: 0 16px 40px rgba(0,0,0,0.5);
+
+  --transition-interactive: 160ms cubic-bezier(0.16, 1, 0.3, 1);
+
+  --font-display: 'Cabinet Grotesk', 'Satoshi', sans-serif;
+  --font-body: 'Satoshi', 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', 'SF Mono', monospace;
+
+  --text-xs: clamp(0.72rem, 0.68rem + 0.2vw, 0.8rem);
+  --text-sm: clamp(0.825rem, 0.78rem + 0.25vw, 0.9rem);
+  --text-base: clamp(0.9rem, 0.86rem + 0.2vw, 1rem);
+  --text-lg: clamp(1.05rem, 0.95rem + 0.5vw, 1.3rem);
+  --text-xl: clamp(1.3rem, 1.05rem + 1vw, 1.8rem);
+
+  --space-1: 0.25rem; --space-2: 0.5rem; --space-3: 0.75rem;
+  --space-4: 1rem; --space-5: 1.25rem; --space-6: 1.5rem;
+  --space-8: 2rem; --space-10: 2.5rem; --space-12: 3rem;
+}
+
+[data-theme="light"] {
+  --color-bg: #f4f6f8;
+  --color-surface: #ffffff;
+  --color-surface-2: #fbfcfd;
+  --color-surface-offset: #eef1f4;
+  --color-divider: #e2e7ec;
+  --color-border: #d5dce2;
+
+  --color-text: #182430;
+  --color-text-muted: #5b6b7a;
+  --color-text-faint: #94a3b1;
+  --color-text-inverse: #f4f6f8;
+
+  --color-primary: #b45309;
+  --color-primary-hover: #92400e;
+  --color-primary-active: #78350f;
+  --color-primary-highlight: #fde8c8;
+
+  --color-cyan: #0891b2;
+  --color-cyan-highlight: #cff5fb;
+
+  --color-voltage-high: #dc2626;
+  --color-voltage-high-bg: #fde4e4;
+  --color-voltage-medium: #b45309;
+  --color-voltage-medium-bg: #fdead0;
+  --color-voltage-low: #0891b2;
+  --color-voltage-low-bg: #d3f3f9;
+  --color-voltage-unknown: #64748b;
+
+  --color-success: #059669;
+  --color-error: #dc2626;
+
+  --shadow-sm: 0 1px 2px rgba(20,30,40,0.06);
+  --shadow-md: 0 4px 16px rgba(20,30,40,0.08);
+  --shadow-lg: 0 16px 40px rgba(20,30,40,0.14);
+}
+
+body {
+  min-height: 100dvh;
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-text);
+  background: var(--color-bg);
+  line-height: 1.5;
+}
+
+button, input, select { font: inherit; color: inherit; }
+button { cursor: pointer; background: none; border: none; }
+a { color: var(--color-primary); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: var(--radius-full); }
+::-webkit-scrollbar-thumb:hover { background: var(--color-text-faint); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}

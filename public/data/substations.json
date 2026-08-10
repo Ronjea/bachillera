@@ -1,0 +1,1655 @@
+[
+  {
+    "id": 11010300001191,
+    "nombre": "AGUILA",
+    "municipio": "Alcalá de Guadaíra",
+    "provincia": "Sevilla",
+    "lat": 37.33718201,
+    "lon": -5.82302288,
+    "tension_max_kV": 132,
+    "niveles_tension_kV": [
+      132,
+      15
+    ],
+    "tipologia": "media",
+    "tipologia_label": "Media-Alta tensión (Distribución AT, 132 kV)"
+  },
+  {
+    "id": 11010300001259,
+    "nombre": "ALCAGUAD",
+    "municipio": "Alcalá de Guadaíra",
+    "provincia": "Sevilla",
+    "lat": 37.35704821,
+    "lon": -5.87217305,
+    "tension_max_kV": 132,
+    "niveles_tension_kV": [
+      132,
+      15
+    ],
+    "tipologia": "media",
+    "tipologia_label": "Media-Alta tensión (Distribución AT, 132 kV)"
+  },
+  {
+    "id": 11010300001410,
+    "nombre": "ALCORES",
+    "municipio": "Alcalá de Guadaíra",
+    "provincia": "Sevilla",
+    "lat": 37.38636989,
+    "lon": -5.8563796,
+    "tension_max_kV": 220,
+    "niveles_tension_kV": [
+      220,
+      132,
+      66,
+      15
+    ],
+    "tipologia": "alta",
+    "tipologia_label": "Alta tensión (Transporte, 220-400 kV)"
+  },
+  {
+    "id": 11010300001007,
+    "nombre": "ARGON",
+    "municipio": "Alcalá de Guadaíra",
+    "provincia": "Sevilla",
+    "lat": 37.35988209,
+    "lon": -5.88509259,
+    "tension_max_kV": 66,
+    "niveles_tension_kV": [
+      66
+    ],
+    "tipologia": "baja",
+    "tipologia_label": "Baja-Media tensión (Distribución, ≤66 kV)"
+  },
+  {
+    "id": 11010300001430,
+    "nombre": "DON RODRIGO",
+    "municipio": "Alcalá de Guadaíra",
+    "provincia": "Sevilla",
+    "lat": 37.24546263,
+    "lon": -5.84353866,
+    "tension_max_kV": 400,
+    "niveles_tension_kV": [
+      400,
+      220,
+      66,
+      30
+    ],
+    "tipologia": "alta",
+    "tipologia_label": "Alta tensión (Transporte, 220-400 kV)"
+  },
+  {
+    "id": 11010300001406,
+    "nombre": "DOS HERMANAS",
+    "municipio": "Alcalá de Guadaíra",
+    "provincia": "Sevilla",
+    "lat": 37.29823436,
+    "lon": -5.90556252,
+    "tension_max_kV": 220,
+    "niveles_tension_kV": [
+      220,
+      132,
+      66,
+      15
+    ],
+    "tipologia": "alta",
+    "tipologia_label": "Alta tensión (Transporte, 220-400 kV)"
+  },
+  {
+    "id": 11010300001012,
+    "nombre": "ESPALDIL",
+    "municipio": "Alcalá de Guadaíra",
+    "provincia": "Sevilla",
+    "lat": 37.36790532,
+    "lon": -5.89821119,
+    "tension_max_kV": 66,
+    "niveles_tension_kV": [
+      66,
+      15
+    ],
+    "tipologia": "baja",
+    "tipologia_label": "Baja-Media tensión (Distribución, ≤66 kV)"
+  },
+  {
+    "id": 11010300001260,
+    "nombre": "OROMANA",
+    "municipio": "Alcalá de Guadaíra",
+    "provincia": "Sevilla",
+    "lat": 37.32389816,
+    "lon": -5.87514444,
+    "tension_max_kV": 132,
+    "niveles_tension_kV": [
+      132,
+      15
+    ],
+    "tipologia": "media",
+    "tipologia_label": "Media-Alta tensión (Distribución AT, 132 kV)"
+  },
+  {
+    "id": 11010300001233,
+    "nombre": "PALILLOS",
+    "municipio": "Alcalá de Guadaíra",
+    "provincia": "Sevilla",
+    "lat": 37.37518318,
+    "lon": -5.87107799,
+    "tension_max_kV": 66,
+    "niveles_tension_kV": [
+      66,
+      15
+    ],
+    "tipologia": "baja",
+    "tipologia_label": "Baja-Media tensión (Distribución, ≤66 kV)"
+  },
+  {
+    "id": 11010300001311,
+    "nombre": "POLO",
+    "municipio": "Alcalá de Guadaíra",
+    "provincia": "Sevilla",
+    "lat": 37.35665997,
+    "lon": -5.8643796,
+    "tension_max_kV": 66,
+    "niveles_tension_kV": [
+      66,
+      15
+    ],
+    "tipologia": "baja",
+    "tipologia_label": "Baja-Media tensión (Distribución, ≤66 kV)"
+  },
+  {
+    "id": 11010300000981,
+    "nombre": "ALCALRIO",
+    "municipio": "Alcalá del Río",
+    "provincia": "Sevilla",
+    "lat": 37.51738676,
+    "lon": -5.97466468,
+    "tension_max_kV": 66,
+    "niveles_tension_kV": [
+      66,
+      15
+    ],
+    "tipologia": "baja",
+    "tipologia_label": "Baja-Media tensión (Distribución, ≤66 kV)"
+  },
+  {
+    "id": 11010300000982,
+    "nombre": "ALCOLRIO",
+    "municipio": "Alcolea del Río",
+    "provincia": "Sevilla",
+    "lat": 37.62202211,
+    "lon": -5.67033325,
+    "tension_max_kV": 132,
+    "niveles_tension_kV": [
+      132,
+      66,
+      15
+    ],
+    "tipologia": "media",
+    "tipologia_label": "Media-Alta tensión (Distribución AT, 132 kV)"
+  },
+  {
+    "id": 11010300000998,
+    "nombre": "ARAHAL",
+    "municipio": "Arahal",
+    "provincia": "Sevilla",
+    "lat": 37.27192347,
+    "lon": -5.54644623,
+    "tension_max_kV": 66,
+    "niveles_tension_kV": [
+      66,
+      15
+    ],
+    "tipologia": "baja",
+    "tipologia_label": "Baja-Media tensión (Distribución, ≤66 kV)"
+  },
+  {
+    "id": 11010300000984,
+    "nombre": "BASMORON",
+    "municipio": "Arahal",
+    "provincia": "Sevilla",
+    "lat": 37.18985416,
+    "lon": -5.60141066,
+    "tension_max_kV": 66,
+    "niveles_tension_kV": [
+      66,
+      20
+    ],
+    "tipologia": "baja",
+    "tipologia_label": "Baja-Media tensión (Distribución, ≤66 kV)"
+  },
+  {
+    "id": 11010300001317,
+    "nombre": "CLH_ARAH",
+    "municipio": "Arahal",
+    "provincia": "Sevilla",
+    "lat": 37.23931422,
+    "lon": -5.60316803,
+    "tension_max_kV": 66,
+    "niveles_tension_kV": [
+      66
+    ],
+    "tipologia": "baja",
+    "tipologia_label": "Baja-Media tensión (Distribución, ≤66 kV)"
+  },
+  {
+    "id": 11010300001170,
+    "nombre": "AZNALCOL",
+    "municipio": "Aznalcóllar",
+    "provincia": "Sevilla",
+    "lat": 37.50964248,
+    "lon": -6.22904021,
+    "tension_max_kV": 132,
+    "niveles_tension_kV": [
+      132,
+      15
+    ],
+    "tipologia": "media",
+    "tipologia_label": "Media-Alta tensión (Distribución AT, 132 kV)"
+  },
+  {
+    "id": 11010300001331,
+    "nombre": "BENACAZON",
+    "municipio": "Benacazón",
+    "provincia": "Sevilla",
+    "lat": 37.36756541,
+    "lon": -6.24322215,
+    "tension_max_kV": 66,
+    "niveles_tension_kV": [
+      66,
+      20
+    ],
+    "tipologia": "baja",
+    "tipologia_label": "Baja-Media tensión (Distribución, ≤66 kV)"
+  },
+  {
+    "id": 11010300001179,
+    "nombre": "HUEVAR",
+    "municipio": "Benacazón",
+    "provincia": "Sevilla",
+    "lat": 37.36737184,
+    "lon": -6.24325954,
+    "tension_max_kV": 66,
+    "niveles_tension_kV": [
+      66,
+      15
+    ],
+    "tipologia": "baja",
+    "tipologia_label": "Baja-Media tensión (Distribución, ≤66 kV)"
+  },
+  {
+    "id": 11010300001394,
+    "nombre": "ALJARAFE",
+    "municipio": "Bollullos de la Mitación",
+    "provincia": "Sevilla",
+    "lat": 37.34448787,
+    "lon": -6.09450447,
+    "tension_max_kV": 220,
+    "niveles_tension_kV": [
+      220,
+      66,
+      15
+    ],
+    "tipologia": "alta",
+    "tipologia_label": "Alta tensión (Transporte, 220-400 kV)"
+  },
+  {
+    "id": 11010300001137,
+    "nombre": "BOLLULLM",
+    "municipio": "Bollullos de la Mitación",
+    "provincia": "Sevilla",
+    "lat": 37.35293646,
+    "lon": -6.14402569,
+    "tension_max_kV": 66,
+    "niveles_tension_kV": [
+      66,
+      15
+    ],
+    "tipologia": "baja",
+    "tipologia_label": "Baja-Media tensión (Distribución, ≤66 kV)"
+  },
+  {
+    "id": 11010300001020,
+    "nombre": "BORMUJOS",
+    "municipio": "Bormujos",
+    "provincia": "Sevilla",
+    "lat": 37.35062476,
+    "lon": -6.07747947,
+    "tension_max_kV": 66,
+    "niveles_tension_kV": [
+      66,
+      15
+    ],
+    "tipologia": "baja",
+    "tipologia_label": "Baja-Media tensión (Distribución, ≤66 kV)"
+  },
+  {
+    "id": 11010300000996,
+    "nombre": "AGRIBETI",
+    "municipio": "Brenes",
+    "provincia": "Sevilla",
+    "lat": 37.54084016,
+    "lon": -5.88497655,
+    "tension_max_kV": 66,
+    "niveles_tension_kV": [
+      66,
+      15
+    ],
+    "tipologia": "baja",
+    "tipologia_label": "Baja-Media tensión (Distribución, ≤66 kV)"
+  },
+  {
+    "id": 11010300001310,
+    "nombre": "VALLEINF",
+    "municipio": "Brenes",
+    "provincia": "Sevilla",
+    "lat": 37.55282892,
+    "lon": -5.84677569,
+    "tension_max_kV": 132,
+    "niveles_tension_kV": [
+      132
+    ],
+    "tipologia": "media",
+    "tipologia_label": "Media-Alta tensión (Distribución AT, 132 kV)"
+  },
+  {
+    "id": 11010300001073,
+    "nombre": "CARAMBOL",
+    "municipio": "Camas",
+    "provincia": "Sevilla",
+    "lat": 37.38978556,
+    "lon": -6.04026815,
+    "tension_max_kV": 66,
+    "niveles_tension_kV": [
+      66,
+      15
+    ],
+    "tipologia": "baja",
+    "tipologia_label": "Baja-Media tensión (Distribución, ≤66 kV)"
+  },
+  {
+    "id": 11010300001297,
+    "nombre": "CANTILLA",
+    "municipio": "Cantillana",
+    "provincia": "Sevilla",
+    "lat": 37.59119329,
+    "lon": -5.81153781,
+    "tension_max_kV": 66,
+    "niveles_tension_kV": [
+      66,
+      15
+    ],
+    "tipologia": "baja",
+    "tipologia_label": "Baja-Media tensión (Distribución, ≤66 kV)"
+  },
+  {
+    "id": 11010300001380,
+    "nombre": "CARMONA_400",
+    "municipio": "Carmona",
+    "provincia": "Sevilla",
+    "lat": 37.55718129,
+    "lon": -5.75908036,
+    "tension_max_kV": 400,
+    "niveles_tension_kV": [
+      400,
+      220
+    ],
+    "tipologia": "alta",
+    "tipologia_label": "Alta tensión (Transporte, 220-400 kV)"
+  },
+  {
+    "id": 11010300001321,
+    "nombre": "CARMONA_66",
+    "municipio": "Carmona",
+    "provincia": "Sevilla",
+    "lat": 37.47613827,
+    "lon": -5.647542,
+    "tension_max_kV": 66,
+    "niveles_tension_kV": [
+      66,
+      15
+    ],
+    "tipologia": "baja",
+    "tipologia_label": "Baja-Media tensión (Distribución, ≤66 kV)"
+  },
+  {
+    "id": 11010300001076,
+    "nombre": "ROMERAL",
+    "municipio": "Carmona",
+    "provincia": "Sevilla",
+    "lat": 37.50736349,
+    "lon": -5.65377591,
+    "tension_max_kV": 66,
+    "niveles_tension_kV": [
+      66,
+      15
+    ],
+    "tipologia": "baja",
+    "tipologia_label": "Baja-Media tensión (Distribución, ≤66 kV)"
+  },
+  {
+    "id": 11010300001256,
+    "nombre": "PINTADO",
+    "municipio": "Cazalla de la Sierra",
+    "provincia": "Sevilla",
+    "lat": 37.91624933,
+    "lon": -5.9306588,
+    "tension_max_kV": 132,
+    "niveles_tension_kV": [
+      132,
+      66,
+      15
+    ],
+    "tipologia": "media",
+    "tipologia_label": "Media-Alta tensión (Distribución AT, 132 kV)"
+  },
+  {
+    "id": 11010300001419,
+    "nombre": "ENTRENUCLEOS",
+    "municipio": "Dos Hermanas",
+    "provincia": "Sevilla",
+    "lat": 37.31464769,
+    "lon": -5.94488278,
+    "tension_max_kV": 220,
+    "niveles_tension_kV": [
+      220,
+      15
+    ],
+    "tipologia": "alta",
+    "tipologia_label": "Alta tensión (Transporte, 220-400 kV)"
+  },
+  {
+    "id": 11010300001044,
+    "nombre": "FUENTE_R",
+    "municipio": "Dos Hermanas",
+    "provincia": "Sevilla",
+    "lat": 37.30417286,
+    "lon": -5.98637823,
+    "tension_max_kV": 66,
+    "niveles_tension_kV": [
+      66,
+      15
+    ],
+    "tipologia": "baja",
+    "tipologia_label": "Baja-Media tensión (Distribución, ≤66 kV)"
+  },
+  {
+    "id": 11010300001329,
+    "nombre": "VALME",
+    "municipio": "Dos Hermanas",
+    "provincia": "Sevilla",
+    "lat": 37.25926802,
+    "lon": -5.91770948,
+    "tension_max_kV": 132,
+    "niveles_tension_kV": [
+      132,
+      15
+    ],
+    "tipologia": "media",
+    "tipologia_label": "Media-Alta tensión (Distribución AT, 132 kV)"
+  },
+  {
+    "id": 11010300001327,
+    "nombre": "CORONIL",
+    "municipio": "El Coronil",
+    "provincia": "Sevilla",
+    "lat": 37.08836974,
+    "lon": -5.62769884,
+    "tension_max_kV": 66,
+    "niveles_tension_kV": [
+      66,
+      15
+    ],
+    "tipologia": "baja",
+    "tipologia_label": "Baja-Media tensión (Distribución, ≤66 kV)"
+  },
+  {
+    "id": 11010300001047,
+    "nombre": "CUERVO",
+    "municipio": "El Cuervo de Sevilla",
+    "provincia": "Sevilla",
+    "lat": 36.85900124,
+    "lon": -6.04369205,
+    "tension_max_kV": 66,
+    "niveles_tension_kV": [
+      66,
+      15
+    ],
+    "tipologia": "baja",
+    "tipologia_label": "Baja-Media tensión (Distribución, ≤66 kV)"
+  },
+  {
+    "id": 11010300001013,
+    "nombre": "VISO",
+    "municipio": "El Viso del Alcor",
+    "provincia": "Sevilla",
+    "lat": 37.40002987,
+    "lon": -5.71402354,
+    "tension_max_kV": 66,
+    "niveles_tension_kV": [
+      66,
+      15
+    ],
+    "tipologia": "baja",
+    "tipologia_label": "Baja-Media tensión (Distribución, ≤66 kV)"
+  },
+  {
+    "id": 11010300001040,
+    "nombre": "ESTEPA",
+    "municipio": "Estepa",
+    "provincia": "Sevilla",
+    "lat": 37.29888325,
+    "lon": -4.87331013,
+    "tension_max_kV": 66,
+    "niveles_tension_kV": [
+      66,
+      25
+    ],
+    "tipologia": "baja",
+    "tipologia_label": "Baja-Media tensión (Distribución, ≤66 kV)"
+  },
+  {
+    "id": 11010300001133,
+    "nombre": "MONCLOVA",
+    "municipio": "Fuentes de Andalucía",
+    "provincia": "Sevilla",
+    "lat": 37.55477126,
+    "lon": -5.33061431,
+    "tension_max_kV": 66,
+    "niveles_tension_kV": [
+      66,
+      25,
+      15
+    ],
+    "tipologia": "baja",
+    "tipologia_label": "Baja-Media tensión (Distribución, ≤66 kV)"
+  },
+  {
+    "id": 11010300001095,
+    "nombre": "BERROCAL",
+    "municipio": "Gerena",
+    "provincia": "Sevilla",
+    "lat": 37.53004892,
+    "lon": -6.18524261,
+    "tension_max_kV": 132,
+    "niveles_tension_kV": [
+      132
+    ],
+    "tipologia": "media",
+    "tipologia_label": "Media-Alta tensión (Distribución AT, 132 kV)"
+  },
+  {
+    "id": 11010300001304,
+    "nombre": "CALA",
+    "municipio": "Guillena",
+    "provincia": "Sevilla",
+    "lat": 37.66840137,
+    "lon": -6.13355974,
+    "tension_max_kV": 132,
+    "niveles_tension_kV": [
+      132,
+      15
+    ],
+    "tipologia": "media",
+    "tipologia_label": "Media-Alta tensión (Distribución AT, 132 kV)"
+  },
+  {
+    "id": 11010300001389,
+    "nombre": "FUNDICIO",
+    "municipio": "Guillena",
+    "provincia": "Sevilla",
+    "lat": 37.51506745,
+    "lon": -6.08116411,
+    "tension_max_kV": 132,
+    "niveles_tension_kV": [
+      132,
+      20
+    ],
+    "tipologia": "media",
+    "tipologia_label": "Media-Alta tensión (Distribución AT, 132 kV)"
+  },
+  {
+    "id": 11010300001401,
+    "nombre": "GUILLENA",
+    "municipio": "Guillena",
+    "provincia": "Sevilla",
+    "lat": 37.6360724,
+    "lon": -6.09786823,
+    "tension_max_kV": 400,
+    "niveles_tension_kV": [
+      400,
+      220,
+      132,
+      30,
+      15
+    ],
+    "tipologia": "alta",
+    "tipologia_label": "Alta tensión (Transporte, 220-400 kV)"
+  },
+  {
+    "id": 11010300001120,
+    "nombre": "RUTPLATA",
+    "municipio": "Guillena",
+    "provincia": "Sevilla",
+    "lat": 37.55245804,
+    "lon": -6.08724046,
+    "tension_max_kV": 132,
+    "niveles_tension_kV": [
+      132,
+      15
+    ],
+    "tipologia": "media",
+    "tipologia_label": "Media-Alta tensión (Distribución AT, 132 kV)"
+  },
+  {
+    "id": 11010300001030,
+    "nombre": "ISLAS",
+    "municipio": "Isla Mayor",
+    "provincia": "Sevilla",
+    "lat": 37.16105498,
+    "lon": -6.14132073,
+    "tension_max_kV": 66,
+    "niveles_tension_kV": [
+      66,
+      15
+    ],
+    "tipologia": "baja",
+    "tipologia_label": "Baja-Media tensión (Distribución, ≤66 kV)"
+  },
+  {
+    "id": 11010300001102,
+    "nombre": "AEROPUER",
+    "municipio": "La Rinconada",
+    "provincia": "Sevilla",
+    "lat": 37.44051039,
+    "lon": -5.8858032,
+    "tension_max_kV": 132,
+    "niveles_tension_kV": [
+      132,
+      15
+    ],
+    "tipologia": "media",
+    "tipologia_label": "Media-Alta tensión (Distribución AT, 132 kV)"
+  },
+  {
+    "id": 11010300000961,
+    "nombre": "CANAMO",
+    "municipio": "La Rinconada",
+    "provincia": "Sevilla",
+    "lat": 37.48501219,
+    "lon": -5.92803709,
+    "tension_max_kV": 132,
+    "niveles_tension_kV": [
+      132,
+      15
+    ],
+    "tipologia": "media",
+    "tipologia_label": "Media-Alta tensión (Distribución AT, 132 kV)"
+  },
+  {
+    "id": 11010300001250,
+    "nombre": "PARQ_AER",
+    "municipio": "La Rinconada",
+    "provincia": "Sevilla",
+    "lat": 37.43817481,
+    "lon": -5.8563127,
+    "tension_max_kV": 132,
+    "niveles_tension_kV": [
+      132,
+      20
+    ],
+    "tipologia": "media",
+    "tipologia_label": "Media-Alta tensión (Distribución AT, 132 kV)"
+  },
+  {
+    "id": 11010300001116,
+    "nombre": "RINCONAD",
+    "municipio": "La Rinconada",
+    "provincia": "Sevilla",
+    "lat": 37.47297419,
+    "lon": -5.9501709,
+    "tension_max_kV": 132,
+    "niveles_tension_kV": [
+      132,
+      15
+    ],
+    "tipologia": "media",
+    "tipologia_label": "Media-Alta tensión (Distribución AT, 132 kV)"
+  },
+  {
+    "id": 11010300001264,
+    "nombre": "S_JOSE",
+    "municipio": "La Rinconada",
+    "provincia": "Sevilla",
+    "lat": 37.47984111,
+    "lon": -5.93894478,
+    "tension_max_kV": 132,
+    "niveles_tension_kV": [
+      132
+    ],
+    "tipologia": "media",
+    "tipologia_label": "Media-Alta tensión (Distribución AT, 132 kV)"
+  },
+  {
+    "id": 11010300001379,
+    "nombre": "RODA DE ANDALUCIA",
+    "municipio": "La Roda de Andalucía",
+    "provincia": "Sevilla",
+    "lat": 37.25486563,
+    "lon": -4.77704286,
+    "tension_max_kV": 400,
+    "niveles_tension_kV": [
+      400
+    ],
+    "tipologia": "alta",
+    "tipologia_label": "Alta tensión (Transporte, 220-400 kV)"
+  },
+  {
+    "id": 11010300001119,
+    "nombre": "RODAANDA",
+    "municipio": "La Roda de Andalucía",
+    "provincia": "Sevilla",
+    "lat": 37.20967231,
+    "lon": -4.77421847,
+    "tension_max_kV": 66,
+    "niveles_tension_kV": [
+      66,
+      25
+    ],
+    "tipologia": "baja",
+    "tipologia_label": "Baja-Media tensión (Distribución, ≤66 kV)"
+  },
+  {
+    "id": 11010300001045,
+    "nombre": "CABEZAS",
+    "municipio": "Las Cabezas de San Juan",
+    "provincia": "Sevilla",
+    "lat": 36.97846298,
+    "lon": -5.95014644,
+    "tension_max_kV": 66,
+    "niveles_tension_kV": [
+      66,
+      15
+    ],
+    "tipologia": "baja",
+    "tipologia_label": "Baja-Media tensión (Distribución, ≤66 kV)"
+  },
+  {
+    "id": 11010300001211,
+    "nombre": "MARISMAS",
+    "municipio": "Las Cabezas de San Juan",
+    "provincia": "Sevilla",
+    "lat": 37.0720147,
+    "lon": -6.03593505,
+    "tension_max_kV": 66,
+    "niveles_tension_kV": [
+      66,
+      15
+    ],
+    "tipologia": "baja",
+    "tipologia_label": "Baja-Media tensión (Distribución, ≤66 kV)"
+  },
+  {
+    "id": 11010300001160,
+    "nombre": "FONTANAL",
+    "municipio": "Lebrija",
+    "provincia": "Sevilla",
+    "lat": 36.93307109,
+    "lon": -6.06179282,
+    "tension_max_kV": 66,
+    "niveles_tension_kV": [
+      66,
+      15
+    ],
+    "tipologia": "baja",
+    "tipologia_label": "Baja-Media tensión (Distribución, ≤66 kV)"
+  },
+  {
+    "id": 11010300001060,
+    "nombre": "LEBRIJA",
+    "municipio": "Lebrija",
+    "provincia": "Sevilla",
+    "lat": 36.96467251,
+    "lon": -6.06853805,
+    "tension_max_kV": 66,
+    "niveles_tension_kV": [
+      66,
+      20
+    ],
+    "tipologia": "baja",
+    "tipologia_label": "Baja-Media tensión (Distribución, ≤66 kV)"
+  },
+  {
+    "id": 11010300001081,
+    "nombre": "SEC_PELP",
+    "municipio": "Lebrija",
+    "provincia": "Sevilla",
+    "lat": 36.87265282,
+    "lon": -5.94869605,
+    "tension_max_kV": 132,
+    "niveles_tension_kV": [
+      132
+    ],
+    "tipologia": "media",
+    "tipologia_label": "Media-Alta tensión (Distribución AT, 132 kV)"
+  },
+  {
+    "id": 11010300001210,
+    "nombre": "LORA",
+    "municipio": "Lora del Río",
+    "provincia": "Sevilla",
+    "lat": 37.66375935,
+    "lon": -5.53517797,
+    "tension_max_kV": 66,
+    "niveles_tension_kV": [
+      66,
+      15
+    ],
+    "tipologia": "baja",
+    "tipologia_label": "Baja-Media tensión (Distribución, ≤66 kV)"
+  },
+  {
+    "id": 11010300001262,
+    "nombre": "SETEFILL",
+    "municipio": "Lora del Río",
+    "provincia": "Sevilla",
+    "lat": 37.66113542,
+    "lon": -5.54571266,
+    "tension_max_kV": 132,
+    "niveles_tension_kV": [
+      132
+    ],
+    "tipologia": "media",
+    "tipologia_label": "Media-Alta tensión (Distribución AT, 132 kV)"
+  },
+  {
+    "id": 11010300000970,
+    "nombre": "PALACIOS",
+    "municipio": "Los Palacios y Villafranca",
+    "provincia": "Sevilla",
+    "lat": 37.11757164,
+    "lon": -5.88275722,
+    "tension_max_kV": 132,
+    "niveles_tension_kV": [
+      132,
+      66,
+      15
+    ],
+    "tipologia": "media",
+    "tipologia_label": "Media-Alta tensión (Distribución AT, 132 kV)"
+  },
+  {
+    "id": 11010300001309,
+    "nombre": "CANTOSAL",
+    "municipio": "Mairena del Alcor",
+    "provincia": "Sevilla",
+    "lat": 37.38159769,
+    "lon": -5.76563519,
+    "tension_max_kV": 66,
+    "niveles_tension_kV": [
+      66,
+      15
+    ],
+    "tipologia": "baja",
+    "tipologia_label": "Baja-Media tensión (Distribución, ≤66 kV)"
+  },
+  {
+    "id": 11010300001028,
+    "nombre": "LAMINILL",
+    "municipio": "Mairena del Aljarafe",
+    "provincia": "Sevilla",
+    "lat": 37.32976201,
+    "lon": -6.06104628,
+    "tension_max_kV": 66,
+    "niveles_tension_kV": [
+      66,
+      15
+    ],
+    "tipologia": "baja",
+    "tipologia_label": "Baja-Media tensión (Distribución, ≤66 kV)"
+  },
+  {
+    "id": 11010300001031,
+    "nombre": "MARCHENA",
+    "municipio": "Marchena",
+    "provincia": "Sevilla",
+    "lat": 37.32282367,
+    "lon": -5.4331967,
+    "tension_max_kV": 66,
+    "niveles_tension_kV": [
+      66,
+      15
+    ],
+    "tipologia": "baja",
+    "tipologia_label": "Baja-Media tensión (Distribución, ≤66 kV)"
+  },
+  {
+    "id": 11010300001188,
+    "nombre": "MORON",
+    "municipio": "Morón de la Frontera",
+    "provincia": "Sevilla",
+    "lat": 37.13276294,
+    "lon": -5.45759687,
+    "tension_max_kV": 66,
+    "niveles_tension_kV": [
+      66,
+      15
+    ],
+    "tipologia": "baja",
+    "tipologia_label": "Baja-Media tensión (Distribución, ≤66 kV)"
+  },
+  {
+    "id": 11010300001221,
+    "nombre": "TORREJON",
+    "municipio": "Morón de la Frontera",
+    "provincia": "Sevilla",
+    "lat": 37.10756131,
+    "lon": -5.56952794,
+    "tension_max_kV": 66,
+    "niveles_tension_kV": [
+      66,
+      15
+    ],
+    "tipologia": "baja",
+    "tipologia_label": "Baja-Media tensión (Distribución, ≤66 kV)"
+  },
+  {
+    "id": 11010300001290,
+    "nombre": "OSUNA",
+    "municipio": "Osuna",
+    "provincia": "Sevilla",
+    "lat": 37.23039644,
+    "lon": -5.11568986,
+    "tension_max_kV": 66,
+    "niveles_tension_kV": [
+      66,
+      25,
+      20
+    ],
+    "tipologia": "baja",
+    "tipologia_label": "Baja-Media tensión (Distribución, ≤66 kV)"
+  },
+  {
+    "id": 11010300001247,
+    "nombre": "PALOMARE",
+    "municipio": "Palomares del Río",
+    "provincia": "Sevilla",
+    "lat": 37.31290652,
+    "lon": -6.04895231,
+    "tension_max_kV": 66,
+    "niveles_tension_kV": [
+      66,
+      15
+    ],
+    "tipologia": "baja",
+    "tipologia_label": "Baja-Media tensión (Distribución, ≤66 kV)"
+  },
+  {
+    "id": 11010300001420,
+    "nombre": "GRULLAS",
+    "municipio": "Peñaflor",
+    "provincia": "Sevilla",
+    "lat": 37.70865867,
+    "lon": -5.41907177,
+    "tension_max_kV": 132,
+    "niveles_tension_kV": [
+      132
+    ],
+    "tipologia": "media",
+    "tipologia_label": "Media-Alta tensión (Distribución AT, 132 kV)"
+  },
+  {
+    "id": 11010300001255,
+    "nombre": "PILAS",
+    "municipio": "Pilas",
+    "provincia": "Sevilla",
+    "lat": 37.29459122,
+    "lon": -6.30822806,
+    "tension_max_kV": 66,
+    "niveles_tension_kV": [
+      66,
+      20,
+      15
+    ],
+    "tipologia": "baja",
+    "tipologia_label": "Baja-Media tensión (Distribución, ≤66 kV)"
+  },
+  {
+    "id": 11010300001341,
+    "nombre": "SANTA AMELIA",
+    "municipio": "Pilas",
+    "provincia": "Sevilla",
+    "lat": 37.2945124,
+    "lon": -6.30839806,
+    "tension_max_kV": 66,
+    "niveles_tension_kV": [
+      66,
+      20
+    ],
+    "tipologia": "baja",
+    "tipologia_label": "Baja-Media tensión (Distribución, ≤66 kV)"
+  },
+  {
+    "id": 11010300001074,
+    "nombre": "ITALICA",
+    "municipio": "Salteras",
+    "provincia": "Sevilla",
+    "lat": 37.46406023,
+    "lon": -6.05960407,
+    "tension_max_kV": 132,
+    "niveles_tension_kV": [
+      132,
+      15
+    ],
+    "tipologia": "media",
+    "tipologia_label": "Media-Alta tensión (Distribución AT, 132 kV)"
+  },
+  {
+    "id": 11010300001381,
+    "nombre": "SALTERAS_220",
+    "municipio": "Salteras",
+    "provincia": "Sevilla",
+    "lat": 37.48168228,
+    "lon": -6.06983818,
+    "tension_max_kV": 220,
+    "niveles_tension_kV": [
+      220
+    ],
+    "tipologia": "alta",
+    "tipologia_label": "Alta tensión (Transporte, 220-400 kV)"
+  },
+  {
+    "id": 11010300001208,
+    "nombre": "SALTERAS_66",
+    "municipio": "Salteras",
+    "provincia": "Sevilla",
+    "lat": 37.45137836,
+    "lon": -6.12264268,
+    "tension_max_kV": 66,
+    "niveles_tension_kV": [
+      66,
+      15
+    ],
+    "tipologia": "baja",
+    "tipologia_label": "Baja-Media tensión (Distribución, ≤66 kV)"
+  },
+  {
+    "id": 11010300001283,
+    "nombre": "S_NICOLA",
+    "municipio": "San Nicolás del Puerto",
+    "provincia": "Sevilla",
+    "lat": 37.99623614,
+    "lon": -5.65817949,
+    "tension_max_kV": 66,
+    "niveles_tension_kV": [
+      66,
+      15
+    ],
+    "tipologia": "baja",
+    "tipologia_label": "Baja-Media tensión (Distribución, ≤66 kV)"
+  },
+  {
+    "id": 11010300001382,
+    "nombre": "CASAQUEMADA",
+    "municipio": "Sanlúcar la Mayor",
+    "provincia": "Sevilla",
+    "lat": 37.44042816,
+    "lon": -6.26631095,
+    "tension_max_kV": 220,
+    "niveles_tension_kV": [
+      220
+    ],
+    "tipologia": "alta",
+    "tipologia_label": "Alta tensión (Transporte, 220-400 kV)"
+  },
+  {
+    "id": 11010300000979,
+    "nombre": "SANLUC_M",
+    "municipio": "Sanlúcar la Mayor",
+    "provincia": "Sevilla",
+    "lat": 37.39244968,
+    "lon": -6.20507444,
+    "tension_max_kV": 66,
+    "niveles_tension_kV": [
+      66,
+      20,
+      15
+    ],
+    "tipologia": "baja",
+    "tipologia_label": "Baja-Media tensión (Distribución, ≤66 kV)"
+  },
+  {
+    "id": 11010300001360,
+    "nombre": "ALAMILLO",
+    "municipio": "Sevilla",
+    "provincia": "Sevilla",
+    "lat": 37.41068703,
+    "lon": -5.99759554,
+    "tension_max_kV": 66,
+    "niveles_tension_kV": [
+      66,
+      20
+    ],
+    "tipologia": "baja",
+    "tipologia_label": "Baja-Media tensión (Distribución, ≤66 kV)"
+  },
+  {
+    "id": 11010300000994,
+    "nombre": "AMATE",
+    "municipio": "Sevilla",
+    "provincia": "Sevilla",
+    "lat": 37.3863785,
+    "lon": -5.94798733,
+    "tension_max_kV": 66,
+    "niveles_tension_kV": [
+      66,
+      15
+    ],
+    "tipologia": "baja",
+    "tipologia_label": "Baja-Media tensión (Distribución, ≤66 kV)"
+  },
+  {
+    "id": 11010300001003,
+    "nombre": "ARJONA",
+    "municipio": "Sevilla",
+    "provincia": "Sevilla",
+    "lat": 37.38795034,
+    "lon": -6.00274101,
+    "tension_max_kV": 66,
+    "niveles_tension_kV": [
+      66,
+      20
+    ],
+    "tipologia": "baja",
+    "tipologia_label": "Baja-Media tensión (Distribución, ≤66 kV)"
+  },
+  {
+    "id": 11010300001307,
+    "nombre": "CALONGE",
+    "municipio": "Sevilla",
+    "provincia": "Sevilla",
+    "lat": 37.41116735,
+    "lon": -5.96086171,
+    "tension_max_kV": 132,
+    "niveles_tension_kV": [
+      132,
+      20
+    ],
+    "tipologia": "media",
+    "tipologia_label": "Media-Alta tensión (Distribución AT, 132 kV)"
+  },
+  {
+    "id": 11010300001433,
+    "nombre": "CENTENARIO",
+    "municipio": "Sevilla",
+    "provincia": "Sevilla",
+    "lat": 37.39205483,
+    "lon": -6.01245738,
+    "tension_max_kV": 220,
+    "niveles_tension_kV": [
+      220,
+      66,
+      20
+    ],
+    "tipologia": "alta",
+    "tipologia_label": "Alta tensión (Transporte, 220-400 kV)"
+  },
+  {
+    "id": 11010300001072,
+    "nombre": "CROSS_SJ",
+    "municipio": "Sevilla",
+    "provincia": "Sevilla",
+    "lat": 37.42982548,
+    "lon": -5.97329786,
+    "tension_max_kV": 132,
+    "niveles_tension_kV": [
+      132,
+      20
+    ],
+    "tipologia": "media",
+    "tipologia_label": "Media-Alta tensión (Distribución AT, 132 kV)"
+  },
+  {
+    "id": 11010300001051,
+    "nombre": "CRUZCAMP",
+    "municipio": "Sevilla",
+    "provincia": "Sevilla",
+    "lat": 37.38794212,
+    "lon": -5.95972261,
+    "tension_max_kV": 66,
+    "niveles_tension_kV": [
+      66,
+      20,
+      15
+    ],
+    "tipologia": "baja",
+    "tipologia_label": "Baja-Media tensión (Distribución, ≤66 kV)"
+  },
+  {
+    "id": 11010300001049,
+    "nombre": "CUNA",
+    "municipio": "Sevilla",
+    "provincia": "Sevilla",
+    "lat": 37.39187564,
+    "lon": -5.9937524,
+    "tension_max_kV": 66,
+    "niveles_tension_kV": [
+      66,
+      20
+    ],
+    "tipologia": "baja",
+    "tipologia_label": "Baja-Media tensión (Distribución, ≤66 kV)"
+  },
+  {
+    "id": 11010300001093,
+    "nombre": "EADSCASA",
+    "municipio": "Sevilla",
+    "provincia": "Sevilla",
+    "lat": 37.40707784,
+    "lon": -5.8837485,
+    "tension_max_kV": 132,
+    "niveles_tension_kV": [
+      132
+    ],
+    "tipologia": "media",
+    "tipologia_label": "Media-Alta tensión (Distribución AT, 132 kV)"
+  },
+  {
+    "id": 11010300001370,
+    "nombre": "EMPALME",
+    "municipio": "Sevilla",
+    "provincia": "Sevilla",
+    "lat": 37.41727322,
+    "lon": -5.98427709,
+    "tension_max_kV": 132,
+    "niveles_tension_kV": [
+      132,
+      66,
+      20,
+      15
+    ],
+    "tipologia": "media",
+    "tipologia_label": "Media-Alta tensión (Distribución AT, 132 kV)"
+  },
+  {
+    "id": 11010300001038,
+    "nombre": "ENRAMADI",
+    "municipio": "Sevilla",
+    "provincia": "Sevilla",
+    "lat": 37.37669324,
+    "lon": -5.97606613,
+    "tension_max_kV": 66,
+    "niveles_tension_kV": [
+      66,
+      20
+    ],
+    "tipologia": "baja",
+    "tipologia_label": "Baja-Media tensión (Distribución, ≤66 kV)"
+  },
+  {
+    "id": 11010300001282,
+    "nombre": "GUADAIRA",
+    "municipio": "Sevilla",
+    "provincia": "Sevilla",
+    "lat": 37.33768685,
+    "lon": -5.9917697,
+    "tension_max_kV": 66,
+    "niveles_tension_kV": [
+      66,
+      15
+    ],
+    "tipologia": "baja",
+    "tipologia_label": "Baja-Media tensión (Distribución, ≤66 kV)"
+  },
+  {
+    "id": 11010300001057,
+    "nombre": "HEINEKEN",
+    "municipio": "Sevilla",
+    "provincia": "Sevilla",
+    "lat": 37.38867994,
+    "lon": -5.86294496,
+    "tension_max_kV": 132,
+    "niveles_tension_kV": [
+      132
+    ],
+    "tipologia": "media",
+    "tipologia_label": "Media-Alta tensión (Distribución AT, 132 kV)"
+  },
+  {
+    "id": 11010300001288,
+    "nombre": "HYTASA",
+    "municipio": "Sevilla",
+    "provincia": "Sevilla",
+    "lat": 37.36682071,
+    "lon": -5.96384678,
+    "tension_max_kV": 66,
+    "niveles_tension_kV": [
+      66,
+      20,
+      15
+    ],
+    "tipologia": "baja",
+    "tipologia_label": "Baja-Media tensión (Distribución, ≤66 kV)"
+  },
+  {
+    "id": 11010300001089,
+    "nombre": "MV_KANSA",
+    "municipio": "Sevilla",
+    "provincia": "Sevilla",
+    "lat": 37.3959177,
+    "lon": -5.95935782,
+    "tension_max_kV": 66,
+    "niveles_tension_kV": [
+      66,
+      20
+    ],
+    "tipologia": "baja",
+    "tipologia_label": "Baja-Media tensión (Distribución, ≤66 kV)"
+  },
+  {
+    "id": 11010300001150,
+    "nombre": "NERVION",
+    "municipio": "Sevilla",
+    "provincia": "Sevilla",
+    "lat": 37.37640707,
+    "lon": -5.96003646,
+    "tension_max_kV": 66,
+    "niveles_tension_kV": [
+      66,
+      20,
+      15
+    ],
+    "tipologia": "baja",
+    "tipologia_label": "Baja-Media tensión (Distribución, ≤66 kV)"
+  },
+  {
+    "id": 11010300001229,
+    "nombre": "OSARIO",
+    "municipio": "Sevilla",
+    "provincia": "Sevilla",
+    "lat": 37.39432346,
+    "lon": -5.98280598,
+    "tension_max_kV": 66,
+    "niveles_tension_kV": [
+      66,
+      20
+    ],
+    "tipologia": "baja",
+    "tipologia_label": "Baja-Media tensión (Distribución, ≤66 kV)"
+  },
+  {
+    "id": 11010300001026,
+    "nombre": "PALMALTA",
+    "municipio": "Sevilla",
+    "provincia": "Sevilla",
+    "lat": 37.34013924,
+    "lon": -5.98461652,
+    "tension_max_kV": 66,
+    "niveles_tension_kV": [
+      66,
+      20
+    ],
+    "tipologia": "baja",
+    "tipologia_label": "Baja-Media tensión (Distribución, ≤66 kV)"
+  },
+  {
+    "id": 11010300001138,
+    "nombre": "PALMERA",
+    "municipio": "Sevilla",
+    "provincia": "Sevilla",
+    "lat": 37.35607459,
+    "lon": -5.96829158,
+    "tension_max_kV": 66,
+    "niveles_tension_kV": [
+      66,
+      20,
+      15
+    ],
+    "tipologia": "baja",
+    "tipologia_label": "Baja-Media tensión (Distribución, ≤66 kV)"
+  },
+  {
+    "id": 11010300001427,
+    "nombre": "QUINTOS",
+    "municipio": "Sevilla",
+    "provincia": "Sevilla",
+    "lat": 37.35016842,
+    "lon": -5.95196684,
+    "tension_max_kV": 220,
+    "niveles_tension_kV": [
+      220,
+      66,
+      15
+    ],
+    "tipologia": "alta",
+    "tipologia_label": "Alta tensión (Transporte, 220-400 kV)"
+  },
+  {
+    "id": 11010300001129,
+    "nombre": "RASTRO",
+    "municipio": "Sevilla",
+    "provincia": "Sevilla",
+    "lat": 37.38410269,
+    "lon": -5.98487092,
+    "tension_max_kV": 66,
+    "niveles_tension_kV": [
+      66,
+      20
+    ],
+    "tipologia": "baja",
+    "tipologia_label": "Baja-Media tensión (Distribución, ≤66 kV)"
+  },
+  {
+    "id": 11010300001240,
+    "nombre": "REMEDIOS",
+    "municipio": "Sevilla",
+    "provincia": "Sevilla",
+    "lat": 37.37862513,
+    "lon": -6.01380501,
+    "tension_max_kV": 66,
+    "niveles_tension_kV": [
+      66,
+      20
+    ],
+    "tipologia": "baja",
+    "tipologia_label": "Baja-Media tensión (Distribución, ≤66 kV)"
+  },
+  {
+    "id": 11010300001432,
+    "nombre": "SANTA ELVIRA",
+    "municipio": "Sevilla",
+    "provincia": "Sevilla",
+    "lat": 37.38976682,
+    "lon": -5.93049204,
+    "tension_max_kV": 220,
+    "niveles_tension_kV": [
+      220,
+      132,
+      66,
+      15
+    ],
+    "tipologia": "alta",
+    "tipologia_label": "Alta tensión (Transporte, 220-400 kV)"
+  },
+  {
+    "id": 11010300001276,
+    "nombre": "TABLADA",
+    "municipio": "Sevilla",
+    "provincia": "Sevilla",
+    "lat": 37.3661041,
+    "lon": -5.99962268,
+    "tension_max_kV": 66,
+    "niveles_tension_kV": [
+      66,
+      20,
+      15
+    ],
+    "tipologia": "baja",
+    "tipologia_label": "Baja-Media tensión (Distribución, ≤66 kV)"
+  },
+  {
+    "id": 11010300001220,
+    "nombre": "TORRECUE",
+    "municipio": "Sevilla",
+    "provincia": "Sevilla",
+    "lat": 37.3359797,
+    "lon": -6.00148679,
+    "tension_max_kV": 66,
+    "niveles_tension_kV": [
+      66,
+      20
+    ],
+    "tipologia": "baja",
+    "tipologia_label": "Baja-Media tensión (Distribución, ≤66 kV)"
+  },
+  {
+    "id": 11010300001270,
+    "nombre": "TOMARES",
+    "municipio": "Tomares",
+    "provincia": "Sevilla",
+    "lat": 37.37662816,
+    "lon": -6.03170997,
+    "tension_max_kV": 66,
+    "niveles_tension_kV": [
+      66,
+      15
+    ],
+    "tipologia": "baja",
+    "tipologia_label": "Baja-Media tensión (Distribución, ≤66 kV)"
+  },
+  {
+    "id": 11010300001182,
+    "nombre": "ZAUDIN",
+    "municipio": "Tomares",
+    "provincia": "Sevilla",
+    "lat": 37.36406992,
+    "lon": -6.04598554,
+    "tension_max_kV": 66,
+    "niveles_tension_kV": [
+      66,
+      15
+    ],
+    "tipologia": "baja",
+    "tipologia_label": "Baja-Media tensión (Distribución, ≤66 kV)"
+  },
+  {
+    "id": 11010300001169,
+    "nombre": "MORERA",
+    "municipio": "Utrera",
+    "provincia": "Sevilla",
+    "lat": 37.20475181,
+    "lon": -5.80360881,
+    "tension_max_kV": 66,
+    "niveles_tension_kV": [
+      66,
+      15
+    ],
+    "tipologia": "baja",
+    "tipologia_label": "Baja-Media tensión (Distribución, ≤66 kV)"
+  },
+  {
+    "id": 11010300001291,
+    "nombre": "UTRERA",
+    "municipio": "Utrera",
+    "provincia": "Sevilla",
+    "lat": 37.18475817,
+    "lon": -5.77180138,
+    "tension_max_kV": 66,
+    "niveles_tension_kV": [
+      66,
+      15
+    ],
+    "tipologia": "baja",
+    "tipologia_label": "Baja-Media tensión (Distribución, ≤66 kV)"
+  },
+  {
+    "id": 11010300001392,
+    "nombre": "SANTIPONCE",
+    "municipio": "Valencina de la Concepción",
+    "provincia": "Sevilla",
+    "lat": 37.42539457,
+    "lon": -6.03931095,
+    "tension_max_kV": 220,
+    "niveles_tension_kV": [
+      220,
+      132,
+      66,
+      15
+    ],
+    "tipologia": "alta",
+    "tipologia_label": "Alta tensión (Transporte, 220-400 kV)"
+  },
+  {
+    "id": 11010300001366,
+    "nombre": "ECIJA",
+    "municipio": "Écija",
+    "provincia": "Sevilla",
+    "lat": 37.54487587,
+    "lon": -5.06337477,
+    "tension_max_kV": 66,
+    "niveles_tension_kV": [
+      66,
+      25
+    ],
+    "tipologia": "baja",
+    "tipologia_label": "Baja-Media tensión (Distribución, ≤66 kV)"
+  },
+  {
+    "id": 11010300001387,
+    "nombre": "HUMOSOS",
+    "municipio": "Écija",
+    "provincia": "Sevilla",
+    "lat": 37.51484509,
+    "lon": -4.99805808,
+    "tension_max_kV": 66,
+    "niveles_tension_kV": [
+      66,
+      25
+    ],
+    "tipologia": "baja",
+    "tipologia_label": "Baja-Media tensión (Distribución, ≤66 kV)"
+  },
+  {
+    "id": 11010300001054,
+    "nombre": "I_REDOND",
+    "municipio": "Écija",
+    "provincia": "Sevilla",
+    "lat": 37.45800976,
+    "lon": -4.89606016,
+    "tension_max_kV": 66,
+    "niveles_tension_kV": [
+      66,
+      25
+    ],
+    "tipologia": "baja",
+    "tipologia_label": "Baja-Media tensión (Distribución, ≤66 kV)"
+  },
+  {
+    "id": 11010300001428,
+    "nombre": "VILLANUEVA DEL REY",
+    "municipio": "Écija",
+    "provincia": "Sevilla",
+    "lat": 37.5276323,
+    "lon": -5.16420567,
+    "tension_max_kV": 220,
+    "niveles_tension_kV": [
+      220,
+      66,
+      25
+    ],
+    "tipologia": "alta",
+    "tipologia_label": "Alta tensión (Transporte, 220-400 kV)"
+  },
+  {
+    "id": 11010300000959,
+    "nombre": "VILLAR",
+    "municipio": "Écija",
+    "provincia": "Sevilla",
+    "lat": 37.60684135,
+    "lon": -5.10535021,
+    "tension_max_kV": 66,
+    "niveles_tension_kV": [
+      66,
+      25
+    ],
+    "tipologia": "baja",
+    "tipologia_label": "Baja-Media tensión (Distribución, ≤66 kV)"
+  }
+]
