@@ -1,8 +1,6 @@
 /* =========================================================
-   Site navigation bar — thin strip above each page's own header.
-   Two skins: "default" (design tokens, theme-aware) for the
-   landing page and the map, "paper" (fixed archival palette)
-   for the documents archive.
+   Site navigation bar — thin strip above each page's own
+   header, styled with the shared design tokens.
    ========================================================= */
 
 .site-nav {
@@ -65,40 +63,6 @@
 .lang-switch button:hover { color: var(--color-text); }
 .lang-switch button[aria-pressed="true"] {
   background: var(--color-primary);
-  color: var(--color-text-inverse);
-}
-
-.site-nav .theme-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 26px;
-  height: 26px;
-  border-radius: var(--radius-full);
-  border: 1px solid var(--color-border);
-  color: var(--color-text-muted);
-}
-.site-nav .theme-btn:hover { color: var(--color-text); background: var(--color-surface-offset); }
-.site-nav .theme-btn svg { width: 14px; height: 14px; }
-
-/* ---- Paper skin (documents archive) ---- */
-.site-nav[data-skin="paper"] {
-  background: #efe9dc;
-  border-bottom: 1px solid #d9d2c4;
-  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
-}
-.site-nav[data-skin="paper"] .site-nav-brand { color: #4a453e; }
-.site-nav[data-skin="paper"] .site-nav-brand:hover { color: #2f5d4e; }
-.site-nav[data-skin="paper"] .site-nav-links a { color: #4a453e; }
-.site-nav[data-skin="paper"] .site-nav-links a:hover { color: #1c1a17; }
-.site-nav[data-skin="paper"] .site-nav-links a[aria-current="page"] {
-  color: #2f5d4e;
-  background: #e6efe9;
-}
-.site-nav[data-skin="paper"] .lang-switch { border-color: #b7ac97; }
-.site-nav[data-skin="paper"] .lang-switch button { color: #4a453e; }
-.site-nav[data-skin="paper"] .lang-switch button[aria-pressed="true"] {
-  background: #2f5d4e;
   color: #ffffff;
 }
 

@@ -1,3 +1,4 @@
+import '../styles/tokens.css';
 import { initI18n, translateDom, currentLocale, onLocaleChange } from '../i18n';
 import { initSiteNav } from '../shared/nav';
 
@@ -24,10 +25,9 @@ const setupLanguageNote = (): void => {
   onLocaleChange(syncVisibility);
 };
 
-// The archive page keeps its own fixed "paper" aesthetic: no theme handling.
 const init = async (): Promise<void> => {
   await initI18n();
-  initSiteNav({ current: 'documents', skin: 'paper' });
+  initSiteNav({ current: 'documents' });
   setupLanguageNote();
   translateDom();
 };
