@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
-  <title>Mapa — infraestructura eléctrica de Sevilla y La Bachillera</title>
-  <meta name="description" content="Mapa interactivo de subestaciones y líneas eléctricas (aéreas y subterráneas) de la provincia de Sevilla, con foco en el barrio de La Bachillera." />
+  <title data-i18n="map:meta.title">Mapa — infraestructura eléctrica de Sevilla y La Bachillera</title>
+  <meta name="description" content="Mapa interactivo de subestaciones y líneas eléctricas (aéreas y subterráneas) de la provincia de Sevilla, con foco en el barrio de La Bachillera." data-i18n-attr="content:map:meta.description" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@700,500,800&f[]=satoshi@400,500,700&display=swap" rel="stylesheet" />
@@ -13,10 +13,150 @@
 </head>
 <body>
   <div id="siteNav"></div>
-  <main class="home-main">
-    <h1 data-i18n="map:title">Mapa de infraestructura eléctrica</h1>
-    <p data-i18n="map:placeholder">Mapa en construcción.</p>
-  </main>
+
+  <div class="app">
+    <header class="topbar">
+      <div class="topbar-brand">
+        <svg class="brand-mark" width="30" height="30" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+          <rect width="32" height="32" rx="7" fill="var(--color-surface-2)"/>
+          <path d="M16 4 8 17h6l-2 11 10-15h-6l2-9z" fill="var(--color-primary)"/>
+        </svg>
+        <div class="brand-text">
+          <h1 data-i18n-html="map:topbar.titleHtml">Subestaciones Eléctricas <span>de Sevilla</span></h1>
+          <p class="brand-sub" data-i18n="map:topbar.subtitle">Mapa interactivo · Agencia Andaluza de la Energía</p>
+        </div>
+      </div>
+
+      <div class="topbar-actions">
+        <button class="btn btn-ghost" id="sidebarToggle" aria-label="Mostrar u ocultar panel" data-i18n-attr="aria-label:map:topbar.toggleSidebar" data-testid="button-toggle-sidebar">
+          <i data-lucide="panel-left"></i>
+        </button>
+      </div>
+    </header>
+
+    <div class="body-shell">
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-scroll" id="sidebarScroll">
+
+          <!-- Stats -->
+          <section class="panel stats-panel" aria-label="Resumen" data-i18n-attr="aria-label:map:stats.sectionLabel">
+            <div class="stat-grid" id="statGrid" data-testid="grid-stats"></div>
+          </section>
+
+          <!-- Proximity tool -->
+          <section class="panel">
+            <h2 class="panel-title"><i data-lucide="locate-fixed"></i> <span data-i18n="map:proximity.title">Distancia a mi ubicación</span></h2>
+            <p class="panel-hint" data-i18n="map:proximity.hint">Introduce tu código postal o dirección en Sevilla para calcular la subestación más cercana.</p>
+            <form id="proximityForm" class="proximity-form" autocomplete="off">
+              <div class="input-row">
+                <input type="text" id="proximityInput" placeholder="Ej: 41013 o Calle Sierpes, Sevilla" data-i18n-attr="placeholder:map:proximity.inputPlaceholder" data-testid="input-proximity" />
+                <button type="submit" class="btn btn-primary" id="proximitySubmit" aria-label="Buscar" data-i18n-attr="aria-label:map:proximity.searchAria" data-testid="button-search-proximity">
+                  <i data-lucide="search"></i>
+                </button>
+              </div>
+              <button type="button" class="btn btn-ghost btn-block" id="useMyLocation" data-testid="button-use-location">
+                <i data-lucide="crosshair"></i> <span data-i18n="map:proximity.useMyLocation">Usar mi ubicación actual</span>
+              </button>
+            </form>
+            <div id="proximityStatus" class="proximity-status" role="status" aria-live="polite" data-testid="status-proximity"></div>
+            <div id="proximityResults" class="proximity-results" data-testid="list-proximity-results"></div>
+          </section>
+
+          <!-- Layers -->
+          <section class="panel">
+            <h2 class="panel-title"><i data-lucide="layers"></i> <span data-i18n="map:layers.title">Capas visuales</span></h2>
+            <div class="layer-toggles">
+              <label class="toggle-row">
+                <span data-i18n="map:layers.markers">Marcadores</span>
+                <input type="checkbox" id="layerMarkers" checked data-testid="checkbox-layer-markers" />
+                <span class="toggle-switch"></span>
+              </label>
+              <label class="toggle-row">
+                <span data-i18n="map:layers.heatmap">Mapa de densidad</span>
+                <input type="checkbox" id="layerHeatmap" data-testid="checkbox-layer-heatmap" />
+                <span class="toggle-switch"></span>
+              </label>
+              <label class="toggle-row">
+                <span data-i18n="map:layers.clusters">Agrupación por municipio</span>
+                <input type="checkbox" id="layerClusters" data-testid="checkbox-layer-clusters" />
+                <span class="toggle-switch"></span>
+              </label>
+              <label class="toggle-row">
+                <span data-i18n="map:layers.lines">Líneas eléctricas</span>
+                <input type="checkbox" id="layerLines" checked data-testid="checkbox-layer-lines" />
+                <span class="toggle-switch"></span>
+              </label>
+              <div class="sub-toggle-row" id="lineSubToggles">
+                <label class="filter-chip mini">
+                  <input type="checkbox" id="layerLinesOverhead" checked data-testid="checkbox-layer-lines-overhead" />
+                  <span data-i18n="map:layers.linesOverhead">Aérea</span>
+                </label>
+                <label class="filter-chip mini">
+                  <input type="checkbox" id="layerLinesUnderground" checked data-testid="checkbox-layer-lines-underground" />
+                  <span data-i18n="map:layers.linesUnderground">Subterránea</span>
+                </label>
+              </div>
+              <p class="layers-warning" id="powerLinesWarning" hidden></p>
+            </div>
+            <div class="view-presets">
+              <button class="chip" id="viewMetro" data-i18n="map:viewPresets.metro" data-testid="button-view-metro">Área metropolitana</button>
+              <button class="chip" id="viewPeriphery" data-i18n="map:viewPresets.periphery" data-testid="button-view-periphery">Provincia completa</button>
+              <button class="chip" id="viewBachillera" data-i18n="map:viewPresets.bachillera" data-testid="button-view-bachillera">La Bachillera</button>
+            </div>
+          </section>
+
+          <!-- Filters -->
+          <section class="panel">
+            <h2 class="panel-title"><i data-lucide="sliders-horizontal"></i> <span data-i18n="map:filters.title">Filtrar por tipología</span></h2>
+            <div class="filter-chips" id="typologyFilters" data-testid="group-typology-filters"></div>
+
+            <label class="field-label" for="municipioFilter" data-i18n="map:filters.municipalityLabel">Municipio</label>
+            <select id="municipioFilter" class="select" data-testid="select-municipio">
+              <option value=""></option>
+            </select>
+          </section>
+
+          <!-- Urbanismo -->
+          <section class="panel legend-panel">
+            <h2 class="panel-title"><i data-lucide="scale"></i> <span data-i18n="map:urbanismPanel.title">¿Se permiten en suelo urbano?</span></h2>
+            <p class="panel-note" data-i18n-html="map:urbanismPanel.paragraph1Html">
+              Sí. Tanto la <strong>alta tensión</strong> como la <strong>media tensión</strong> se clasifican jurídicamente como uso dotacional de «transportes e infraestructuras básicas» (energía eléctrica), un uso admitido por igual en suelo urbano, urbanizable y no urbanizable por tratarse de un servicio de interés general. El <a href="https://web.urbanismosevilla.org/planeamientopgou/pdfs/06_TR_NORMAS_URBANISTICAS/06_TR_NORMAS/06_TR_NORMAS.PDF" target="_blank" rel="noopener">Art. 6.6.28 del PGOU de Sevilla</a> lo recoge expresamente dentro de la Sección Cuarta «Uso de transportes e infraestructuras básicas».
+            </p>
+            <p class="panel-note" data-i18n-html="map:urbanismPanel.paragraph2Html">
+              Ahora bien, esa admisión va acompañada de condiciones más estrictas en suelo urbano que en suelo urbanizable: en <strong>suelo urbano consolidado</strong>, las instalaciones de abastecimiento eléctrico deben ser subterráneas salvo justificación técnica de improcedencia; cuando se necesita levantar una subestación, debe ubicarse en un edificio protegido o en una parcela con calificación urbanística específica para infraestructuras —nunca en la vía pública—, y requiere licencia urbanística municipal (además de concesión demanial si ocupa subsuelo público). En suelo urbano no consolidado y urbanizable, los nuevos desarrollos deben prever de forma obligatoria el tendido subterráneo de las líneas de media y baja tensión (Art. 6.6.28, apartados 5, 6 y 11 del PGOU; <a href="https://www.boe.es/buscar/doc.php?id=BOE-A-2000-24019" target="_blank" rel="noopener">RD 1955/2000</a>).
+            </p>
+            <p class="panel-note" data-i18n-html="map:urbanismPanel.paragraph3Html">
+              Un ejemplo real es la subestación «Empalme» (Endesa, barrio de San Jerónimo): calificada en 2006 para traslado, el Ayuntamiento tramita ahora una modificación puntual del PGOU para consolidarla en su emplazamiento actual al considerarla infraestructura crítica para la red provincial — confirmando que una subestación de alta tensión puede permanecer, e incluso blindarse, dentro de suelo urbano consolidado (<a href="https://www.manueljesusflorencio.com/2026/07/urbanismo-modificara-el-pgou-para-blindar-la-subestacion-electrica-estrategica-empalme-en-san-jeronimo/" target="_blank" rel="noopener">reportaje, jul. 2026</a>).
+            </p>
+          </section>
+
+          <!-- LEGAL_LINES_PANEL_SLOT -->
+
+          <!-- Legend / methodology -->
+          <section class="panel legend-panel">
+            <h2 class="panel-title"><i data-lucide="info"></i> <span data-i18n="map:aboutPanel.title">Sobre los datos</span></h2>
+            <p class="panel-note" data-i18n-html="map:aboutPanel.paragraph1Html">
+              109 subestaciones eléctricas de transporte y distribución en la provincia de Sevilla, obtenidas del servicio geográfico oficial de la <strong>Agencia Andaluza de la Energía</strong> (Mapa de Infraestructuras Energéticas de Andalucía, capa DERA G10), vía <a href="http://www.ideandalucia.es/services/DERA_g10_infra_energetica/wfs" target="_blank" rel="noopener">IDEAndalucía</a>. Prensa regional cifraba la red en 95 subestaciones a cierre de 2024; esta capa geográfica (actualización 2025) incluye 109 nodos. Fuente: <a href="https://www.agenciaandaluzadelaenergia.es/es/informacion-energetica/cartografia-energetica-de-andalucia/mapa-de-infraestructuras-energeticas-de-andalucia-miea" target="_blank" rel="noopener">AAE — MIEA</a>.
+            </p>
+            <p class="panel-note" data-i18n-html="map:aboutPanel.paragraph2Html">
+              La clasificación por tensión agrupa: <strong>Alta</strong> (transporte, 220–400 kV, gestionado por Red Eléctrica), <strong>Media</strong> (distribución en alta tensión, 132 kV) y <strong>Baja</strong> (distribución, ≤66 kV). No existe capacidad instalada por subestación en formato abierto; los totales agregados por categoría (<a href="https://www.agenciaandaluzadelaenergia.es/sites/default/files/Documentos/Infraestructuras/Informe_Prov_SE_MIEA.pdf" target="_blank" rel="noopener">informe AAE 30/06/2025</a>) se muestran en cada ficha.
+            </p>
+            <!-- OSM_METHODOLOGY_SLOT -->
+          </section>
+
+        </div>
+      </aside>
+
+      <main class="map-wrap">
+        <div id="map" role="application" aria-label="Mapa interactivo de subestaciones eléctricas de Sevilla" data-i18n-attr="aria-label:map:mapAriaLabel"></div>
+
+        <div class="map-legend" id="mapLegend" data-testid="legend-map"></div>
+
+        <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+      </main>
+    </div>
+  </div>
+
   <script type="module" src="/src/map/main.ts"></script>
 </body>
 </html>

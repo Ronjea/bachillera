@@ -1,4 +1,4 @@
-import type { FeatureCollection, Geometry, LineString, Point } from 'geojson';
+import type { FeatureCollection, GeoJsonProperties, Geometry, LineString, Point } from 'geojson';
 import type { PowerLineProperties, Substation, SubstationTypology } from '../shared/types';
 
 export type PowerLinesCollection = FeatureCollection<LineString, PowerLineProperties>;
@@ -6,14 +6,15 @@ export type PowerLinesState = { collection: PowerLinesCollection; usingFixture: 
 export type RouteCollection = FeatureCollection<LineString>;
 export type UserPointCollection = FeatureCollection<Point>;
 
-export const emptyFeatureCollection = <T extends Geometry>(): FeatureCollection<T> => ({
+export const emptyFeatureCollection = <G extends Geometry, P = GeoJsonProperties>(): FeatureCollection<G, P> => ({
   type: 'FeatureCollection',
   features: [],
 });
 
 /** Convenience constructors so callers never need to reach for the `geojson`
  *  package types themselves — they just want "no data yet" placeholders. */
-export const emptyPowerLinesCollection = (): PowerLinesCollection => emptyFeatureCollection<LineString>();
+export const emptyPowerLinesCollection = (): PowerLinesCollection =>
+  emptyFeatureCollection<LineString, PowerLineProperties>();
 export const emptyRouteCollection = (): RouteCollection => emptyFeatureCollection<LineString>();
 export const emptyUserPointCollection = (): UserPointCollection => emptyFeatureCollection<Point>();
 
@@ -51,8 +52,9 @@ export const setActiveMunicipality = (value: string): void => {
   activeMunicipality = value;
 };
 
-/** Route + user-location data survive a map style switch (setStyle wipes all
- *  sources), so they are kept here and redrawn by layers.ts::addDataLayers. */
+/** Last proximity-search route/user-location overlay, kept as the single
+ *  source of truth so proximity.ts never has to reach into the map's raw
+ *  GeoJSON sources directly — it just updates state and layers.ts reads it. */
 export const getRouteData = (): RouteCollection | null => routeData;
 export const setRouteData = (data: RouteCollection): void => {
   routeData = data;

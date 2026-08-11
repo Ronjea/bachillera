@@ -1,4 +1,4 @@
-import type { Substation, SubstationTypology, VoltageClass } from '../shared/types';
+import type { PowerLineKind, Substation, SubstationTypology, VoltageClass } from '../shared/types';
 
 /** Shared hex palette for voltage classes, reused by substation markers, power
  *  line paint expressions, the legend and popups so every representation of a
@@ -59,3 +59,6 @@ export const isSubstationTypology = (value: unknown): value is SubstationTypolog
 
 export const isVoltageClass = (value: unknown): value is VoltageClass =>
   value === 'high' || value === 'medium' || value === 'low' || value === 'unknown';
+
+export const isPowerLineKind = (value: unknown): value is PowerLineKind =>
+  value === 'overhead' || value === 'underground';

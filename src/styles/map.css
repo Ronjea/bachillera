@@ -3,13 +3,24 @@
    Ported from the legacy substations app (reference/legacy/style.css).
    ========================================================= */
 
-body { overflow: hidden; }
+/* body is a flex column of [#siteNav, .app]: #siteNav sizes to its own
+   content and .app fills whatever remains. This avoids hardcoding the nav
+   bar's height anywhere (it can wrap/resize freely) and avoids a double
+   scrollbar, since .app's own height is always exactly "100dvh minus
+   whatever the nav actually rendered at". */
+body {
+  overflow: hidden;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
 
 /* ============ LAYOUT ============ */
 .app {
   display: flex;
   flex-direction: column;
-  height: 100dvh;
+  flex: 1;
+  min-height: 0;
 }
 
 .topbar {
@@ -183,6 +194,7 @@ body { overflow: hidden; }
   border-radius: 50%;
   margin-right: var(--space-2);
   vertical-align: middle;
+  background: var(--dot-color);
 }
 
 /* Proximity */
@@ -267,6 +279,14 @@ body { overflow: hidden; }
 .filter-chip.mini { padding: 4px 8px; font-size: var(--text-xs); }
 .filter-chip.mini input { position: absolute; opacity: 0; width: 0; height: 0; }
 .filter-chip.mini.inactive { opacity: 0.45; }
+
+.layers-warning {
+  font-size: var(--text-xs);
+  color: var(--color-error);
+  margin-top: var(--space-1);
+  margin-bottom: var(--space-3);
+}
+.layers-warning[hidden] { display: none; }
 
 .view-presets { display: flex; gap: var(--space-2); flex-wrap: wrap; }
 .chip {
@@ -385,13 +405,26 @@ body { overflow: hidden; }
 .popup-row { display: flex; justify-content: space-between; font-size: var(--text-xs); padding: 4px 0; border-top: 1px solid var(--color-divider); }
 .popup-row span:first-child { color: var(--color-text-muted); }
 .popup-row span:last-child { font-family: var(--font-mono); text-align: right; }
+.popup-row--note { flex-direction: column; align-items: flex-start; gap: 4px; }
+
+.popup-footnote {
+  margin-top: var(--space-3);
+  padding-top: var(--space-2);
+  border-top: 1px solid var(--color-divider);
+  font-size: 0.65rem;
+  color: var(--color-text-faint);
+}
 
 /* ============ RESPONSIVE ============ */
 @media (max-width: 860px) {
   .brand-sub { display: none; }
   .sidebar {
-    position: fixed;
-    top: 60px; left: 0; bottom: 0;
+    /* Positioned against .body-shell (position:relative, already below the
+       nav bar + topbar) instead of the viewport, so the drawer always
+       starts exactly under the topbar regardless of the nav bar's height —
+       no hardcoded pixel offset to keep in sync. */
+    position: absolute;
+    top: 0; left: 0; bottom: 0;
     width: min(88vw, 360px);
     transform: translateX(-100%);
     transition: transform var(--transition-interactive);
