@@ -28,8 +28,5 @@ export const createMap = (container: HTMLElement | string): MapLibreMap => {
   map.addControl(new NavigationControl({ showCompass: false }), 'top-right');
   map.addControl(new ScaleControl({ unit: 'metric' }), 'bottom-right');
 
-  // TEMP-QA-DEBUG-HOOK: remove before finishing.
-  (window as unknown as { __debugMap: MapLibreMap }).__debugMap = map;
-
   return map;
 };
