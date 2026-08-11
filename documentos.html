@@ -35,29 +35,31 @@
     -webkit-font-smoothing:antialiased;
   }
   h1,h2,h3{font-family:'Cabinet Grotesk','Satoshi',sans-serif}
-  .wrap{max-width:940px;margin:0 auto;padding:0 22px}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
 
-  /* Map viewer hero card */
+  /* Map viewer hero card — surface card with amber accent, matching the
+     highlighted cards of the landing page. */
   .mapcard{
-    margin:26px 0 4px;background:var(--accent);color:#fff;border-radius:4px;
+    margin:26px 0 4px;background:var(--card);color:var(--ink);border-radius:0.9rem;
+    border:1px solid var(--line-strong);border-left:4px solid var(--accent);
     padding:24px 26px;display:flex;flex-wrap:wrap;align-items:center;gap:18px 26px;
-    justify-content:space-between;box-shadow:0 8px 22px rgba(180,83,9,.18);
+    justify-content:space-between;box-shadow:0 4px 16px rgba(20,30,40,.08);
   }
   .mapcard .mc-txt{max-width:56ch}
   .mapcard .mc-tag{
-    font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;
-    color:var(--accent-soft);opacity:.9;
+    font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.24em;text-transform:uppercase;
+    color:var(--accent);
   }
-  .mapcard h2{font-size:22px;font-weight:600;margin:6px 0 5px;letter-spacing:-.01em;color:#fff}
-  .mapcard p{font-size:14.5px;color:#fde8c8;opacity:.95}
+  .mapcard h2{font-size:22px;font-weight:700;margin:6px 0 5px;letter-spacing:-.01em;color:var(--ink)}
+  .mapcard p{font-size:14.5px;color:var(--ink-2)}
   .mapcard .mc-btn{
     display:inline-flex;align-items:center;gap:9px;white-space:nowrap;
     font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13.5px;letter-spacing:.01em;
-    text-decoration:none;background:#fff;color:var(--accent);
-    padding:13px 22px;border-radius:3px;font-weight:600;
+    text-decoration:none;background:var(--accent);color:#fff;
+    padding:13px 22px;border-radius:0.6rem;font-weight:600;
     transition:transform .12s ease, box-shadow .12s ease;
   }
-  .mapcard .mc-btn:hover{transform:translateY(-1px);box-shadow:0 6px 16px rgba(0,0,0,.22)}
+  .mapcard .mc-btn:hover{transform:translateY(-1px);box-shadow:0 5px 14px rgba(180,83,9,.28)}
 
   /* Header */
   header.masthead{
@@ -67,12 +69,12 @@
   }
   .eyebrow{
     font-family:'JetBrains Mono',ui-monospace,Menlo,monospace;
-    font-size:12px;letter-spacing:.28em;text-transform:uppercase;
+    font-size:12px;letter-spacing:.24em;text-transform:uppercase;
     color:var(--accent);margin-bottom:18px;
   }
   h1{
     font-size:clamp(34px,6vw,56px);
-    line-height:1.02;font-weight:600;letter-spacing:-.01em;
+    line-height:1.02;font-weight:800;letter-spacing:-.02em;
     margin-bottom:14px;
   }
   h1 .ref{display:block;font-size:.42em;letter-spacing:.02em;color:var(--ink-2);font-weight:500;margin-top:10px}
@@ -90,20 +92,20 @@
     background:var(--card);
     border:1px solid var(--line-strong);
     border-left:5px solid var(--accent);
-    border-radius:3px;
+    border-radius:0.6rem;
     padding:24px 26px;
   }
   .headline-doc .tag{
     font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.2em;
     text-transform:uppercase;color:var(--accent);
   }
-  .headline-doc h2{font-size:24px;font-weight:600;margin:8px 0 6px;letter-spacing:-.01em}
+  .headline-doc h2{font-size:24px;font-weight:700;margin:8px 0 6px;letter-spacing:-.01em}
   .headline-doc p{color:var(--ink-2);font-size:15.5px;margin-bottom:16px;max-width:66ch}
   .btn-row{display:flex;flex-wrap:wrap;gap:12px}
   .btn{
     display:inline-flex;align-items:center;gap:8px;
     font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px;letter-spacing:.02em;
-    text-decoration:none;padding:11px 18px;border-radius:3px;
+    text-decoration:none;padding:11px 18px;border-radius:0.6rem;
     border:1px solid var(--accent);color:#fff;background:var(--accent);
     transition:transform .12s ease, box-shadow .12s ease;
   }
@@ -120,17 +122,17 @@
   .howto li{margin-bottom:5px}
   .howto code{
     font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12.5px;
-    background:var(--amber-soft);padding:1px 6px;border-radius:3px;color:var(--ink-2);
+    background:var(--amber-soft);padding:1px 6px;border-radius:0.6rem;color:var(--ink-2);
   }
   .clarify{
-    margin-top:16px;padding:15px 17px;border-radius:4px;
+    margin-top:16px;padding:15px 17px;border-radius:0.9rem;
     background:#fdecec;border:1px solid #eec7c7;border-left:5px solid var(--red);
     font-size:14px;color:#7f1d1d;
   }
   .clarify b{color:#991b1b}
   .clarify .q{font-weight:600;display:block;margin-bottom:6px;font-size:14.5px}
   .clarify .split{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:10px}
-  .clarify .split div{background:#ffffff;border:1px solid var(--line);border-radius:3px;padding:11px 13px}
+  .clarify .split div{background:#ffffff;border:1px solid var(--line);border-radius:0.6rem;padding:11px 13px}
   .clarify .split .no{border-color:#eec7c7}
   .clarify .split .yes{border-color:#f0cfa5}
   .clarify .split .lab{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;display:block;margin-bottom:5px}
@@ -142,7 +144,7 @@
   section{margin-top:44px}
   .sec-head{display:flex;align-items:baseline;gap:14px;border-bottom:1px solid var(--line);padding-bottom:10px;margin-bottom:4px}
   .sec-num{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px;color:var(--accent);font-weight:600}
-  .sec-head h3{font-size:21px;font-weight:600;letter-spacing:-.01em}
+  .sec-head h3{font-size:21px;font-weight:700;letter-spacing:-.01em}
 
   /* Document rows */
   .doc{
@@ -157,7 +159,7 @@
   .doc a.open{
     white-space:nowrap;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12.5px;
     text-decoration:none;color:var(--accent);border:1px solid var(--line-strong);
-    padding:7px 13px;border-radius:3px;transition:all .12s ease;
+    padding:7px 13px;border-radius:0.6rem;transition:all .12s ease;
   }
   .doc a.open:hover{border-color:var(--accent);background:var(--accent);color:#fff}
   .doc a.open[data-blocked]:hover{border-color:var(--amber);background:var(--amber);color:#fff}
@@ -182,7 +184,7 @@
 
   /* Full chronology */
   .chrono{
-    background:var(--card);border:1px solid var(--line-strong);border-radius:4px;
+    background:var(--card);border:1px solid var(--line-strong);border-radius:0.9rem;
     padding:6px 26px 20px;margin-top:8px;
   }
   .era{
@@ -197,14 +199,14 @@
   .cevent .yr{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px;font-weight:600;color:var(--ink)}
   .cevent .ev{font-size:15px;color:var(--ink)}
   .cevent .ev small{display:block;color:var(--ink-2);font-size:13px;margin-top:3px;line-height:1.4}
-  .cevent.key{background:var(--accent-soft);margin:6px -14px;padding:13px 14px;border-radius:3px;border-bottom:none}
+  .cevent.key{background:var(--accent-soft);margin:6px -14px;padding:13px 14px;border-radius:0.6rem;border-bottom:none}
   .cevent.key .yr{color:var(--accent)}
 
   footer{
     margin:56px 0 40px;padding-top:20px;border-top:2px solid var(--ink);
     font-size:13px;color:var(--ink-2);
   }
-  footer .note{background:var(--amber-soft);border-radius:4px;padding:14px 16px;margin-bottom:16px;color:var(--ink-2);font-size:13.5px}
+  footer .note{background:var(--amber-soft);border-radius:0.9rem;padding:14px 16px;margin-bottom:16px;color:var(--ink-2);font-size:13.5px}
   a.inline{color:var(--accent)}
 
   @media (max-width:620px){

@@ -4,8 +4,8 @@
     "description": "Mapa interactivo de subestaciones y líneas eléctricas (aéreas y subterráneas) de la provincia de Sevilla, con foco en el barrio de La Bachillera."
   },
   "topbar": {
-    "titleHtml": "Subestaciones Eléctricas <span>de Sevilla</span>",
-    "subtitle": "Mapa interactivo · Agencia Andaluza de la Energía",
+    "titleHtml": "Infraestructura eléctrica <span>de Sevilla</span>",
+    "subtitle": "Subestaciones y líneas · AAE · OpenStreetMap",
     "toggleSidebar": "Mostrar u ocultar panel"
   },
   "mapAriaLabel": "Mapa interactivo de subestaciones eléctricas de Sevilla",
