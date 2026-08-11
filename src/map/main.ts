@@ -5,6 +5,7 @@ import { createIcons, icons } from 'lucide';
 import { initI18n, translateDom } from '../i18n';
 import { initSiteNav } from '../shared/nav';
 import esMap from '../i18n/locales/es/map.json';
+import esLegal from '../i18n/locales/es/legal.json';
 import { fetchPowerLines, fetchSubstations } from './data';
 import { initFilters } from './filters';
 import { registerMapInteractions } from './interactions';
@@ -19,7 +20,10 @@ import { renderStats } from './stats';
 import { initViewPresets } from './view-presets';
 
 const init = async (): Promise<void> => {
-  await initI18n([{ locale: 'es', namespace: 'map', resources: esMap }]);
+  await initI18n([
+    { locale: 'es', namespace: 'map', resources: esMap },
+    { locale: 'es', namespace: 'legal', resources: esLegal },
+  ]);
   initSiteNav({ current: 'map' });
   translateDom();
 

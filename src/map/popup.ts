@@ -111,10 +111,13 @@ export const showPowerLinePopup = (map: MapLibreMap, lngLat: LngLat, feature: Ma
   if (data.circuits !== null) rows.push(popupRow(t('map:linePopup.circuits'), String(data.circuits)));
   if (data.cables !== null) rows.push(popupRow(t('map:linePopup.cables'), data.cables));
 
+  const legalNoteKey = data.kind === 'overhead' ? 'legal:popup.overheadNote' : 'legal:popup.undergroundNote';
+
   const html = `
     <div class="popup-title">${title}</div>
     <span class="popup-badge" style="background:${color}22; color:${color}">${kindLabel}</span>
     ${rows.join('')}
+    ${popupNoteRow(t('map:linePopup.legal'), t(legalNoteKey))}
     <div class="popup-footnote">${t('map:linePopup.attribution')}</div>
   `;
 
