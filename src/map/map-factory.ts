@@ -28,5 +28,10 @@ export const createMap = (container: HTMLElement | string): MapLibreMap => {
   map.addControl(new NavigationControl({ showCompass: false }), 'top-right');
   map.addControl(new ScaleControl({ unit: 'metric' }), 'bottom-right');
 
+  if (import.meta.env.DEV) {
+    // Dev-only handle for debugging and scripted QA; stripped from builds.
+    (window as unknown as { __map?: MapLibreMap }).__map = map;
+  }
+
   return map;
 };
