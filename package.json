@@ -9,7 +9,8 @@
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit",
-    "fetch:lines": "node scripts/fetch-power-lines.mjs"
+    "fetch:lines": "node scripts/fetch-power-lines.mjs",
+    "fetch:memory": "node scripts/fetch-memory-photos.mjs"
   },
   "dependencies": {
     "i18next": "^26.3.6",

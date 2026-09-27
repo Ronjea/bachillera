@@ -277,11 +277,29 @@ body { overflow-x: hidden; }
 .electric-text strong { color: var(--color-text); font-weight: 600; }
 .electric-card .cta-link { margin-top: var(--space-2); }
 
+/* ============ Memory teaser strip (photos from memoria.html) ============ */
+.memory-strip {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: var(--space-3);
+  margin: var(--space-10) 0 var(--space-5);
+}
+.memory-strip[hidden] { display: none; }
+.memory-strip img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+  background: var(--color-surface-offset);
+  border-radius: var(--radius-md);
+}
+
 /* ============ Explore / CTA cards ============ */
-.explore-section .wrap { max-width: 1000px; }
+.explore-section .wrap { max-width: 1180px; }
 .cta-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--space-6);
   margin-top: var(--space-8);
 }

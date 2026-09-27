@@ -3,6 +3,7 @@
   "nav": {
     "label": "Navegación principal",
     "home": "Inicio",
+    "memory": "Memoria",
     "map": "Mapa",
     "documents": "Documentos"
   }

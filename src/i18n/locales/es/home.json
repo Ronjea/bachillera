@@ -8,10 +8,22 @@
     "title": "La Bachillera",
     "subtitle": "La historia, el planeamiento urbanístico y los problemas que todavía afronta el barrio: desde los 77 años que tardaron sus vecinos en registrar sus viviendas hasta el tendido eléctrico que aún sobrevuela sus casas.",
     "stats": [
-      { "value": "~34.000 m²", "label": "Ámbito del AGI-02" },
-      { "value": "~1.000–1.500", "label": "Habitantes" },
-      { "value": "202", "label": "Parcelas (2026)" },
-      { "value": "25/05/2018", "label": "PERI aprobado" }
+      {
+        "value": "~34.000 m²",
+        "label": "Ámbito del AGI-02"
+      },
+      {
+        "value": "~1.000–1.500",
+        "label": "Habitantes"
+      },
+      {
+        "value": "202",
+        "label": "Parcelas (2026)"
+      },
+      {
+        "value": "25/05/2018",
+        "label": "PERI aprobado"
+      }
     ]
   },
   "history": {
@@ -51,7 +63,8 @@
         "year": "May 2026",
         "text": "Culmina la reparcelación: 202 parcelas independientes. Los vecinos ya pueden registrar sus viviendas, 77 años después."
       }
-    ]
+    ],
+    "memoryCta": "Ver fotos antiguas, películas y reportajes del barrio"
   },
   "planning": {
     "eyebrow": "Planeamiento urbanístico",
@@ -76,9 +89,18 @@
     "title": "El problema eléctrico",
     "lede": "Tres líneas de alta tensión cruzan la zona de El Manchón por encima de las viviendas; dos líneas de media tensión atraviesan el centro del barrio, con postes en la calle Tilo. La subestación Empalme, en San Jerónimo, condiciona cualquier solución.",
     "facts": [
-      { "value": "3", "label": "líneas de alta tensión sobre El Manchón" },
-      { "value": "2", "label": "líneas de media tensión por el centro del barrio" },
-      { "value": "1", "label": "subestación (Empalme) que condiciona la solución" }
+      {
+        "value": "3",
+        "label": "líneas de alta tensión sobre El Manchón"
+      },
+      {
+        "value": "2",
+        "label": "líneas de media tensión por el centro del barrio"
+      },
+      {
+        "value": "1",
+        "label": "subestación (Empalme) que condiciona la solución"
+      }
     ],
     "paragraph1": "El soterramiento o desvío de las líneas está pendiente y depende de <strong>Endesa</strong> y <strong>Red Eléctrica de España</strong>. En 2017, el Ayuntamiento, Red Eléctrica y Endesa firmaron un convenio de 55 M€ para una actuación semejante en el Distrito Este: el precedente que se cita para La Bachillera. En 2022, distintos grupos municipales preguntaron en la Comisión de Control y en el Pleno, en febrero y abril, por el calendario de estas actuaciones.",
     "paragraph2": "En julio de 2026, la Gerencia de Urbanismo tramita una modificación puntual del PGOU que mantiene la subestación Empalme en su ubicación actual, pero contempla el desvío y soterramiento de las líneas que sobrevuelan las viviendas del barrio.",
@@ -86,6 +108,11 @@
   },
   "explore": {
     "title": "Explora el sitio",
+    "memory": {
+      "title": "Memoria del barrio",
+      "description": "Fotos antiguas, películas Super 8 y reportajes sobre La Bachillera, del archivo vecinal «Memorias de La Bachillera».",
+      "cta": "Ver la memoria"
+    },
     "map": {
       "title": "Mapa interactivo",
       "description": "Subestaciones y líneas de alta y media tensión de toda la provincia, con distinción entre tendido aéreo y subterráneo.",

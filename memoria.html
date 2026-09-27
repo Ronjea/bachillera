@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n="memory:meta.title">Memoria · La Bachillera en fotos, películas y reportajes</title>
+  <meta name="description" content="Fotografías antiguas, películas Super 8 y reportajes sobre el barrio de La Bachillera (Sevilla)." data-i18n-attr="content:memory:meta.description" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@700,500,800&f[]=satoshi@400,500,700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230B0F14'/%3E%3Cpath d='M16 4 8 17h6l-2 11 10-15h-6l2-9z' fill='%23FBBF24'/%3E%3C/svg%3E" />
+</head>
+<body>
+  <div id="siteNav"></div>
+
+  <header class="hero">
+    <div class="wrap hero-inner">
+      <p class="eyebrow" data-i18n="memory:hero.eyebrow"></p>
+      <h1 class="hero-title" data-i18n="memory:hero.title"></h1>
+      <p class="hero-subtitle" data-i18n="memory:hero.subtitle"></p>
+      <p class="memory-source-note" data-i18n-html="memory:hero.sourceNote"></p>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" id="fotos" aria-labelledby="fotos-title">
+      <div class="wrap">
+        <p class="eyebrow" data-i18n="memory:gallery.eyebrow"></p>
+        <h2 id="fotos-title" class="section-title" data-i18n="memory:gallery.title"></h2>
+        <p class="section-lede" data-i18n="memory:gallery.lede"></p>
+        <div id="photoGallery" data-testid="photo-gallery"></div>
+      </div>
+    </section>
+
+    <section class="section" id="antes-ahora" aria-labelledby="antes-ahora-title" hidden>
+      <div class="wrap">
+        <p class="eyebrow" data-i18n="memory:beforeAfter.eyebrow"></p>
+        <h2 id="antes-ahora-title" class="section-title" data-i18n="memory:beforeAfter.title"></h2>
+        <p class="section-lede" data-i18n="memory:beforeAfter.lede"></p>
+        <div id="beforeAfterList" class="before-after-list"></div>
+      </div>
+    </section>
+
+    <section class="section" id="videos" aria-labelledby="videos-title">
+      <div class="wrap">
+        <p class="eyebrow" data-i18n="memory:videos.eyebrow"></p>
+        <h2 id="videos-title" class="section-title" data-i18n="memory:videos.title"></h2>
+        <p class="section-lede" data-i18n="memory:videos.lede"></p>
+        <div id="videoList" class="video-grid" data-testid="video-list"></div>
+      </div>
+    </section>
+
+    <section class="section" id="reportajes" aria-labelledby="reportajes-title">
+      <div class="wrap">
+        <p class="eyebrow" data-i18n="memory:reports.eyebrow"></p>
+        <h2 id="reportajes-title" class="section-title" data-i18n="memory:reports.title"></h2>
+        <p class="section-lede" data-i18n="memory:reports.lede"></p>
+        <div id="reportList" class="report-grid" data-testid="report-list"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <h2 class="memory-credits-title" data-i18n="memory:credits.title"></h2>
+      <p class="footer-about" data-i18n-html="memory:credits.text"></p>
+      <p class="footer-disclaimer" data-i18n-html="memory:credits.contribute"></p>
+    </div>
+  </footer>
+
+  <dialog id="photoLightbox" class="lightbox" data-testid="photo-lightbox">
+    <div class="lightbox-inner">
+      <button type="button" class="lightbox-close" data-action="close" data-i18n-attr="aria-label:memory:lightbox.close">×</button>
+      <button type="button" class="lightbox-nav lightbox-nav--prev" data-action="prev" data-i18n-attr="aria-label:memory:lightbox.previous">‹</button>
+      <figure class="lightbox-figure">
+        <img class="lightbox-image" alt="" />
+        <figcaption class="lightbox-caption"></figcaption>
+      </figure>
+      <button type="button" class="lightbox-nav lightbox-nav--next" data-action="next" data-i18n-attr="aria-label:memory:lightbox.next">›</button>
+    </div>
+  </dialog>
+
+  <script type="module" src="/src/memory/main.ts"></script>
+</body>
+</html>

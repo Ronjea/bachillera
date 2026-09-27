@@ -1,0 +1,66 @@
+{
+  "meta": {
+    "title": "Memoria · La Bachillera en fotos, películas y reportajes",
+    "description": "Fotografías antiguas, películas Super 8 y reportajes sobre el barrio de La Bachillera (Sevilla), procedentes del archivo vecinal «Memorias de La Bachillera»."
+  },
+  "hero": {
+    "eyebrow": "Memoria del barrio · 1959–2022",
+    "title": "La Bachillera, en imágenes",
+    "subtitle": "Vaquerías, vías del tren, calles de tierra, la Velá, el campo de fútbol y las majorettes. Una selección del archivo que los propios vecinos han reunido y digitalizado, junto a los reportajes que se han publicado sobre el barrio.",
+    "sourceNote": "Las fotos y películas proceden de <a href=\"https://ladigitalizadora.org/coleccion/memorias-de-la-bachillera-sevilla/\" target=\"_blank\" rel=\"noopener\">«Memorias de La Bachillera»</a>, un archivo colaborativo de la <strong>AVV Estrella Andaluza</strong> y <strong>La Digitalizadora de la Memoria Colectiva</strong>, con más de 1.400 fotografías y 6.500 metros de película Super 8."
+  },
+  "gallery": {
+    "eyebrow": "Fotografías",
+    "title": "El álbum del barrio",
+    "lede": "Pulsa una foto para verla a tamaño completo. Cada imagen enlaza a su ficha en el archivo original.",
+    "groups": {
+      "origins": "Orígenes y autoconstrucción",
+      "daily-life": "Vida cotidiana",
+      "celebrations": "Fiestas y tradiciones",
+      "sport": "Deporte",
+      "community": "Movimiento vecinal",
+      "urbanism": "El barrio y su urbanismo"
+    },
+    "empty": "Todavía no hay fotografías en esta selección."
+  },
+  "lightbox": {
+    "close": "Cerrar",
+    "previous": "Foto anterior",
+    "next": "Foto siguiente",
+    "source": "Ver ficha en el archivo",
+    "counter": "{{current}} de {{total}}"
+  },
+  "beforeAfter": {
+    "eyebrow": "Refotografía",
+    "title": "Antes y ahora",
+    "lede": "En el taller de refotografía de 2022, los vecinos buscaron el sitio exacto de fotos antiguas y volvieron a fotografiarlo tal y como está hoy.",
+    "before": "Antes",
+    "after": "Ahora"
+  },
+  "videos": {
+    "eyebrow": "Películas y entrevistas",
+    "title": "El barrio en movimiento",
+    "lede": "Películas Super 8 familiares y entrevistas a vecinos, digitalizadas por el proyecto y alojadas en Internet Archive.",
+    "watch": "Ver en Internet Archive",
+    "empty": "Todavía no hay vídeos en esta selección."
+  },
+  "reports": {
+    "eyebrow": "Reportajes",
+    "title": "Qué se ha contado del barrio",
+    "lede": "Reportajes, entrevistas y noticias sobre La Bachillera y su memoria, enlazados a su publicación original.",
+    "read": "Leer",
+    "kinds": {
+      "prensa": "Prensa",
+      "revista": "Revista",
+      "institucional": "Institucional",
+      "blog": "Blog",
+      "archivo": "Archivo"
+    },
+    "empty": "Todavía no hay reportajes en esta selección."
+  },
+  "credits": {
+    "title": "Créditos y licencia",
+    "text": "Fotografías y películas: <strong>AVV Estrella Andaluza</strong> y <strong>La Digitalizadora de la Memoria Colectiva</strong>, colección «Memorias de La Bachillera», con los créditos de cada ficha. Se publican bajo licencia <a href=\"https://creativecommons.org/licenses/by-nc-nd/4.0/deed.es\" target=\"_blank\" rel=\"noopener\">CC BY-NC-ND 4.0</a>: se reproducen sin recortes ni modificaciones y sin fines comerciales.",
+    "contribute": "¿Tienes fotos antiguas del barrio? El archivo sigue abierto: puedes aportarlas a través de la AVV Estrella Andaluza o de <a href=\"https://ladigitalizadora.org/\" target=\"_blank\" rel=\"noopener\">La Digitalizadora</a>."
+  }
+}

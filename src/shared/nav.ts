@@ -1,7 +1,7 @@
 import '../styles/nav.css';
 import { t } from '../i18n';
 
-export type PageId = 'home' | 'map' | 'documents';
+export type PageId = 'home' | 'memory' | 'map' | 'documents';
 
 type NavOptions = {
   current: PageId;
@@ -9,6 +9,7 @@ type NavOptions = {
 
 const PAGES: Array<{ id: PageId; href: string; labelKey: string }> = [
   { id: 'home', href: 'index.html', labelKey: 'common:nav.home' },
+  { id: 'memory', href: 'memoria.html', labelKey: 'common:nav.memory' },
   { id: 'map', href: 'mapa.html', labelKey: 'common:nav.map' },
   { id: 'documents', href: 'documentos.html', labelKey: 'common:nav.documents' },
 ];

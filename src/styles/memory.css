@@ -1,0 +1,269 @@
+/* =========================================================
+   Memoria — photo gallery, films and press for memoria.html.
+   Builds on tokens.css + home.css. Archive photos are CC BY-NC-ND,
+   so every image uses object-fit: contain: never cropped.
+   ========================================================= */
+
+.memory-source-note {
+  margin-top: var(--space-6);
+  max-width: 68ch;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  padding-left: var(--space-4);
+  border-left: 3px solid var(--color-primary);
+}
+.memory-source-note strong { color: var(--color-text); font-weight: 600; }
+
+.memory-empty {
+  padding: var(--space-6);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-lg);
+  color: var(--color-text-muted);
+  text-align: center;
+}
+
+/* ============ Photo gallery ============ */
+.photo-group + .photo-group { margin-top: var(--space-10); }
+.photo-group-title {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  margin-bottom: var(--space-4);
+  padding-bottom: var(--space-2);
+  border-bottom: 1px solid var(--color-divider);
+}
+
+.photo-grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: var(--space-5);
+}
+
+.photo-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  text-align: left;
+  background: var(--color-surface);
+  border: 1px solid var(--color-divider);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition:
+    transform var(--transition-interactive),
+    box-shadow var(--transition-interactive),
+    border-color var(--transition-interactive);
+}
+.photo-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-border);
+}
+
+/* Fixed frame with a neutral mat: mixed portrait/landscape photos line up
+   without cropping any of them. */
+.photo-card-frame {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 4 / 3;
+  background: var(--color-surface-offset);
+}
+.photo-card-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.photo-card-caption {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding: var(--space-3) var(--space-4) var(--space-4);
+}
+.photo-card-date {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-primary);
+}
+/* Captions are the archive descriptions; clamp keeps the grid rows even
+   (the full text is in the lightbox). */
+.photo-card-title {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  overflow: hidden;
+  font-size: var(--text-sm);
+  line-height: 1.4;
+  color: var(--color-text);
+}
+
+/* ============ Lightbox ============ */
+.lightbox {
+  width: 100vw;
+  height: 100dvh;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  border: none;
+  padding: 0;
+  background: transparent;
+}
+.lightbox::backdrop { background: rgba(12, 18, 24, 0.9); }
+.lightbox-inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-4);
+  height: 100%;
+  padding: var(--space-8) var(--space-4);
+  pointer-events: none;
+}
+.lightbox-inner > * { pointer-events: auto; }
+
+.lightbox-figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+  max-width: min(1100px, 100%);
+  max-height: 100%;
+}
+.lightbox-image {
+  max-width: 100%;
+  max-height: calc(100dvh - 12rem);
+  object-fit: contain;
+  border-radius: var(--radius-sm);
+  background: var(--color-surface-offset);
+}
+.lightbox-caption {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  max-width: 72ch;
+  text-align: center;
+  color: var(--color-text-inverse);
+  font-size: var(--text-sm);
+}
+.lightbox-counter { font-family: var(--font-mono); font-size: var(--text-xs); opacity: 0.7; }
+.lightbox-title { font-size: var(--text-base); font-weight: 600; }
+.lightbox-credit { opacity: 0.85; }
+.lightbox-caption a { color: var(--color-primary-highlight); text-decoration: underline; }
+
+.lightbox-close,
+.lightbox-nav {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  font-size: 1.75rem;
+  line-height: 1;
+  flex-shrink: 0;
+  transition: background var(--transition-interactive);
+}
+.lightbox-close:hover,
+.lightbox-nav:hover { background: rgba(255, 255, 255, 0.24); }
+.lightbox-close { position: absolute; top: var(--space-4); right: var(--space-4); }
+
+/* ============ Before / after ============ */
+.before-after-list { display: flex; flex-direction: column; gap: var(--space-10); }
+.pair-title { font-family: var(--font-display); font-size: var(--text-lg); margin-bottom: var(--space-4); }
+.pair-place { font-family: var(--font-body); font-weight: 400; font-size: var(--text-sm); color: var(--color-text-muted); }
+.pair-images { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-5); }
+.pair-side { display: flex; flex-direction: column; gap: var(--space-2); }
+.pair-side img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+  background: var(--color-surface-offset);
+  border-radius: var(--radius-md);
+}
+.pair-label {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+}
+.pair-side figcaption { font-size: var(--text-xs); color: var(--color-text-muted); }
+
+/* ============ Videos ============ */
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: var(--space-6);
+}
+.video-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-surface);
+  border: 1px solid var(--color-divider);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+.video-frame { aspect-ratio: 4 / 3; background: #0c1218; }
+.video-frame iframe { width: 100%; height: 100%; border: 0; display: block; }
+.video-body { display: flex; flex-direction: column; gap: var(--space-2); padding: var(--space-4) var(--space-5) var(--space-5); }
+.video-title { font-family: var(--font-display); font-size: var(--text-base); font-weight: 700; line-height: 1.3; }
+.video-desc { font-size: var(--text-sm); color: var(--color-text-muted); }
+.video-link { font-size: var(--text-sm); margin-top: auto; }
+
+/* ============ Press reports ============ */
+.report-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-5);
+}
+.report-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-6);
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-divider);
+  border-radius: var(--radius-lg);
+  color: var(--color-text);
+  transition:
+    transform var(--transition-interactive),
+    border-color var(--transition-interactive),
+    box-shadow var(--transition-interactive);
+}
+.report-card:hover {
+  text-decoration: none;
+  transform: translateY(-2px);
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-md);
+}
+.report-card:hover .cta-card-link::after { transform: translateX(4px); }
+.report-meta { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2); font-size: var(--text-xs); color: var(--color-text-muted); }
+.report-kind {
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.1rem 0.5rem;
+  border-radius: var(--radius-full);
+  background: var(--color-primary-highlight);
+  color: var(--color-primary-active);
+}
+.report-title { font-family: var(--font-display); font-size: var(--text-base); font-weight: 700; line-height: 1.3; }
+.report-summary { font-size: var(--text-sm); color: var(--color-text-muted); flex-grow: 1; }
+
+/* ============ Credits ============ */
+.memory-credits-title { font-family: var(--font-display); font-size: var(--text-lg); margin-bottom: var(--space-3); }
+
+@media (max-width: 640px) {
+  .photo-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-3); }
+  .video-grid,
+  .report-grid { grid-template-columns: 1fr; }
+  .pair-images { grid-template-columns: 1fr; }
+  .lightbox-nav { position: absolute; bottom: var(--space-4); }
+  .lightbox-nav--prev { left: var(--space-4); }
+  .lightbox-nav--next { right: var(--space-4); }
+  .lightbox-image { max-height: calc(100dvh - 16rem); }
+}
