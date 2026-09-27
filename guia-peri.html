@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n="documents:guide.meta.title">Cómo consultar el PERI · La Bachillera</title>
+  <meta name="description" content="Guía paso a paso para llegar al documento completo del Plan Especial de Reforma Interior (PERI) de La Bachillera en el visor oficial de la Gerencia de Urbanismo." data-i18n-attr="content:documents:guide.meta.description" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Cómo consultar el PERI · La Bachillera" data-i18n-attr="content:documents:guide.meta.title" />
+  <meta property="og:description" content="Guía paso a paso para llegar al documento completo del Plan Especial de Reforma Interior (PERI) de La Bachillera." data-i18n-attr="content:documents:guide.meta.description" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@700,500,800&f[]=satoshi@400,500,700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <meta name="theme-color" content="#b45309" />
+</head>
+<body>
+  <div id="siteNav"></div>
+
+  <header class="hero">
+    <div class="wrap hero-inner">
+      <a class="guide-back" href="documentos.html" data-i18n="documents:guide.back">Volver a Documentos</a>
+      <p class="eyebrow" data-i18n="documents:guide.eyebrow">Documentos</p>
+      <h1 class="hero-title" data-i18n="documents:guide.title">Cómo consultar el PERI</h1>
+      <p class="hero-subtitle" data-i18n="documents:guide.intro">
+        El PERI (Plan Especial de Reforma Interior) es el documento técnico que desarrolla, calle a calle y parcela a
+        parcela, la ordenación urbanística del barrio. La memoria, la normativa y los planos se descargan desde la
+        ficha del ámbito en el visor de Planeamiento de Desarrollo de la Gerencia de Urbanismo, que no permite un
+        enlace directo al PDF: hay que llegar hasta él por búsqueda dentro del propio visor.
+      </p>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" id="pasos" aria-labelledby="pasos-title">
+      <div class="wrap">
+        <h2 id="pasos-title" class="section-title" data-i18n="documents:guide.stepsTitle">Paso a paso hasta el PDF</h2>
+
+        <ol class="step-list" id="stepList" data-testid="guide-steps"></ol>
+
+        <div class="clarify-block" data-testid="guide-clarify">
+          <span class="clarify-question" data-i18n="documents:guide.clarify.question">¿No lo encuentras entre las modificaciones del PGOU? Es normal.</span>
+          <p class="clarify-body" data-i18n-html="documents:guide.clarify.body"></p>
+          <div class="clarify-split">
+            <div class="clarify-no">
+              <span class="clarify-label" data-i18n="documents:guide.clarify.no.label">Aquí no está</span>
+              <span data-i18n="documents:guide.clarify.no.text">Modificaciones del PGOU (cambian el texto del Plan General).</span>
+            </div>
+            <div class="clarify-yes">
+              <span class="clarify-label" data-i18n="documents:guide.clarify.yes.label">Aquí sí está</span>
+              <span data-i18n="documents:guide.clarify.yes.text">Planeamiento de Desarrollo, filtrando por «AGI-02» o «Bachillera».</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="quick-route" data-testid="guide-quick-route">
+          <h2 data-i18n="documents:guide.quickRoute.title">La ruta más rápida: el mapa</h2>
+          <p data-i18n="documents:guide.quickRoute.body"></p>
+        </div>
+
+        <div class="button-row button-row--stack">
+          <a class="button button--primary" href="https://sig.urbanismosevilla.org/PGOU2006_Des.aspx" target="_blank" rel="noopener" data-i18n="documents:guide.buttons.developmentViewer" data-testid="guide-btn-development">Abrir el visor de Planeamiento de Desarrollo</a>
+          <a class="button button--ghost" href="https://cdu.urbanismosevilla.org/arcgis/apps/experiencebuilder/experience/?id=4617ad6ca7624d84971d065b730f902b#widget_39=active_datasource_id:dataSource_2,center:-666266.236665109%2C4497207.6212885035%2C102100,scale:2011.5031449674996,rotation:0,viewpoint:%7B%22rotation%22%3A0%2C%22scale%22%3A2011.5031449674996%2C%22targetGeometry%22%3A%7B%22spatialReference%22%3A%7B%22latestWkid%22%3A3857%2C%22wkid%22%3A102100%7D%2C%22x%22%3A-666266.236665109%2C%22y%22%3A4497207.6212885035%7D%7D" target="_blank" rel="noopener" data-i18n="documents:guide.buttons.mapViewer" data-testid="guide-btn-map">Abrir el visor cartográfico</a>
+          <a class="button button--ghost" href="https://ws132.juntadeandalucia.es/situadifusion/pages/search.jsf" target="_blank" rel="noopener" data-i18n="documents:guide.buttons.registry" data-testid="guide-btn-registry">Registro autonómico (Junta)</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p class="footer-about" data-i18n-html="documents:footer.about">
+        La Bachillera es un <strong>archivo informativo vecinal</strong>: reúne y enlaza fuentes oficiales del
+        Ayuntamiento de Sevilla, la Gerencia de Urbanismo y el Boletín Oficial de la Provincia (BOP).
+      </p>
+      <p class="footer-disclaimer" data-i18n-html="documents:footer.disclaimer">
+        Este archivo <strong>no es una fuente vinculante</strong>. Para cualquier trámite, la referencia es el
+        documento del PERI aprobado y su publicación en el BOP.
+      </p>
+    </div>
+  </footer>
+
+  <script type="module" src="/src/documents/guia-peri-main.ts"></script>
+</body>
+</html>

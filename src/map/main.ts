@@ -12,6 +12,7 @@ import { registerMapInteractions } from './interactions';
 import { addDataLayers } from './layers';
 import { disablePowerLineControls, initLayerToggles } from './layer-toggles';
 import { renderMapLegend } from './legend';
+import { BBOX_BACHILLERA } from './constants';
 import { createMap } from './map-factory';
 import { initProximityTool } from './proximity';
 import { initSidebarToggle } from './sidebar';
@@ -24,7 +25,8 @@ const init = async (): Promise<void> => {
     { locale: 'es', namespace: 'map', resources: esMap },
     { locale: 'es', namespace: 'legal', resources: esLegal },
   ]);
-  initSiteNav({ current: 'map' });
+  // The full map is a tool of the power-lines movement, so the nav highlights it.
+  initSiteNav({ current: 'movements' });
   translateDom();
 
   const [substations, powerLines] = await Promise.all([fetchSubstations(), fetchPowerLines()]);
@@ -32,7 +34,8 @@ const init = async (): Promise<void> => {
   setPowerLines(powerLines);
   if (!powerLines) disablePowerLineControls();
 
-  const map = createMap('map');
+  // Visitors arrive from the power-lines movement, so start on the barrio.
+  const map = createMap('map', { bounds: BBOX_BACHILLERA });
   map.on('load', () => {
     addDataLayers(map);
     registerMapInteractions(map);
@@ -42,7 +45,7 @@ const init = async (): Promise<void> => {
   initFilters(map);
   renderMapLegend();
   initLayerToggles(map);
-  initViewPresets(map);
+  initViewPresets(map, 'bachillera');
   initProximityTool(map);
   initSidebarToggle(map);
 

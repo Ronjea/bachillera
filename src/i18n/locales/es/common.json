@@ -3,8 +3,33 @@
   "nav": {
     "label": "Navegación principal",
     "home": "Inicio",
-    "memory": "Memoria",
-    "map": "Mapa",
+    "movements": "Movimientos",
+    "memory": "Historia",
     "documents": "Documentos"
+  },
+  "participate": {
+    "eyebrow": "Participa",
+    "title": "El barrio lo hemos hecho entre todas",
+    "lede": "Cada avance de La Bachillera ha salido de sus vecinas. Estas son las formas de sumarte ahora mismo.",
+    "email": {
+      "title": "Escríbenos",
+      "description": "Cuéntanos tu caso, pregunta dudas o apúntate para echar una mano.",
+      "cta": "Enviar un correo",
+      "pending": "Muy pronto publicaremos un correo de contacto."
+    },
+    "share": {
+      "title": "Compártelo",
+      "description": "Cuanta más gente del barrio lo sepa, más fuerza tenemos. Pásalo por WhatsApp a tus vecinas.",
+      "cta": "Compartir esta página",
+      "copied": "Enlace copiado. Ya puedes pegarlo donde quieras.",
+      "failed": "No se ha podido copiar. Copia la dirección desde la barra del navegador.",
+      "text": "La Bachillera: lo que el barrio sigue reclamando"
+    },
+    "inform": {
+      "title": "Infórmate",
+      "description": "Todos los documentos oficiales y el mapa de las líneas eléctricas, enlazados a sus fuentes.",
+      "documents": "Ver documentos",
+      "map": "Ver el mapa"
+    }
   }
 }

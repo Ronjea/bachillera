@@ -9,26 +9,33 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@700,500,800&f[]=satoshi@400,500,700&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230B0F14'/%3E%3Cpath d='M16 4 8 17h6l-2 11 10-15h-6l2-9z' fill='%23FBBF24'/%3E%3C/svg%3E" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <meta name="theme-color" content="#b45309" />
+  <!-- Tool page reached from movimientos.html; kept out of search results. -->
+  <meta name="robots" content="noindex" />
 </head>
 <body>
   <div id="siteNav"></div>
 
   <div class="app">
     <header class="topbar">
+      <a class="btn btn-ghost topbar-back" href="movimientos.html#mapa-lineas" aria-label="Volver a Movimientos: líneas eléctricas" data-i18n-attr="aria-label:map:topbar.backLabel" data-testid="map-back">
+        <i data-lucide="arrow-left"></i><span data-i18n="map:topbar.back">Volver</span>
+      </a>
       <div class="topbar-brand">
         <svg class="brand-mark" width="30" height="30" viewBox="0 0 32 32" fill="none" aria-hidden="true">
           <rect width="32" height="32" rx="7" fill="var(--color-surface-2)"/>
           <path d="M16 4 8 17h6l-2 11 10-15h-6l2-9z" fill="var(--color-primary)"/>
         </svg>
         <div class="brand-text">
-          <h1 data-i18n-html="map:topbar.titleHtml">Infraestructura eléctrica <span>de Sevilla</span></h1>
+          <h1 data-i18n-html="map:topbar.titleHtml">Líneas eléctricas <span>en La Bachillera</span></h1>
           <p class="brand-sub" data-i18n="map:topbar.subtitle">Subestaciones y líneas · AAE · OpenStreetMap</p>
         </div>
       </div>
 
       <div class="topbar-actions">
-        <button class="btn btn-ghost" id="sidebarToggle" aria-label="Mostrar u ocultar panel" data-i18n-attr="aria-label:map:topbar.toggleSidebar" data-testid="button-toggle-sidebar">
+        <button class="btn btn-ghost btn-icon" id="sidebarToggle" aria-label="Mostrar u ocultar panel" data-i18n-attr="aria-label:map:topbar.toggleSidebar" data-testid="button-toggle-sidebar">
           <i data-lucide="panel-left"></i>
         </button>
       </div>
@@ -50,7 +57,7 @@
             <form id="proximityForm" class="proximity-form" autocomplete="off">
               <div class="input-row">
                 <input type="text" id="proximityInput" placeholder="Ej: 41013 o Calle Sierpes, Sevilla" data-i18n-attr="placeholder:map:proximity.inputPlaceholder" data-testid="input-proximity" />
-                <button type="submit" class="btn btn-primary" id="proximitySubmit" aria-label="Buscar" data-i18n-attr="aria-label:map:proximity.searchAria" data-testid="button-search-proximity">
+                <button type="submit" class="btn btn-primary btn-icon" id="proximitySubmit" aria-label="Buscar" data-i18n-attr="aria-label:map:proximity.searchAria" data-testid="button-search-proximity">
                   <i data-lucide="search"></i>
                 </button>
               </div>

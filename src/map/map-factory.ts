@@ -17,11 +17,18 @@ setWorkerUrl(maplibreWorkerUrl as string);
 /** Builds the MapLibre instance with the shared basemap, initial bounds and
  *  chrome controls. Does not add data sources/layers or register
  *  interactions — callers wire those up once the map fires `load`. */
-export const createMap = (container: HTMLElement | string): MapLibreMap => {
+type CreateMapOptions = {
+  bounds?: [number, number, number, number];
+};
+
+export const createMap = (
+  container: HTMLElement | string,
+  { bounds = BBOX_PROVINCE }: CreateMapOptions = {},
+): MapLibreMap => {
   const map = new MapLibreMap({
     container,
     style: MAP_STYLE,
-    bounds: BBOX_PROVINCE,
+    bounds,
     fitBoundsOptions: { padding: 40 },
   });
 

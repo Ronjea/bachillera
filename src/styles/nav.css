@@ -1,52 +1,77 @@
 /* =========================================================
-   Site navigation bar — thin strip above each page's own
-   header, styled with the shared design tokens.
+   Site navigation bar — sticky strip above each page's own
+   header. On phones the links scroll sideways instead of
+   wrapping, so all five pages stay one tap away.
    ========================================================= */
+
+#siteNav {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+}
 
 .site-nav {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   gap: var(--space-3);
-  padding: 6px var(--space-5);
-  background: var(--color-surface-2);
+  padding: 0 var(--space-5);
+  background: color-mix(in srgb, var(--color-surface) 94%, transparent);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--color-divider);
-  font-size: var(--text-xs);
-  z-index: 30;
+  font-size: var(--text-sm);
   flex-shrink: 0;
 }
 
 .site-nav-brand {
-  font-family: var(--font-mono);
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--color-text-muted);
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: var(--text-base);
+  letter-spacing: -0.01em;
+  color: var(--color-text);
   white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--tap-target);
 }
 .site-nav-brand:hover { color: var(--color-primary); text-decoration: none; }
 
 .site-nav-links {
   display: flex;
-  gap: var(--space-2);
+  gap: var(--space-1);
   flex: 1 1 auto;
-  justify-content: center;
+  justify-content: flex-end;
   min-width: 0;
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  scrollbar-width: none;
 }
+.site-nav-links::-webkit-scrollbar { display: none; }
 .site-nav-links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--tap-target);
+  padding: 0 var(--space-3);
   color: var(--color-text-muted);
-  padding: 3px 10px;
-  border-radius: var(--radius-full);
+  font-weight: 500;
   white-space: nowrap;
+  scroll-snap-align: center;
+  border-bottom: 2px solid transparent;
 }
 .site-nav-links a:hover { color: var(--color-text); text-decoration: none; }
 .site-nav-links a[aria-current="page"] {
   color: var(--color-primary);
-  background: var(--color-primary-highlight);
+  border-bottom-color: var(--color-primary);
 }
 
-@media (max-width: 620px) {
-  .site-nav { padding: 6px var(--space-3); }
-  .site-nav-brand { display: none; }
-  .site-nav-links { justify-content: flex-start; }
+@media (max-width: 720px) {
+  .site-nav { padding: 0 0 0 var(--space-4); gap: var(--space-2); }
+  .site-nav-links {
+    justify-content: flex-start;
+    padding-right: var(--space-4);
+    /* Fade on the right hints that the row scrolls. */
+    -webkit-mask-image: linear-gradient(to right, black 85%, transparent);
+    mask-image: linear-gradient(to right, black 85%, transparent);
+  }
+  .site-nav-links a { padding: 0 var(--space-2); }
 }

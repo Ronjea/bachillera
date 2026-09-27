@@ -2,9 +2,8 @@ import type { Map as MapLibreMap } from 'maplibre-gl';
 import { buildMunicipalityClusters, getFilteredSubstations, toSubstationsGeoJSON } from './filters';
 import { addPowerLineLayers } from './power-line-layers';
 import { emptyRouteCollection, emptyUserPointCollection, getRouteData, getUserPointData } from './state';
+import { isChecked } from './dom';
 import { VOLTAGE_COLORS } from './typology';
-
-const isChecked = (selector: string): boolean => document.querySelector<HTMLInputElement>(selector)?.checked ?? false;
 
 /** Adds every source and layer this app owns: substations, municipality
  *  clusters, the proximity route/user-point overlay, and the power lines
@@ -18,9 +17,9 @@ export const addDataLayers = (map: MapLibreMap): void => {
   map.addSource('route', { type: 'geojson', data: getRouteData() ?? emptyRouteCollection() });
   map.addSource('user-point', { type: 'geojson', data: getUserPointData() ?? emptyUserPointCollection() });
 
-  const markersVisible = isChecked('#layerMarkers');
-  const heatmapVisible = isChecked('#layerHeatmap');
-  const clustersVisible = isChecked('#layerClusters');
+  const markersVisible = isChecked('#layerMarkers', true);
+  const heatmapVisible = isChecked('#layerHeatmap', false);
+  const clustersVisible = isChecked('#layerClusters', false);
 
   map.addLayer({
     id: 'heat-layer',

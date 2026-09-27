@@ -1,10 +1,12 @@
 import type { Map as MapLibreMap } from 'maplibre-gl';
 import { BBOX_BACHILLERA, BBOX_METRO, BBOX_PROVINCE } from './constants';
 
+type ViewPreset = 'metro' | 'province' | 'bachillera';
+
 /** Wires the three view-preset chips (metro / full province / La Bachillera)
- *  with mutually exclusive `.active` styling, matching the legacy behavior
- *  where "Provincia completa" starts active. */
-export const initViewPresets = (map: MapLibreMap): void => {
+ *  with mutually exclusive `.active` styling. `initial` must match the
+ *  bounds the map was created with. */
+export const initViewPresets = (map: MapLibreMap, initial: ViewPreset = 'province'): void => {
   const metroButton = document.querySelector<HTMLButtonElement>('#viewMetro');
   const peripheryButton = document.querySelector<HTMLButtonElement>('#viewPeriphery');
   const bachilleraButton = document.querySelector<HTMLButtonElement>('#viewBachillera');
@@ -27,5 +29,6 @@ export const initViewPresets = (map: MapLibreMap): void => {
     activate(bachilleraButton);
   });
 
-  activate(peripheryButton);
+  const initialButton = { metro: metroButton, province: peripheryButton, bachillera: bachilleraButton }[initial];
+  activate(initialButton);
 };

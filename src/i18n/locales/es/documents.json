@@ -1,0 +1,122 @@
+{
+  "meta": {
+    "title": "Documentos · La Bachillera",
+    "description": "Todos los documentos del barrio de La Bachillera (Sevilla): el PERI, la reparcelación, las líneas eléctricas y su historia. Cada ficha enlaza a su fuente oficial.",
+    "ogTitle": "Los papeles del barrio · La Bachillera",
+    "ogDescription": "Todos los documentos del barrio, agrupados por tema y enlazados a su fuente oficial: el PERI, la reparcelación, las líneas eléctricas y su historia."
+  },
+  "hero": {
+    "eyebrow": "Documentos",
+    "title": "Los papeles del barrio",
+    "subtitle": "Cada documento enlaza a su fuente oficial y se abre en una pestaña nueva. Este archivo no es una fuente vinculante: para cualquier trámite, la referencia es el documento del PERI aprobado."
+  },
+  "featured": {
+    "title": "Lo más importante",
+    "guideCard": {
+      "kind": "Guía",
+      "title": "Cómo consultar el PERI",
+      "description": "El documento completo del plan no tiene enlace directo: esta guía te lleva paso a paso hasta el PDF.",
+      "cta": "Ver la guía"
+    }
+  },
+  "chips": {
+    "todos": "Todos",
+    "lineas": "Líneas eléctricas",
+    "calles": "Calles y urbanización",
+    "vivienda": "Vivienda y propiedad",
+    "planeamiento": "El plan del barrio",
+    "historia": "Historia",
+    "consulta": "Dónde consultar"
+  },
+  "topics": {
+    "lineas": {
+      "explanation": "Los cables de alta y media tensión que cruzan el barrio, la subestación Empalme y su marco legal.",
+      "movementLabel": "Quitar los cables de encima de las casas"
+    },
+    "calles": {
+      "explanation": "La urbanización de las calles del barrio, todavía pendiente de ejecutarse.",
+      "movementLabel": "Calles urbanizadas de verdad"
+    },
+    "vivienda": {
+      "explanation": "La regularización de la propiedad de las viviendas: de la finca única del barrio a las parcelas registradas.",
+      "movementLabel": "Acabar con la infravivienda"
+    },
+    "planeamiento": {
+      "explanation": "El PGOU, el PERI y las fichas de los ámbitos que ordenan urbanísticamente el barrio y su entorno."
+    },
+    "historia": {
+      "explanation": "El origen del barrio en 1948 y su memoria, en fotos, películas y reportajes."
+    },
+    "consulta": {
+      "explanation": "Visores, buscadores y páginas oficiales para consultar el planeamiento por tu cuenta."
+    }
+  },
+  "movementLink": "Ver la lucha: {{title}}",
+  "kinds": {
+    "oficial": "Oficial",
+    "prensa": "Prensa",
+    "grupo-municipal": "Grupo municipal",
+    "referencia": "Referencia",
+    "archivo": "Archivo"
+  },
+  "card": {
+    "open": "Abrir",
+    "openPdf": "Abrir PDF"
+  },
+  "empty": "Todavía no hay documentos en este tema.",
+  "pdfNote": "Algunos PDF de la Gerencia de Urbanismo (<code>sig.urbanismosevilla.org</code> y <code>web.urbanismosevilla.org</code>) tardan en abrir o fallan en algunos móviles. Si eso ocurre, ábrelos desde la <a class=\"inline-link\" href=\"guia-peri.html\">guía para consultar el PERI</a> o desde un ordenador.",
+  "footer": {
+    "about": "La Bachillera es un <strong>archivo informativo vecinal</strong>: reúne y enlaza fuentes oficiales del Ayuntamiento de Sevilla, la Gerencia de Urbanismo y el Boletín Oficial de la Provincia (BOP).",
+    "disclaimer": "Este archivo <strong>no es una fuente vinculante</strong>. Para cualquier trámite, la referencia es el documento del PERI aprobado y su publicación en el BOP."
+  },
+  "guide": {
+    "meta": {
+      "title": "Cómo consultar el PERI · La Bachillera",
+      "description": "Guía paso a paso para llegar al documento completo del Plan Especial de Reforma Interior (PERI) de La Bachillera en el visor oficial de la Gerencia de Urbanismo."
+    },
+    "back": "Volver a Documentos",
+    "eyebrow": "Documentos",
+    "title": "Cómo consultar el PERI",
+    "intro": "El PERI (Plan Especial de Reforma Interior) es el documento técnico que desarrolla, calle a calle y parcela a parcela, la ordenación urbanística del barrio. La memoria, la normativa y los planos se descargan desde la ficha del ámbito en el visor de Planeamiento de Desarrollo de la Gerencia de Urbanismo, que no permite un enlace directo al PDF: hay que llegar hasta él por búsqueda dentro del propio visor.",
+    "stepsTitle": "Paso a paso hasta el PDF",
+    "steps": [
+      "Abre el visor de <strong>Planeamiento de Desarrollo</strong> con el botón de abajo (no el de modificaciones del PGOU) y espera a que cargue el listado.",
+      "En el filtro del listado escribe <code>Bachillera</code> o <code>AGI-02</code>.",
+      "En la fila del PERI, pulsa el icono de <strong>«Ficha del Documento»</strong> (datos administrativos, fechas de aprobación y publicación en BOP) y el de <strong>«Plano Guía»</strong>.",
+      "Dentro de la ficha, descarga el <strong>documento vigente</strong>: memoria, normativa y planos en PDF."
+    ],
+    "clarify": {
+      "question": "¿No lo encuentras entre las modificaciones del PGOU? Es normal.",
+      "body": "El PERI <strong>no es una modificación del PGOU</strong>: es <strong>planeamiento de desarrollo</strong>. No cambia el Plan General, sino que desarrolla la previsión que el PGOU ya dejó hecha para el ámbito AGI-02. Por eso está en una lista distinta del visor.",
+      "no": {
+        "label": "Aquí no está",
+        "text": "Modificaciones del PGOU (cambian el texto del Plan General)."
+      },
+      "yes": {
+        "label": "Aquí sí está",
+        "text": "Planeamiento de Desarrollo, filtrando por «AGI-02» o «Bachillera»."
+      }
+    },
+    "quickRoute": {
+      "title": "La ruta más rápida: el mapa",
+      "body": "En el visor cartográfico (botón de abajo), haz clic sobre la mancha de La Bachillera; el cuadro emergente muestra la capa de planeamiento de desarrollo AGI-02 con el enlace a la ficha y al documento del PERI."
+    },
+    "buttons": {
+      "developmentViewer": "Abrir el visor de Planeamiento de Desarrollo",
+      "mapViewer": "Abrir el visor cartográfico",
+      "registry": "Registro autonómico (Junta)"
+    }
+  },
+  "topicIndex": {
+    "cta": "Ver documentos"
+  },
+  "search": {
+    "label": "Buscar documentos",
+    "placeholder": "Busca: parcelas, torres, PERI…",
+    "clear": "Borrar búsqueda",
+    "results_one": "{{count}} documento para «{{query}}»",
+    "results_other": "{{count}} documentos para «{{query}}»",
+    "empty": "No hay documentos que coincidan con «{{query}}». Prueba con otra palabra o mira los temas.",
+    "showTopics": "Ver todos los temas"
+  }
+}

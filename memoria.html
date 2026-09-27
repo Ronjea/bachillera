@@ -3,13 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title data-i18n="memory:meta.title">Memoria · La Bachillera en fotos, películas y reportajes</title>
+  <title data-i18n="memory:meta.title">Historia · La Bachillera en fotos, películas y reportajes</title>
   <meta name="description" content="Fotografías antiguas, películas Super 8 y reportajes sobre el barrio de La Bachillera (Sevilla)." data-i18n-attr="content:memory:meta.description" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@700,500,800&f[]=satoshi@400,500,700&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230B0F14'/%3E%3Cpath d='M16 4 8 17h6l-2 11 10-15h-6l2-9z' fill='%23FBBF24'/%3E%3C/svg%3E" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <meta name="theme-color" content="#b45309" />
 </head>
 <body>
   <div id="siteNav"></div>
@@ -24,6 +26,48 @@
   </header>
 
   <main>
+    <section class="section" id="cronologia" aria-labelledby="cronologia-title">
+      <div class="wrap">
+        <p class="eyebrow" data-i18n="memory:history.eyebrow"></p>
+        <h2 id="cronologia-title" class="section-title" data-i18n="memory:history.title"></h2>
+        <p class="section-lede" data-i18n="memory:history.lede"></p>
+        <ol class="timeline">
+          <li class="timeline-item">
+            <span class="timeline-year" data-i18n="memory:history.items.0.year">1948</span>
+            <p class="timeline-text" data-i18n="memory:history.items.0.text">La Asociación Sevillana de Caridad recibe los terrenos en herencia. Arrienda parcelas a pequeños ganaderos, que las traspasan a particulares con su permiso: nace la autoconstrucción sin escrituras.</p>
+          </li>
+          <li class="timeline-item">
+            <span class="timeline-year" data-i18n="memory:history.items.1.year">Años 50–90</span>
+            <p class="timeline-text" data-i18n="memory:history.items.1.text">El barrio crece por autoconstrucción, sin norma urbanística ni dotaciones. El suelo sigue siendo una única finca registral y las viviendas nunca se escrituran.</p>
+          </li>
+          <li class="timeline-item">
+            <span class="timeline-year" data-i18n="memory:history.items.2.year">2000–2001</span>
+            <p class="timeline-text" data-i18n="memory:history.items.2.text">Los vecinos constituyen la Comisión de Barrio y elaboran un diagnóstico urbanístico participativo, en paralelo a la redacción del nuevo PGOU.</p>
+          </li>
+          <li class="timeline-item">
+            <span class="timeline-year" data-i18n="memory:history.items.3.year">2006</span>
+            <p class="timeline-text" data-i18n="memory:history.items.3.text">El PGOU delimita el barrio como Área de Gestión Integrada AGI-02: revierte el desalojo que se planteaba y remite la ordenación a un futuro Plan Especial.</p>
+          </li>
+          <li class="timeline-item">
+            <span class="timeline-year" data-i18n="memory:history.items.4.year">2010–2011</span>
+            <p class="timeline-text" data-i18n="memory:history.items.4.text">Se aprueba inicialmente el PERI, pero unas 300 alegaciones vecinales bloquean el expediente durante años.</p>
+          </li>
+          <li class="timeline-item timeline-item--key">
+            <span class="timeline-year" data-i18n="memory:history.items.5.year">25 may 2018</span>
+            <p class="timeline-text" data-i18n="memory:history.items.5.text">El Pleno del Ayuntamiento aprueba definitivamente el PERI, por unanimidad, tras 8 años de tramitación.</p>
+          </li>
+          <li class="timeline-item">
+            <span class="timeline-year" data-i18n="memory:history.items.6.year">Feb 2025</span>
+            <p class="timeline-text" data-i18n="memory:history.items.6.text">Se firma ante notario la escritura de parcelación que divide la finca única original.</p>
+          </li>
+          <li class="timeline-item timeline-item--key">
+            <span class="timeline-year" data-i18n="memory:history.items.7.year">May 2026</span>
+            <p class="timeline-text" data-i18n="memory:history.items.7.text">Culmina la reparcelación: 202 parcelas independientes. Los vecinos ya pueden registrar sus viviendas, 77 años después.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
     <section class="section" id="fotos" aria-labelledby="fotos-title">
       <div class="wrap">
         <p class="eyebrow" data-i18n="memory:gallery.eyebrow"></p>
@@ -60,6 +104,8 @@
       </div>
     </section>
   </main>
+
+  <section class="section participate" id="participa"></section>
 
   <footer class="site-footer">
     <div class="wrap">

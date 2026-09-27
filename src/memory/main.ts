@@ -1,8 +1,9 @@
 import '../styles/tokens.css';
-import '../styles/home.css';
+import '../styles/components.css';
 import '../styles/memory.css';
 import { initI18n, translateDom } from '../i18n';
 import { initSiteNav } from '../shared/nav';
+import { renderParticipate } from '../shared/participate';
 import esMemory from '../i18n/locales/es/memory.json';
 import { catalog } from './catalog';
 import { renderBeforeAfter, renderGallery, renderReports, renderVideos } from './gallery';
@@ -18,6 +19,7 @@ const init = async (): Promise<void> => {
   renderBeforeAfter(catalog.beforeAfter);
   renderVideos(catalog.videos);
   renderReports(catalog.reports);
+  renderParticipate({ mountId: 'participa' });
 };
 
 document.addEventListener('DOMContentLoaded', () => {

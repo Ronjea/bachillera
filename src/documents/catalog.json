@@ -1,0 +1,253 @@
+[
+  {
+    "id": "ficha-agi02",
+    "title": "Ficha oficial del barrio en el Plan General",
+    "subtitle": "Ficha AGI-02, Anexo I de las Normas Urbanísticas",
+    "description": "Delimita el ámbito del barrio y fija sus objetivos, criterios de ordenación, modo de ejecución y administraciones participantes.",
+    "href": "https://web.urbanismosevilla.org/planeamientopgou/pdfs/06_TR_NORMAS_URBANISTICAS/06_TR_NORMAS_ANEXO_I_FICHAS/06_TR_NORMAS_ANEXO_I_FICHAS.PDF",
+    "sourceLabel": "web.urbanismosevilla.org",
+    "kind": "oficial",
+    "topics": ["planeamiento"],
+    "isPdf": true
+  },
+  {
+    "id": "normas-urbanisticas",
+    "title": "Normas Urbanísticas del PGOU",
+    "subtitle": "Texto Refundido del Plan General de Ordenación Urbana",
+    "description": "El articulado general del Plan General: define la figura de Área de Gestión Integrada y la obligación de redactar un Plan Especial para desarrollarla.",
+    "href": "https://web.urbanismosevilla.org/planeamientopgou/pdfs/06_TR_NORMAS_URBANISTICAS/06_TR_NORMAS/06_TR_NORMAS.PDF",
+    "sourceLabel": "web.urbanismosevilla.org",
+    "kind": "oficial",
+    "topics": ["planeamiento"],
+    "isPdf": true
+  },
+  {
+    "id": "visor-ordenacion",
+    "title": "Visor de Ordenación Pormenorizada",
+    "description": "Consulta en el mapa la clasificación y calificación del suelo del barrio y de su entorno.",
+    "href": "https://sig.urbanismosevilla.org/PGOU2006_p_o.aspx",
+    "sourceLabel": "sig.urbanismosevilla.org",
+    "kind": "oficial",
+    "topics": ["planeamiento", "consulta"]
+  },
+  {
+    "id": "pleno-aprobacion-2018",
+    "title": "El Ayuntamiento aprueba definitivamente el plan del barrio",
+    "subtitle": "Nota oficial · Pleno del Ayuntamiento, 25/05/2018",
+    "description": "Aprobación definitiva del PERI: marco urbanístico, reparcelación, viales y espacios libres, erradicación de la infravivienda y realojos con mínima afección.",
+    "href": "https://www.sevilla.org/ayuntamiento/alcaldia/comunicacion/noticias/el-pleno-del-ayuntamiento-aprueba-el-plan-especial-de-reforma-interior-de-la-bachillera-que-permite-iniciar-el-proceso-de-regularizacion-y-desarrollo-urbanistico-de-la-barriada-y-marca-el-camino-para-erradicar-la-infravivienda",
+    "sourceLabel": "sevilla.org",
+    "kind": "oficial",
+    "topics": ["planeamiento", "calles", "vivienda"],
+    "date": "25/05/2018",
+    "featured": true
+  },
+  {
+    "id": "consejo-gerencia-2018",
+    "title": "La Gerencia de Urbanismo aprueba el plan del barrio",
+    "subtitle": "Nota oficial · Consejo de la Gerencia de Urbanismo, 16/05/2018",
+    "description": "Aprobación en el Consejo de la Gerencia tras 8 años de tramitación; detalla el ámbito (unos 34.000 m²) y sus objetivos.",
+    "href": "https://www.sevilla.org/ayuntamiento/alcaldia/comunicacion/noticias/el-ayuntamiento-desbloquea-8-anos-despues-el-plan-especial-de-la-bachillera-con-el-objetivo-de-urbanizar-regularizar-y-acabar-con-la-infravivienda-en-un-barrio-con-mas-de-1-000-residentes",
+    "sourceLabel": "sevilla.org",
+    "kind": "oficial",
+    "topics": ["planeamiento"],
+    "date": "16/05/2018"
+  },
+  {
+    "id": "nota-gerencia-2018",
+    "title": "El plan especial, marco para regenerar el barrio",
+    "subtitle": "Nota de la Gerencia de Urbanismo (2018)",
+    "description": "Explica el Plan Especial como marco urbanístico para la regeneración y reordenación del barrio.",
+    "href": "https://www.urbanismosevilla.org/noticias/aprobado-el-plan-especial-de-la-bachillera-como-marco-urbanistico-para-la-regeneracion-y-reordenacion-de-este-barrio-del-distrito-norte-de-sevilla",
+    "sourceLabel": "urbanismosevilla.org",
+    "kind": "oficial",
+    "topics": ["planeamiento"]
+  },
+  {
+    "id": "mocion-2014",
+    "title": "El Pleno reclama por unanimidad terminar el plan",
+    "subtitle": "Moción municipal, julio de 2014",
+    "description": "Reclama resolver las alegaciones pendientes desde 2011, aprobar definitivamente el PERI y actuar contra la infravivienda.",
+    "href": "https://www.eleconomista.es/espana/noticias/5968712/07/14/El-pleno-aprueba-por-unanimidad-impulsar-el-PERI-de-La-Bachillera-y-erradicar-las-infraviviendas-de-la-zona.html",
+    "sourceLabel": "elEconomista",
+    "kind": "prensa",
+    "topics": ["planeamiento", "vivienda"],
+    "date": "Jul 2014"
+  },
+  {
+    "id": "escritura-parcelacion-2025",
+    "title": "Primer paso para escriturar las viviendas",
+    "subtitle": "Escritura de parcelación, febrero de 2025",
+    "description": "División ante notario de la finca única original del barrio: el primer paso para que las vecinas registren sus viviendas.",
+    "href": "https://www.sevilla.org/actualidad/noticias/2025/el-gobierno-de-sanz-pone-fin-a-77-anos-de-espera-y-otorga-a-los-vecinos-de-la-bachillera-la-propiedad-de-sus-viviendas",
+    "sourceLabel": "sevilla.org",
+    "kind": "oficial",
+    "topics": ["vivienda"],
+    "date": "Feb 2025"
+  },
+  {
+    "id": "reparcelacion-2026",
+    "title": "202 parcelas ya inscritas a nombre de sus vecinas",
+    "subtitle": "Reparcelación culminada, mayo de 2026",
+    "description": "El suelo queda dividido en 202 parcelas independientes inscritas a la Fundación Sevillana de la Caridad para su transmisión individual; los viarios y espacios públicos pasan a ser del Ayuntamiento.",
+    "href": "https://www.sevilla.org/actualidad/noticias/2026/jose-luis-sanz-cumple-su-compromiso-con-los-vecinos-de-la-bachillera-y-culmina-la-regularizacion-de-la-titularidad-de-sus-viviendas",
+    "sourceLabel": "sevilla.org",
+    "kind": "oficial",
+    "topics": ["vivienda"],
+    "date": "May 2026",
+    "featured": true
+  },
+  {
+    "id": "prensa-regularizacion-2026",
+    "title": "Cobertura de prensa de la regularización",
+    "description": "Reportaje sobre el cierre registral del proceso de regularización de la propiedad de las viviendas.",
+    "href": "https://www.andaluciainformacion.es/articulo/sevilla/regularizacion-titularidad-viviendas-barriada-bachillera-culminada/202605291431413394212.html",
+    "sourceLabel": "Andalucía Información",
+    "kind": "prensa",
+    "topics": ["vivienda"],
+    "date": "2026"
+  },
+  {
+    "id": "ficha-ari-dmn-05",
+    "title": "Ficha del ámbito colindante Huerta de la Tenería",
+    "subtitle": "Ficha ARI-DMN-05, Anexo I de las Normas Urbanísticas",
+    "description": "Área residencial de transición pensada para recualificar el entorno vulnerable de La Bachillera; exige un Estudio de Detalle.",
+    "href": "https://web.urbanismosevilla.org/planeamientopgou/pdfs/06_TR_NORMAS_URBANISTICAS/06_TR_NORMAS_ANEXO_I_FICHAS/0607_TR_ARI-DMN-05.PDF",
+    "sourceLabel": "web.urbanismosevilla.org",
+    "kind": "oficial",
+    "topics": ["planeamiento"],
+    "isPdf": true
+  },
+  {
+    "id": "ficha-api-dmn-01",
+    "title": "Ficha del ámbito colindante Depósitos de RENFE",
+    "subtitle": "Ficha API-DMN-01, Anexo I de las Normas Urbanísticas",
+    "description": "Recoge la operación de sutura urbana entre San Jerónimo y La Bachillera con la zona norte de la ciudad.",
+    "href": "https://sig.urbanismosevilla.org/docs/TR_PGOU_Y_PD/WEB/06_TR_NORMAS_URBANISTICAS/06_TR_NORMAS_ANEXO_I_FICHAS/0617_TR_API_SUNC_API-DMN-01.pdf",
+    "sourceLabel": "sig.urbanismosevilla.org",
+    "kind": "oficial",
+    "topics": ["planeamiento"],
+    "isPdf": true
+  },
+  {
+    "id": "ficha-ari-dmn-04",
+    "title": "Ficha del ámbito de la subestación Empalme",
+    "subtitle": "Ficha ARI-DMN-04, Anexo I de las Normas Urbanísticas",
+    "description": "El ámbito de la subestación eléctrica de Empalme; su traslado condiciona la retirada de la alta tensión de El Manchón.",
+    "href": "https://web.urbanismosevilla.org/planeamientopgou/pdfs/06_TR_NORMAS_URBANISTICAS/06_TR_NORMAS_ANEXO_I_FICHAS/0607_TR_ARI-DMN-04.PDF",
+    "sourceLabel": "web.urbanismosevilla.org",
+    "kind": "oficial",
+    "topics": ["lineas", "planeamiento"],
+    "isPdf": true
+  },
+  {
+    "id": "pregunta-comision-2022",
+    "title": "El barrio pregunta por las torres de alta tensión",
+    "subtitle": "Pregunta en Comisión de Control, febrero de 2022",
+    "description": "Detalla las 3 líneas de alta tensión por El Manchón, las 2 de media tensión por el centro del barrio y los postes en la calle Tilo; cita el convenio de 55 M€ de 2017 como precedente.",
+    "href": "https://iusevillaciudad.org/preguntas-sobre-las-torres-de-alta-tension-de-san-jeronimo-y-la-bachillera-comision-de-control-febrero-2022/",
+    "sourceLabel": "iusevillaciudad.org",
+    "kind": "grupo-municipal",
+    "topics": ["lineas"],
+    "date": "Feb 2022",
+    "featured": true
+  },
+  {
+    "id": "pregunta-pleno-2022",
+    "title": "El barrio pregunta al alcalde por las torres",
+    "subtitle": "Pregunta al alcalde en el Pleno, abril de 2022",
+    "description": "Plantea trasladar la subestación Empalme a una nueva instalación junto a la carretera de La Rinconada.",
+    "href": "http://iusevillaciudad.org/pregunta-al-alcalde-sobre-la-la-eliminacion-de-las-torres-de-alta-tension-en-san-jeronimo-y-la-bachillera/",
+    "sourceLabel": "iusevillaciudad.org",
+    "kind": "grupo-municipal",
+    "topics": ["lineas"],
+    "date": "Abr 2022"
+  },
+  {
+    "id": "wikipedia",
+    "title": "Ficha del barrio en Wikipedia",
+    "description": "Origen en 1948, forma triangular, 356 viviendas en 2015 y la herencia de la Asociación Sevillana de Caridad.",
+    "href": "https://es.wikipedia.org/wiki/La_Bachillera",
+    "sourceLabel": "es.wikipedia.org",
+    "kind": "referencia",
+    "topics": ["historia"]
+  },
+  {
+    "id": "analisis-urbanistico",
+    "title": "Análisis urbanístico del barrio y su entorno",
+    "description": "Relación de La Bachillera con los ámbitos colindantes y los criterios de regeneración sostenible del área.",
+    "href": "https://habitatydesarrollo.wordpress.com/2012/02/29/bachillera/",
+    "sourceLabel": "Hábitat y Desarrollo",
+    "kind": "referencia",
+    "topics": ["historia"]
+  },
+  {
+    "id": "memorias-bachillera",
+    "title": "Memorias de La Bachillera",
+    "subtitle": "Colección audiovisual",
+    "description": "El proceso de lucha vecinal que revirtió el desalojo previsto y orientó el planeamiento hacia la rehabilitación del barrio.",
+    "href": "https://ladigitalizadora.org/coleccion/memorias-de-la-bachillera-sevilla/",
+    "sourceLabel": "ladigitalizadora.org",
+    "kind": "archivo",
+    "topics": ["historia"]
+  },
+  {
+    "id": "visor-arcgis",
+    "title": "Visor cartográfico del barrio",
+    "subtitle": "Visor ArcGIS, centrado en el ámbito AGI-02",
+    "description": "Mapa interactivo con las capas del planeamiento urbanístico, encuadrado directamente sobre el barrio.",
+    "href": "https://cdu.urbanismosevilla.org/arcgis/apps/experiencebuilder/experience/?id=4617ad6ca7624d84971d065b730f902b#widget_39=active_datasource_id:dataSource_2,center:-666266.236665109%2C4497207.6212885035%2C102100,scale:2011.5031449674996,rotation:0,viewpoint:%7B%22rotation%22%3A0%2C%22scale%22%3A2011.5031449674996%2C%22targetGeometry%22%3A%7B%22spatialReference%22%3A%7B%22latestWkid%22%3A3857%2C%22wkid%22%3A102100%7D%2C%22x%22%3A-666266.236665109%2C%22y%22%3A4497207.6212885035%7D%7D",
+    "sourceLabel": "cdu.urbanismosevilla.org",
+    "kind": "oficial",
+    "topics": ["consulta"]
+  },
+  {
+    "id": "bop-buscador",
+    "title": "Buscador del boletín oficial (BOP)",
+    "description": "Busca aquí la publicación de la aprobación del PERI y otros actos de gestión del barrio (prueba con «Bachillera»).",
+    "href": "https://bopsevilla.dipusevilla.es/publica/buscador-anuncios/",
+    "sourceLabel": "bopsevilla.dipusevilla.es",
+    "kind": "oficial",
+    "topics": ["consulta"]
+  },
+  {
+    "id": "tramitacion-planes-especiales",
+    "title": "Cómo se tramita un Plan Especial",
+    "subtitle": "Página de la Gerencia de Urbanismo",
+    "description": "Procedimiento y normativa aplicable a los Planes Especiales de Reforma Interior, la figura a la que pertenece el PERI del barrio.",
+    "href": "https://www.urbanismosevilla.org/areas/planeamiento-desarrollo-urbanistico/carta-de-servicios/planeamiento-urbanistico/planes-reforma-interior/planes-especiales",
+    "sourceLabel": "urbanismosevilla.org",
+    "kind": "oficial",
+    "topics": ["consulta"]
+  },
+  {
+    "id": "ley-sector-electrico",
+    "title": "Ley del Sector Eléctrico",
+    "subtitle": "Ley 24/2013, de 26 de diciembre (BOE)",
+    "description": "Fija el marco estatal de planificación, autorización y servidumbre de paso de las líneas eléctricas, y su coordinación con el planeamiento urbanístico.",
+    "href": "https://www.boe.es/buscar/act.php?id=BOE-A-2013-13645",
+    "sourceLabel": "boe.es",
+    "kind": "referencia",
+    "topics": ["lineas"]
+  },
+  {
+    "id": "rd-lineas-alta-tension",
+    "title": "Reglamento de líneas eléctricas de alta tensión",
+    "subtitle": "Real Decreto 223/2008 (BOE)",
+    "description": "Aprueba las instrucciones técnicas (ITC-LAT) que fijan las condiciones de seguridad de las líneas aéreas y subterráneas.",
+    "href": "https://www.boe.es/buscar/act.php?id=BOE-A-2008-5269",
+    "sourceLabel": "boe.es",
+    "kind": "referencia",
+    "topics": ["lineas"]
+  },
+  {
+    "id": "rd-1955-2000-art112",
+    "title": "Coordinación de las líneas eléctricas con el planeamiento",
+    "subtitle": "Real Decreto 1955/2000, artículo 112 (BOE)",
+    "description": "Obliga a coordinar la planificación de las instalaciones eléctricas con los instrumentos urbanísticos, reservando suelo para las líneas nuevas y para proteger las existentes.",
+    "href": "https://www.boe.es/buscar/act.php?id=BOE-A-2000-24019#a112",
+    "sourceLabel": "boe.es",
+    "kind": "referencia",
+    "topics": ["lineas"]
+  }
+]

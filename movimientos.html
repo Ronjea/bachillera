@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n="movements:meta.title">Movimientos · La Bachillera</title>
+  <meta name="description" content="Las 3 luchas abiertas del barrio de La Bachillera (Sevilla): soterrar las líneas eléctricas, urbanizar de verdad las calles y acabar con la infravivienda. En qué punto está cada una, qué se pide y qué puedes hacer." data-i18n-attr="content:movements:meta.description" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Movimientos vecinales de La Bachillera" data-i18n-attr="content:movements:meta.ogTitle" />
+  <meta property="og:description" content="Las 3 luchas abiertas del barrio: soterrar los cables de alta tensión, urbanizar las calles y acabar con la infravivienda. En qué punto está cada una y qué puedes hacer." data-i18n-attr="content:movements:meta.ogDescription" />
+  <meta property="og:image" content="https://ronjea.github.io/bachillera/images/memoria/inauguracion-avv-1979-05.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@700,500,800&f[]=satoshi@400,500,700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <meta name="theme-color" content="#b45309" />
+</head>
+<body>
+  <div id="siteNav"></div>
+
+  <header class="hero movements-hero">
+    <div class="wrap hero-inner">
+      <p class="eyebrow" data-i18n="movements:hero.eyebrow">Movimientos vecinales</p>
+      <h1 class="hero-title" data-i18n="movements:hero.title">Lo que el barrio sigue reclamando</h1>
+      <p class="hero-subtitle" data-i18n="movements:hero.subtitle">
+        Tres luchas del barrio, explicadas en lenguaje llano: en qué punto está cada una, qué pedimos y qué puedes
+        hacer tú.
+      </p>
+    </div>
+  </header>
+
+  <nav class="jump-chips" id="jumpChips" aria-label="Ir a un movimiento">
+    <div class="wrap jump-chips-inner">
+      <a class="jump-chip" href="#lineas" data-jump="lineas" data-i18n="movements:chips.lineas">Líneas eléctricas</a>
+      <a class="jump-chip" href="#calles" data-jump="calles" data-i18n="movements:chips.calles">Calles</a>
+      <a class="jump-chip" href="#vivienda" data-jump="vivienda" data-i18n="movements:chips.vivienda">Vivienda</a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="section movement" id="lineas" aria-labelledby="lineas-title">
+      <div class="wrap">
+        <span class="status-badge status-badge--progress" data-i18n="movements:lineas.status">En trámite</span>
+        <h2 id="lineas-title" class="section-title" data-i18n="movements:lineas.title">Quitar los cables de encima de las casas</h2>
+        <p class="section-lede" data-i18n="movements:lineas.summary">
+          Los cables de alta y media tensión que cruzan el barrio llevan años esperando a desviarse y enterrarse bajo
+          tierra.
+        </p>
+
+        <h3 class="movement-subtitle" data-i18n="movements:common.whatHappens">Qué pasa</h3>
+        <div class="prose">
+          <p data-i18n-html="movements:lineas.paragraphs.0"></p>
+          <p data-i18n-html="movements:lineas.paragraphs.1"></p>
+          <p data-i18n-html="movements:lineas.paragraphs.2"></p>
+        </div>
+
+        <div class="movement-facts" id="lineasFacts" data-testid="lineas-facts"></div>
+
+        <div class="lines-map-block" id="mapa-lineas">
+          <h3 class="movement-subtitle" data-i18n="movements:linesMap.title">Las líneas sobre el barrio</h3>
+          <a class="map-preview" href="mapa.html" data-testid="lines-map-preview">
+            <img src="/images/mapa-lineas-preview.jpg" width="1600" height="1000" loading="lazy" decoding="async" alt="Mapa de La Bachillera y alrededores con las líneas eléctricas de alta y media tensión y sus subestaciones" data-i18n-attr="alt:movements:linesMap.alt" />
+            <span class="map-preview-cta">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m3 6 6-3 6 3 6-3v15l-6 3-6-3-6 3z"/><path d="M9 3v15M15 6v15"/></svg>
+              <span data-i18n="movements:linesMap.cta">Abrir el mapa</span>
+            </span>
+          </a>
+          <p class="lines-map-lede" data-i18n="movements:linesMap.lede">Toca el mapa para abrirlo a pantalla completa y consultar cada línea y subestación.</p>
+          <ul class="lines-map-legend" id="linesMapLegend"></ul>
+          <p class="lines-map-source" data-i18n="movements:linesMap.source"></p>
+        </div>
+
+        <p class="movement-legal-note" data-i18n-html="legal:home.legalParagraph"></p>
+
+        <h3 class="movement-subtitle" id="lineasDemandsTitle" data-i18n="movements:lineas.demandsTitle">Qué pedimos</h3>
+        <ul class="movement-demands" id="lineasDemands" data-testid="lineas-demands"></ul>
+
+        <h3 class="movement-subtitle" id="lineasTimelineTitle" data-i18n="movements:lineas.timelineTitle">Cómo hemos llegado aquí</h3>
+        <ol class="timeline" id="lineasTimeline" data-testid="lineas-timeline"></ol>
+
+        <h3 class="movement-subtitle" data-i18n="movements:actions.title">Qué puedes hacer</h3>
+        <div class="movement-actions" id="lineasActions" data-testid="lineas-actions"></div>
+
+        <h3 class="movement-subtitle movement-subtitle--small" id="lineasSourcesTitle" data-i18n="movements:lineas.sourcesTitle">Fuentes</h3>
+        <ul class="movement-sources" id="lineasSources" data-testid="lineas-sources"></ul>
+      </div>
+    </section>
+
+    <section class="section movement" id="calles" aria-labelledby="calles-title">
+      <div class="wrap">
+        <span class="status-badge status-badge--pending" data-i18n="movements:calles.status">Pendiente</span>
+        <h2 id="calles-title" class="section-title" data-i18n="movements:calles.title">Calles urbanizadas de verdad</h2>
+        <p class="section-lede" data-i18n="movements:calles.summary">
+          El barrio tiene ya sus parcelas definidas, pero las calles siguen sin la urbanización material que el plan
+          prometió.
+        </p>
+
+        <h3 class="movement-subtitle" data-i18n="movements:common.whatHappens">Qué pasa</h3>
+        <div class="prose">
+          <p data-i18n-html="movements:calles.paragraphs.0"></p>
+          <p data-i18n-html="movements:calles.paragraphs.1"></p>
+          <p data-i18n-html="movements:calles.paragraphs.2"></p>
+        </div>
+
+        <h3 class="movement-subtitle" id="callesDemandsTitle" data-i18n="movements:calles.demandsTitle">Qué pedimos</h3>
+        <ul class="movement-demands" id="callesDemands" data-testid="calles-demands"></ul>
+
+        <h3 class="movement-subtitle" id="callesTimelineTitle" data-i18n="movements:calles.timelineTitle">Cómo hemos llegado aquí</h3>
+        <ol class="timeline" id="callesTimeline" data-testid="calles-timeline"></ol>
+
+        <h3 class="movement-subtitle" data-i18n="movements:actions.title">Qué puedes hacer</h3>
+        <div class="movement-actions" id="callesActions" data-testid="calles-actions"></div>
+
+        <h3 class="movement-subtitle movement-subtitle--small" id="callesSourcesTitle" data-i18n="movements:calles.sourcesTitle">Fuentes</h3>
+        <ul class="movement-sources" id="callesSources" data-testid="calles-sources"></ul>
+      </div>
+    </section>
+
+    <section class="section movement" id="vivienda" aria-labelledby="vivienda-title">
+      <div class="wrap">
+        <span class="status-badge status-badge--pending" data-i18n="movements:vivienda.status">Pendiente</span>
+        <h2 id="vivienda-title" class="section-title" data-i18n="movements:vivienda.title">Acabar con la infravivienda</h2>
+        <p class="section-lede" data-i18n="movements:vivienda.summary">
+          El PERI prometió erradicar la infravivienda del barrio, pero el programa de actuación para lograrlo sigue
+          sin ponerse en marcha.
+        </p>
+
+        <h3 class="movement-subtitle" data-i18n="movements:common.whatHappens">Qué pasa</h3>
+        <div class="prose">
+          <p data-i18n-html="movements:vivienda.paragraphs.0"></p>
+          <p data-i18n-html="movements:vivienda.paragraphs.1"></p>
+          <p data-i18n-html="movements:vivienda.paragraphs.2"></p>
+        </div>
+
+        <h3 class="movement-subtitle" id="viviendaDemandsTitle" data-i18n="movements:vivienda.demandsTitle">Qué pedimos</h3>
+        <ul class="movement-demands" id="viviendaDemands" data-testid="vivienda-demands"></ul>
+
+        <h3 class="movement-subtitle" id="viviendaTimelineTitle" data-i18n="movements:vivienda.timelineTitle">Cómo hemos llegado aquí</h3>
+        <ol class="timeline" id="viviendaTimeline" data-testid="vivienda-timeline"></ol>
+
+        <h3 class="movement-subtitle" data-i18n="movements:actions.title">Qué puedes hacer</h3>
+        <div class="movement-actions" id="viviendaActions" data-testid="vivienda-actions"></div>
+
+        <h3 class="movement-subtitle movement-subtitle--small" id="viviendaSourcesTitle" data-i18n="movements:vivienda.sourcesTitle">Fuentes</h3>
+        <ul class="movement-sources" id="viviendaSources" data-testid="vivienda-sources"></ul>
+      </div>
+    </section>
+
+    <section class="section participate" id="participa"></section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p class="footer-about" data-i18n-html="movements:footer.about">
+        La Bachillera es un <strong>archivo informativo vecinal</strong>: reúne y enlaza fuentes oficiales del
+        Ayuntamiento de Sevilla, la Gerencia de Urbanismo y el Boletín Oficial de la Provincia (BOP).
+      </p>
+      <p class="footer-disclaimer" data-i18n-html="movements:footer.disclaimer">
+        Este sitio <strong>no es una fuente vinculante</strong>. Para cualquier trámite, la referencia es el
+        documento del PERI aprobado y su publicación en el BOP.
+      </p>
+    </div>
+  </footer>
+
+  <script type="module" src="/src/movements/main.ts"></script>
+</body>
+</html>

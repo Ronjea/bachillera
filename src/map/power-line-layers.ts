@@ -1,5 +1,6 @@
 import type { Map as MapLibreMap } from 'maplibre-gl';
 import { emptyPowerLinesCollection, getPowerLines } from './state';
+import { isChecked } from './dom';
 import { VOLTAGE_COLORS } from './typology';
 
 export const CASING_LAYER_ID = 'power-lines-casing';
@@ -10,8 +11,6 @@ export const OVERHEAD_LAYER_ID = 'power-lines-overhead';
  *  never a click/hover target) — used by interactions.ts to register one
  *  delegated handler across substations + both line layers. */
 export const POWER_LINE_LAYER_IDS = [OVERHEAD_LAYER_ID, UNDERGROUND_LAYER_ID] as const;
-
-const isChecked = (selector: string): boolean => document.querySelector<HTMLInputElement>(selector)?.checked ?? false;
 
 // The voltage-class color *values* below all come from typology.ts's
 // VOLTAGE_COLORS (the single source of truth shared with substations, the
@@ -31,9 +30,9 @@ export const addPowerLineLayers = (map: MapLibreMap): void => {
   const collection = getPowerLines()?.collection ?? emptyPowerLinesCollection();
   map.addSource('power-lines', { type: 'geojson', data: collection });
 
-  const masterVisible = isChecked('#layerLines');
-  const overheadVisible = masterVisible && isChecked('#layerLinesOverhead');
-  const undergroundVisible = masterVisible && isChecked('#layerLinesUnderground');
+  const masterVisible = isChecked('#layerLines', true);
+  const overheadVisible = masterVisible && isChecked('#layerLinesOverhead', true);
+  const undergroundVisible = masterVisible && isChecked('#layerLinesUnderground', true);
 
   map.addLayer(
     {
